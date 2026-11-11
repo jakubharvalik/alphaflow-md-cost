@@ -1,0 +1,15 @@
+model	sada	protein	vzorku	wall_s	kod
+afT_base	B	inB	6	1087.66	0
+afT_dist	B	inB	11	219.799	0
+afT_base	K_7jrq_A	inK_7jrq_A	4	60.4819	0
+afT_base	K_6kty_A	inK_6kty_A	4	85.6159	0
+afT_base	K_7c45_A	inK_7c45_A	4	153.704	0
+afT_base	K_6p5x_B	inK_6p5x_B	4	315.865	0
+afT_base	K_5znj_A	inK_5znj_A	4	462.695	0
+afT_base	K_6sms_A	inK_6sms_A	4	689.704	0
+afT_dist	K_7jrq_A	inK_7jrq_A	6	26.4995	0
+afT_dist	K_6kty_A	inK_6kty_A	6	29.2702	0
+afT_dist	K_7c45_A	inK_7c45_A	6	41.3358	0
+afT_dist	K_6p5x_B	inK_6p5x_B	6	84.5977	0
+afT_dist	K_5znj_A	inK_5znj_A	6	108.613	0
+afT_dist	K_6sms_A	inK_6sms_A	6	126.714	0

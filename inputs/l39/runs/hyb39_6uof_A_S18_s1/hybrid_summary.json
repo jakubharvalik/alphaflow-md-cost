@@ -1,0 +1,427 @@
+{
+  "args": {
+    "sys": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/sys/p2_6uof_A",
+    "ens_pdb": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/af/alphaflow_md_templates_base_202402/6uof_A.pdb",
+    "k": 18,
+    "targets": null,
+    "hyb_check": null,
+    "trim": 4,
+    "ed_pcs": 10,
+    "equil_ps": 80.0,
+    "md_ps": 520.0,
+    "restrain_k": 1000.0,
+    "seed": 1,
+    "max_boxes": 0,
+    "allow_missing": 2,
+    "platform": "CUDA",
+    "work": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/work/6uof_A_S18_s1",
+    "out": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_6uof_A_S18_s1"
+  },
+  "s18": true,
+  "partial": false,
+  "targets": [
+    83,
+    166,
+    49,
+    211,
+    154,
+    180,
+    68,
+    33,
+    1,
+    55,
+    208,
+    52,
+    151,
+    128,
+    219,
+    215,
+    228,
+    165
+  ],
+  "missing_boxes": [
+    4
+  ],
+  "failed": [
+    {
+      "box": 4,
+      "ens_idx": 154,
+      "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+  ],
+  "wall_s": 1865.7,
+  "wall_breakdown_s": {
+    "build": 1243.3,
+    "min": 32.7,
+    "equil": 79.3,
+    "md": 508.8,
+    "total": 1865.7
+  },
+  "simulated_ns": 10.2,
+  "md_free_ns": 8.84,
+  "effective_ns_per_day": 472.3589001447178,
+  "jumps": 17,
+  "rejected": 0,
+  "jump_records": [
+    {
+      "ok": true,
+      "t_after_ps": 1000.0,
+      "t_before_ps": 1000.0,
+      "ens_idx": 83,
+      "s18_box": 0,
+      "seed": 38100,
+      "n_atoms": 17854,
+      "n_solute": 1927,
+      "n_water": 5299,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0258,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 67.3,
+        "min": 2.3,
+        "equil": 4.0,
+        "md": 26.2,
+        "total": 99.9
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 2000.0,
+      "t_before_ps": 2000.0,
+      "ens_idx": 166,
+      "s18_box": 1,
+      "seed": 38101,
+      "n_atoms": 17806,
+      "n_solute": 1927,
+      "n_water": 5283,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0248,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 66.3,
+        "min": 1.7,
+        "equil": 4.2,
+        "md": 25.7,
+        "total": 97.9
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 3000.0,
+      "t_before_ps": 3000.0,
+      "ens_idx": 49,
+      "s18_box": 2,
+      "seed": 38102,
+      "n_atoms": 15693,
+      "n_solute": 1927,
+      "n_water": 4580,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0233,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 73.4,
+        "min": 2.5,
+        "equil": 5.1,
+        "md": 33.3,
+        "total": 114.6
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 4000.0,
+      "t_before_ps": 4000.0,
+      "ens_idx": 211,
+      "s18_box": 3,
+      "seed": 38103,
+      "n_atoms": 15690,
+      "n_solute": 1927,
+      "n_water": 4579,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0252,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 71.8,
+        "min": 1.6,
+        "equil": 5.2,
+        "md": 33.7,
+        "total": 112.3
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 6000.0,
+      "t_before_ps": 6000.0,
+      "ens_idx": 180,
+      "s18_box": 5,
+      "seed": 38105,
+      "n_atoms": 17746,
+      "n_solute": 1927,
+      "n_water": 5263,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0225,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 75.5,
+        "min": 1.6,
+        "equil": 4.0,
+        "md": 25.8,
+        "total": 107.0
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 7000.0,
+      "t_before_ps": 7000.0,
+      "ens_idx": 68,
+      "s18_box": 6,
+      "seed": 38106,
+      "n_atoms": 19038,
+      "n_solute": 1927,
+      "n_water": 5693,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0227,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 72.9,
+        "min": 2.2,
+        "equil": 4.4,
+        "md": 27.5,
+        "total": 107.0
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 8000.0,
+      "t_before_ps": 8000.0,
+      "ens_idx": 33,
+      "s18_box": 7,
+      "seed": 38107,
+      "n_atoms": 15696,
+      "n_solute": 1927,
+      "n_water": 4581,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0236,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 75.0,
+        "min": 2.3,
+        "equil": 5.2,
+        "md": 33.3,
+        "total": 115.9
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 9000.0,
+      "t_before_ps": 9000.0,
+      "ens_idx": 1,
+      "s18_box": 8,
+      "seed": 38108,
+      "n_atoms": 16640,
+      "n_solute": 1927,
+      "n_water": 4895,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.024,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 72.7,
+        "min": 1.8,
+        "equil": 5.4,
+        "md": 34.6,
+        "total": 114.5
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 10000.0,
+      "t_before_ps": 10000.0,
+      "ens_idx": 55,
+      "s18_box": 9,
+      "seed": 38109,
+      "n_atoms": 19748,
+      "n_solute": 1927,
+      "n_water": 5929,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0246,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 72.7,
+        "min": 1.7,
+        "equil": 4.3,
+        "md": 27.7,
+        "total": 106.5
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 11000.0,
+      "t_before_ps": 11000.0,
+      "ens_idx": 208,
+      "s18_box": 10,
+      "seed": 38110,
+      "n_atoms": 16754,
+      "n_solute": 1927,
+      "n_water": 4933,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0249,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 69.7,
+        "min": 1.6,
+        "equil": 5.3,
+        "md": 34.2,
+        "total": 110.8
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 12000.0,
+      "t_before_ps": 12000.0,
+      "ens_idx": 52,
+      "s18_box": 11,
+      "seed": 38111,
+      "n_atoms": 17905,
+      "n_solute": 1927,
+      "n_water": 5316,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0227,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 75.1,
+        "min": 2.1,
+        "equil": 4.1,
+        "md": 26.0,
+        "total": 107.3
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 13000.0,
+      "t_before_ps": 13000.0,
+      "ens_idx": 151,
+      "s18_box": 12,
+      "seed": 38112,
+      "n_atoms": 17047,
+      "n_solute": 1927,
+      "n_water": 5030,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0236,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 75.1,
+        "min": 1.6,
+        "equil": 4.0,
+        "md": 25.4,
+        "total": 106.3
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 14000.0,
+      "t_before_ps": 14000.0,
+      "ens_idx": 128,
+      "s18_box": 13,
+      "seed": 38113,
+      "n_atoms": 15639,
+      "n_solute": 1927,
+      "n_water": 4562,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0243,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 70.4,
+        "min": 2.0,
+        "equil": 5.2,
+        "md": 33.4,
+        "total": 111.0
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 15000.0,
+      "t_before_ps": 15000.0,
+      "ens_idx": 219,
+      "s18_box": 14,
+      "seed": 38114,
+      "n_atoms": 15588,
+      "n_solute": 1927,
+      "n_water": 4545,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0253,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 76.4,
+        "min": 1.6,
+        "equil": 5.2,
+        "md": 33.3,
+        "total": 116.7
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 16000.0,
+      "t_before_ps": 16000.0,
+      "ens_idx": 215,
+      "s18_box": 15,
+      "seed": 38115,
+      "n_atoms": 19445,
+      "n_solute": 1927,
+      "n_water": 5828,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0222,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 75.9,
+        "min": 1.6,
+        "equil": 4.3,
+        "md": 27.5,
+        "total": 109.5
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 17000.0,
+      "t_before_ps": 17000.0,
+      "ens_idx": 228,
+      "s18_box": 16,
+      "seed": 38116,
+      "n_atoms": 15483,
+      "n_solute": 1927,
+      "n_water": 4510,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0223,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 76.7,
+        "min": 2.2,
+        "equil": 5.2,
+        "md": 33.3,
+        "total": 117.5
+      }
+    },
+    {
+      "ok": true,
+      "t_after_ps": 18000.0,
+      "t_before_ps": 18000.0,
+      "ens_idx": 165,
+      "s18_box": 17,
+      "seed": 38117,
+      "n_atoms": 19115,
+      "n_solute": 1927,
+      "n_water": 5718,
+      "missing_h_mapped_to_ca": 0,
+      "ca_dev_after_equil": 0.0225,
+      "platform": "CUDA",
+      "wall_s": {
+        "build": 76.4,
+        "min": 2.3,
+        "equil": 4.2,
+        "md": 27.9,
+        "total": 111.0
+      }
+    }
+  ],
+  "mean": {
+    "ca_dev_after_equil": 0.0238
+  }
+}

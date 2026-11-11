@@ -1,0 +1,71 @@
+#!/bin/bash
+#PBS -N l39_B
+#PBS -l select=1:ncpus=4:ngpus=1:mem=16gb:scratch_local=20gb:gpu_cap=compute_70
+#PBS -l walltime=4:00:00
+#PBS -j oe
+# Linie 39, fáze B (prereg39): jeden protein na úlohu pole (řádek PBS_ARRAY_INDEX seznamu LIST = "jméno délka").
+# 1) p2_<N> z ATLAS PDB (build_system, jen když chybí), 2) rychlost MD p2 na této GPU (bench39, 50 ps),
+# 3) MODE=S18: s39.py/s18.py ze vzorků AF-MD+templates (SEED 0 = cíle jako linie 38; SEED > 0 = ED z náhodné poloviny
+#    vzorků, prereg Z5), MODE=K18: 18 boxů z krystalu (prereg Z7b). Hotové boxy se přeskočí, lze znovu spustit.
+#   qsub -J 1-25 -v MODE=S18,SEED=0,LIST=/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/listB.txt b39.pbs
+. /etc/profile >/dev/null 2>&1 || true
+W=/storage/brno2/home/jakub_harvalik/md_pilot_work
+L=$W/l39
+MODE=${MODE:-S18}; SEED=${SEED:-0}; LIST=${LIST:-$L/listB.txt}
+I=${PBS_ARRAY_INDEX:-1}
+N=$(sed -n "${I}p" $LIST | awk '{print $1}')
+TAG=${MODE}_s${SEED}
+J=${PBS_JOBID%%.*}; J=${J//[\[\]]/_}
+mkdir -p $L/logs $L/sys $L/bench $L/runs $L/work
+exec > >(tee -a $L/logs/b39_${N}_${TAG}_${J}.log) 2>&1
+set -u
+echo "$(date '+%F %T') start $N $TAG na $(hostname), PBS_JOBID $PBS_JOBID"
+[ -n "$N" ] || { echo "prázdný řádek $I v $LIST"; exit 1; }
+trap 'clean_scratch' TERM EXIT
+export TMPDIR=$SCRATCHDIR
+P=$W/envs/omm13/bin/python
+cd $SCRATCHDIR || exit 5
+tar xzf $L/code39.tgz --warning=no-unknown-keyword || exit 6
+cp $L/s39.py $L/k18_make.py $L/bench39.py $L/eval39.py . || exit 6  # eval39.py doplněn 9. 11. 17:00 (25398494/5 ho neměly, dopočte ana39.pbs)
+nvidia-smi --query-gpu=name,driver_version,memory.total,compute_cap --format=csv,noheader | tee $L/logs/gpu_${N}_${TAG}_${J}.txt
+PDB=$L/atlas/pdb/$N.pdb
+AF=$L/af/alphaflow_md_templates_base_202402/$N.pdb
+[ -s $PDB ] || { echo "$N: chybí ATLAS PDB $PDB"; exit 2; }
+SYS=$L/sys/p2_$N
+if [ ! -s $SYS/system.xml ]; then
+  t0=$(date +%s)
+  $P build_system.py --pdb $PDB --ff charmm36m --ionic-molar 0.15 --restrain-k 1000 --platform CUDA --out p2_$N \
+    || { echo "$N: build_system SELHAL"; exit 3; }
+  rm -rf $SYS; cp -r p2_$N $SYS
+  echo "$(date '+%T') p2_$N postaven za $(( $(date +%s) - t0 )) s"
+fi
+[ -s $L/bench/bench_p2_$N.json ] || $P bench39.py --sys $SYS --platform CUDA --out $L/bench/bench_p2_$N.json
+RUN=$L/runs/hyb39_${N}_${TAG}
+WORK=$L/work/${N}_${TAG}
+DONE_BEFORE=0; [ -s $RUN/hybrid_summary.json ] && { echo "$RUN hotovo dřív"; DONE_BEFORE=1; }
+if [ $DONE_BEFORE = 1 ]; then :
+elif [ "$MODE" = K18 ]; then
+  $P k18_make.py $PDB k18_$N.pdb || exit 4
+  $P s39.py --sys $SYS --ens-pdb k18_$N.pdb --targets $(seq -s ' ' 0 17) --seed $SEED --platform CUDA --work $WORK --out $RUN
+else
+  [ -s $AF ] || { echo "$N: chybí vzorky AF $AF"; exit 4; }
+  PH=""; [ "$SEED" -gt 0 ] && PH="--pool-half-seed $SEED"
+  $P s39.py $PH --sys $SYS --ens-pdb $AF --seed $SEED --platform CUDA --work $WORK --out $RUN
+fi
+rc=$?; echo "$(date '+%T') s39 kód $rc"
+if [ -s $RUN/hybrid_summary.json ]; then rm -f $WORK/b??.npz $WORK/b??_raw.pdb $WORK/b??_model.pdb; echo "work uklizen (výstup v $RUN)"; fi
+du -sh $RUN 2>/dev/null
+# rozbory na CPU uzlu (prereg39): sub38 (ekvivalentní čas), eval39 (LOO se shodným n, 3 × 3,6 ns), rel38 (Rama, χ1),
+# af38 s --sys (ΔJS běh − AF při n = 250, stejná reference)
+if [ -s $RUN/hybrid_summary.json ]; then
+  A=$L/ana; mkdir -p $A; C=$L/atlas/cache/$N
+  [ -s $A/sub39_${N}_${TAG}.json ] || $P sub38.py --sys $SYS --atlas $C --runs $MODE=$RUN --out $A/sub39_${N}_${TAG}.json > $A/sub39_${N}_${TAG}.txt 2>&1
+  [ -s $A/eval39_${N}_${TAG}.json ] || $P eval39.py --sys $SYS --atlas $C --runs $MODE=$RUN --out $A/eval39_${N}_${TAG}.json > $A/eval39_${N}_${TAG}.txt 2>&1
+  [ -s $A/rel39_${N}_${TAG}.json ] || $P rel38.py --atlas $C --hyb $RUN --windows "50:520,0:520" --out $A/rel39_${N}_${TAG}.json > $A/rel39_${N}_${TAG}.txt 2>&1
+  EA=""; [ -s $AF ] && EA="--ens AF_MD_templ=$AF"
+  [ -s $A/af39_${N}_${TAG}_b30.json ] || $P af38.py --name $N --sys $SYS --atlas $C $EA --runs $MODE=$RUN --n 250 --reps 20 --bins 30 \
+     --out $A/af39_${N}_${TAG}_b30.json > $A/af39_${N}_${TAG}_b30.txt 2>&1
+  echo "$(date '+%T') rozbory: $(ls $A/*_${N}_${TAG}*.json 2>/dev/null | wc -l) JSON"
+  grep -h -A3 "^$MODE" $A/eval39_${N}_${TAG}.txt 2>/dev/null
+fi
+echo "$(date '+%F %T') konec"

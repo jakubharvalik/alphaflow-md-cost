@@ -1,0 +1,100 @@
+#!/bin/bash
+#PBS -N l39_gd50
+#PBS -l select=1:ncpus=4:ngpus=1:mem=16gb:scratch_local=20gb:gpu_cap=sm_80
+#PBS -l walltime=3:00:00
+#PBS -j oe
+# Linie 39, změna Z9 (prereg39): 50 vzorků destilovaného AlphaFlow-MD+Templates (alphaflow_md_templates_distilled_202402,
+# --noisy_first --no_diffusion, ostatní výchozí) pro 25 proteinů sady B = zdroj cílů ED pro S18d50 (b39d.pbs).
+# Vstupy beze změny z gen39b: gen39_in.csv, msa, templates_A (šablona = struktura ATLAS s ID řetězce A), predict.py se zapsanými
+# úpravami (git diff). predict.py nemá seed, vzorky nejsou reprodukovatelné (jako u zveřejněných).
+# Výstup $L/af/afT_dist50/<N>.pdb jen po kontrole: 50 modelů, v každém počet Cα = délka seqres. Lze spustit znovu (hotové přeskočí).
+# Čas na vzorek ($RUN/rt_dist50.json) jen popisně: cena pro Z9-i se bere z gen39b (A40) jako v Z8.
+# GPU: 8.x (torch 1.12 cu113 nemá sm_90); paměť stačí každá (L ≤ 119), fobos (L40S) povolen.
+#   G=$(qsub gen39d.pbs) && qsub -W depend=afterok:$G -J 1-25 -v MODE=S18,SEED=0,TAG=S18d50_s0,AFSET=afT_dist50,AFLAB=AF_dist50 b39d.pbs
+. /etc/profile >/dev/null 2>&1 || true
+W=/storage/brno2/home/jakub_harvalik/md_pilot_work
+L=$W/l39
+G=$L/gen
+ENV=$W/envs/af39
+J=${PBS_JOBID%%.*}
+RUN=$G/run_$J
+D=$L/af/afT_dist50
+NS=50
+mkdir -p $RUN $D $SCRATCHDIR/pdb
+exec > >(tee -a $RUN/job.log) 2>&1
+set -u
+echo "$(date '+%F %T') start na $(hostname), PBS_JOBID $PBS_JOBID"
+trap 'clean_scratch' TERM EXIT
+[ -f $ENV/.af39_ok ] || { echo "chybí prostředí af39 (inst39)"; exit 2; }
+export TMPDIR=$SCRATCHDIR TORCH_HOME=$SCRATCHDIR/torch WANDB_MODE=disabled LD_LIBRARY_PATH=$ENV/lib:${LD_LIBRARY_PATH:-}
+P=$ENV/bin/python
+GPU=$(nvidia-smi --query-gpu=name,driver_version,memory.total,compute_cap --format=csv,noheader | head -1)
+echo "GPU: $GPU" | tee $RUN/gpu.txt
+CAP=$(echo "$GPU" | awk -F', ' '{print $4}'); CAPM=${CAP%%.*}
+[ "${CAPM:-0}" -ge 9 ] && { echo "compute capability $CAP: torch 1.12 cu113 nemá jádra pro sm_90, končím"; exit 9; }
+$P -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available(), torch.cuda.get_device_name(0))" || exit 3
+awk '$3=="B"{print $1}' $L/gen39_list.txt > $SCRATCHDIR/setB.txt
+for n in $(cat $SCRATCHDIR/setB.txt); do
+  [ -s $G/templates_A/$n.pdb ] || { echo "chybí šablona templates_A/$n.pdb (gen39b)"; exit 4; }
+  [ -e $G/msa/$n ] || { echo "chybí MSA $G/msa/$n"; exit 4; }
+done
+(cd $G/alphaflow && $ENV/bin/git rev-parse HEAD && $ENV/bin/git diff) > $RUN/alphaflow_diff.txt 2>&1
+M=alphaflow_md_templates_distilled_202402
+curl -sSfL --retry 4 --retry-delay 10 -o $SCRATCHDIR/$M.pt https://huggingface.co/bjing-mit/alphaflow/resolve/main/params/$M.pt \
+  || { echo "váhy $M: stažení SELHALO"; exit 5; }
+sha256sum $SCRATCHDIR/$M.pt | tee $RUN/weights_sha.txt
+# kontrola souboru vzorků: 50 modelů, v každém počet Cα = délka seqres (jinak se do $D nekopíruje)
+cat > $SCRATCHDIR/chk.py <<'PY'
+import sys
+import pandas as pd
+csv, pdb, n, ns = sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4])
+L = len(dict(pd.read_csv(csv)[["name", "seqres"]].values)[n])
+ca, cur, nm = [], 0, 0
+for ln in open(pdb):
+    if ln.startswith("MODEL"):
+        nm += 1
+        cur = 0
+    elif ln.startswith("ATOM") and ln[12:16].strip() == "CA":
+        cur += 1
+    elif ln.startswith("ENDMDL"):
+        ca.append(cur)
+ok = nm == ns and len(ca) == ns and all(c == L for c in ca)
+print(f"{n}\t{nm}\t{min(ca) if ca else 0}\t{max(ca) if ca else 0}\t{L}\t{int(ok)}")
+sys.exit(0 if ok else 1)
+PY
+echo -e "protein\tmodelu\tCa_min\tCa_max\tL\tok" > $RUN/check.tsv
+# jen proteiny bez platného souboru v $D
+: > $SCRATCHDIR/todo.txt
+for n in $(cat $SCRATCHDIR/setB.txt); do
+  if [ -s $D/$n.pdb ] && $P $SCRATCHDIR/chk.py $G/gen39_in.csv $D/$n.pdb $n $NS >> $RUN/check.tsv; then echo "$n hotovo dřív"
+  else echo $n >> $SCRATCHDIR/todo.txt; fi
+done
+NT=$(grep -c . $SCRATCHDIR/todo.txt)
+echo "$(date '+%T') ke generování $NT z $(grep -c . $SCRATCHDIR/setB.txt) proteinů"
+if [ $NT -gt 0 ]; then
+  $P - $G/gen39_in.csv $SCRATCHDIR/todo.txt $SCRATCHDIR/in.csv <<'PY'
+import sys, pandas as pd
+df = pd.read_csv(sys.argv[1])
+t = [x.strip() for x in open(sys.argv[2]) if x.strip()]
+df[df.name.isin(t)].to_csv(sys.argv[3], index=False)
+print("CSV", int(df.name.isin(t).sum()), "proteinů")
+PY
+  t0=$(date +%s)
+  (cd $G/alphaflow && $P predict.py --mode alphafold --input_csv $SCRATCHDIR/in.csv --msa_dir $G/msa --templates_dir $G/templates_A \
+     --weights $SCRATCHDIR/$M.pt --samples $NS --outpdb $SCRATCHDIR/pdb --noisy_first --no_diffusion \
+     --runtime_json $RUN/rt_dist50.json < /dev/null > $RUN/predict.txt 2>&1)
+  rc=$?
+  echo "$(date '+%T') predict.py kód $rc, wall $(( $(date +%s) - t0 )) s"
+  [ $rc = 0 ] || tail -20 $RUN/predict.txt
+  for n in $(cat $SCRATCHDIR/todo.txt); do
+    if [ -s $SCRATCHDIR/pdb/$n.pdb ] && $P $SCRATCHDIR/chk.py $G/gen39_in.csv $SCRATCHDIR/pdb/$n.pdb $n $NS >> $RUN/check.tsv; then
+      cp $SCRATCHDIR/pdb/$n.pdb $D/$n.pdb
+    else
+      echo "$n: soubor vzorků chybí nebo neprošel kontrolou (do $D se nekopíruje)"
+    fi
+  done
+fi
+NOK=0
+for n in $(cat $SCRATCHDIR/setB.txt); do [ -s $D/$n.pdb ] && NOK=$((NOK + 1)); done
+echo "$(date '+%F %T') konec: platných souborů $NOK z $(grep -c . $SCRATCHDIR/setB.txt) v $D"
+[ $NOK -ge 20 ] || { echo "méně než 20 proteinů, S18d50 by Z9 nerozhodla"; exit 6; }

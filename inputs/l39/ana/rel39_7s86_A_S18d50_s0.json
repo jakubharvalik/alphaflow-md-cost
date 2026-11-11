@@ -1,0 +1,105 @@
+{
+ "atlas": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/atlas/cache/7s86_A",
+ "hyb": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_7s86_A_S18d50_s0",
+ "dt_ps": 10.0,
+ "jumps": 16,
+ "seg_len_ps": [
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0,
+  520.0
+ ],
+ "reps": 50,
+ "n_rama_res": 97,
+ "n_chi_res": 83,
+ "windows": {
+  "50–520": {
+   "n": 752,
+   "rama": 0.074,
+   "rama_ref": 0.026,
+   "rama_ref_sd": 0.002,
+   "rama_p": 0.0,
+   "chi1": 0.083,
+   "chi1_ref": 0.02,
+   "chi1_ref_sd": 0.002,
+   "chi1_p": 0.0,
+   "worst_rama": [
+    {
+     "res": 14,
+     "name": "LYS",
+     "excess": 0.27
+    },
+    {
+     "res": 52,
+     "name": "LYS",
+     "excess": 0.264
+    },
+    {
+     "res": 67,
+     "name": "VAL",
+     "excess": 0.251
+    },
+    {
+     "res": 68,
+     "name": "GLY",
+     "excess": 0.221
+    },
+    {
+     "res": 97,
+     "name": "ILE",
+     "excess": 0.218
+    }
+   ]
+  },
+  "0–520": {
+   "n": 832,
+   "rama": 0.073,
+   "rama_ref": 0.026,
+   "rama_ref_sd": 0.002,
+   "rama_p": 0.0,
+   "chi1": 0.084,
+   "chi1_ref": 0.019,
+   "chi1_ref_sd": 0.002,
+   "chi1_p": 0.0,
+   "worst_rama": [
+    {
+     "res": 14,
+     "name": "LYS",
+     "excess": 0.272
+    },
+    {
+     "res": 52,
+     "name": "LYS",
+     "excess": 0.259
+    },
+    {
+     "res": 67,
+     "name": "VAL",
+     "excess": 0.25
+    },
+    {
+     "res": 68,
+     "name": "GLY",
+     "excess": 0.228
+    },
+    {
+     "res": 97,
+     "name": "ILE",
+     "excess": 0.207
+    }
+   ]
+  }
+ }
+}

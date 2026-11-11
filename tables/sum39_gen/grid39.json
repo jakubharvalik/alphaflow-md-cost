@@ -1,0 +1,382 @@
+{
+ "overhead_per_protein_s": {
+  "afT_base": 1.9480000000000002,
+  "afT_dist": 1.148
+ },
+ "runs": {
+  "S18_s0|bench|first": {
+   "tag": "S18_s0",
+   "v_src": "bench",
+   "tstar": "first",
+   "n": 25,
+   "grid": {
+    "plný, 250": {
+     "jádro": {
+      "median": 0.36,
+      "lower95": 0.216,
+      "upper95": 0.479,
+      "frac_ge_1_5": 0.08,
+      "n": 25
+     },
+     "TICA": {
+      "median": 0.463,
+      "lower95": 0.318,
+      "upper95": 0.929,
+      "frac_ge_1_5": 0.16,
+      "n": 25
+     },
+     "nevyplaci_se": true
+    },
+    "plný, 50": {
+     "jádro": {
+      "median": 0.865,
+      "lower95": 0.494,
+      "upper95": 1.136,
+      "frac_ge_1_5": 0.24,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.26,
+      "lower95": 0.89,
+      "upper95": 2.42,
+      "frac_ge_1_5": 0.4,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "plný, 18": {
+     "jádro": {
+      "median": 1.117,
+      "lower95": 0.621,
+      "upper95": 1.432,
+      "frac_ge_1_5": 0.32,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.743,
+      "lower95": 1.068,
+      "upper95": 3.256,
+      "frac_ge_1_5": 0.56,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "destil., 250": {
+     "jádro": {
+      "median": 1.049,
+      "lower95": 0.588,
+      "upper95": 1.324,
+      "frac_ge_1_5": 0.32,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.587,
+      "lower95": 1.007,
+      "upper95": 3.026,
+      "frac_ge_1_5": 0.56,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "destil., 50": {
+     "jádro": {
+      "median": 1.288,
+      "lower95": 0.694,
+      "upper95": 1.686,
+      "frac_ge_1_5": 0.44,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.983,
+      "lower95": 1.23,
+      "upper95": 3.907,
+      "frac_ge_1_5": 0.6,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "destil., 18": {
+     "jádro": {
+      "median": 1.338,
+      "lower95": 0.709,
+      "upper95": 1.763,
+      "frac_ge_1_5": 0.48,
+      "n": 25
+     },
+     "TICA": {
+      "median": 2.05,
+      "lower95": 1.278,
+      "upper95": 4.111,
+      "frac_ge_1_5": 0.6,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    }
+   },
+   "wall": {
+    "plný, 250": {
+     "jádro": {
+      "median": 0.282,
+      "lower95": 0.173,
+      "upper95": 0.363,
+      "frac_ge_1_5": 0.04,
+      "n": 25
+     },
+     "TICA": {
+      "median": 0.39,
+      "lower95": 0.25,
+      "upper95": 0.711,
+      "frac_ge_1_5": 0.08,
+      "n": 25
+     }
+    },
+    "destil., 50": {
+     "jádro": {
+      "median": 0.603,
+      "lower95": 0.35,
+      "upper95": 0.758,
+      "frac_ge_1_5": 0.12,
+      "n": 25
+     },
+     "TICA": {
+      "median": 0.755,
+      "lower95": 0.617,
+      "upper95": 1.64,
+      "frac_ge_1_5": 0.36,
+      "n": 25
+     }
+    }
+   },
+   "breakeven": {
+    "jádro, 250 vzorků": {
+     "median_s": -0.296,
+     "q25": -3.342,
+     "q75": 3.107,
+     "n_neg": 13,
+     "model": "afT_base",
+     "n_measured_below": 2,
+     "n": 25
+    },
+    "TICA, 250 vzorků": {
+     "median_s": 1.538,
+     "q25": -1.894,
+     "q75": 8.898,
+     "n_neg": 10,
+     "model": "afT_base",
+     "n_measured_below": 4,
+     "n": 25
+    },
+    "jádro, 50 vzorků": {
+     "median_s": -1.48,
+     "q25": -16.712,
+     "q75": 15.535,
+     "n_neg": 13,
+     "model": "afT_dist",
+     "n_measured_below": 11,
+     "n": 25
+    },
+    "TICA, 50 vzorků": {
+     "median_s": 7.688,
+     "q25": -9.468,
+     "q75": 44.491,
+     "n_neg": 10,
+     "model": "afT_dist",
+     "n_measured_below": 15,
+     "n": 25
+    }
+   },
+   "build_s": {
+    "median": 1323.4,
+    "min": 1103.8,
+    "max": 2124.0
+   }
+  },
+  "S18_s1|xfer|first": {
+   "tag": "S18_s1",
+   "v_src": "xfer",
+   "tstar": "first",
+   "n": 25,
+   "grid": {
+    "plný, 250": {
+     "jádro": {
+      "median": 0.38,
+      "lower95": 0.09,
+      "upper95": 0.453,
+      "frac_ge_1_5": 0.12,
+      "n": 25
+     },
+     "TICA": {
+      "median": 0.406,
+      "lower95": 0.178,
+      "upper95": 0.669,
+      "frac_ge_1_5": 0.12,
+      "n": 25
+     },
+     "nevyplaci_se": true
+    },
+    "plný, 50": {
+     "jádro": {
+      "median": 0.873,
+      "lower95": 0.245,
+      "upper95": 1.114,
+      "frac_ge_1_5": 0.2,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.17,
+      "lower95": 0.499,
+      "upper95": 1.796,
+      "frac_ge_1_5": 0.36,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "plný, 18": {
+     "jádro": {
+      "median": 1.08,
+      "lower95": 0.338,
+      "upper95": 1.526,
+      "frac_ge_1_5": 0.36,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.669,
+      "lower95": 0.702,
+      "upper95": 2.459,
+      "frac_ge_1_5": 0.52,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "destil., 250": {
+     "jádro": {
+      "median": 1.023,
+      "lower95": 0.312,
+      "upper95": 1.411,
+      "frac_ge_1_5": 0.28,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.529,
+      "lower95": 0.644,
+      "upper95": 2.275,
+      "frac_ge_1_5": 0.52,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "destil., 50": {
+     "jádro": {
+      "median": 1.205,
+      "lower95": 0.399,
+      "upper95": 1.795,
+      "frac_ge_1_5": 0.4,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.878,
+      "lower95": 0.84,
+      "upper95": 2.893,
+      "frac_ge_1_5": 0.52,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    },
+    "destil., 18": {
+     "jádro": {
+      "median": 1.24,
+      "lower95": 0.418,
+      "upper95": 1.896,
+      "frac_ge_1_5": 0.44,
+      "n": 25
+     },
+     "TICA": {
+      "median": 1.938,
+      "lower95": 0.883,
+      "upper95": 3.024,
+      "frac_ge_1_5": 0.52,
+      "n": 25
+     },
+     "nevyplaci_se": false
+    }
+   },
+   "wall": {
+    "plný, 250": {
+     "jádro": {
+      "median": 0.278,
+      "lower95": 0.082,
+      "upper95": 0.36,
+      "frac_ge_1_5": 0.04,
+      "n": 25
+     },
+     "TICA": {
+      "median": 0.307,
+      "lower95": 0.152,
+      "upper95": 0.482,
+      "frac_ge_1_5": 0.04,
+      "n": 25
+     }
+    },
+    "destil., 50": {
+     "jádro": {
+      "median": 0.558,
+      "lower95": 0.204,
+      "upper95": 0.684,
+      "frac_ge_1_5": 0.16,
+      "n": 25
+     },
+     "TICA": {
+      "median": 0.696,
+      "lower95": 0.406,
+      "upper95": 1.035,
+      "frac_ge_1_5": 0.28,
+      "n": 25
+     }
+    }
+   },
+   "breakeven": {
+    "jádro, 250 vzorků": {
+     "median_s": -0.61,
+     "q25": -3.204,
+     "q75": 1.986,
+     "n_neg": 14,
+     "model": "afT_base",
+     "n_measured_below": 3,
+     "n": 25
+    },
+    "TICA, 250 vzorků": {
+     "median_s": 1.317,
+     "q25": -2.684,
+     "q75": 7.229,
+     "n_neg": 12,
+     "model": "afT_base",
+     "n_measured_below": 3,
+     "n": 25
+    },
+    "jádro, 50 vzorků": {
+     "median_s": -3.05,
+     "q25": -16.018,
+     "q75": 9.931,
+     "n_neg": 14,
+     "model": "afT_dist",
+     "n_measured_below": 10,
+     "n": 25
+    },
+    "TICA, 50 vzorků": {
+     "median_s": 6.584,
+     "q25": -13.42,
+     "q75": 36.147,
+     "n_neg": 12,
+     "model": "afT_dist",
+     "n_measured_below": 13,
+     "n": 25
+    }
+   },
+   "build_s": {
+    "median": 1319.0,
+    "min": 1168.4,
+    "max": 1925.6
+   }
+  }
+ }
+}

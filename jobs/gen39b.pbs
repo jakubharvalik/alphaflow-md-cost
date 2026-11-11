@@ -1,0 +1,198 @@
+#!/bin/bash
+#PBS -N l39_gen2
+#PBS -l select=1:ncpus=4:ngpus=1:mem=32gb:scratch_local=60gb:gpu_cap=sm_80:gpu_mem=40gb:cl_fobos=False
+#PBS -l walltime=16:00:00
+#PBS -j oe
+# Linie 39, změna Z8: měření času na vzorek AlphaFlow/ESMFlow (predict.py autorů, --runtime_json = čas model.inference
+# na vzorek včetně převodu na CPU) a rychlosti MD na TÉŽE GPU (bench39) pro převod ceny generátoru na "MD-ns".
+# Předpoklad: inst39 hotové (envs/af39/.af39_ok, l39/gen: alphaflow, gen39_in.csv, templates, msa).
+# Pořadí: bench39 napřed, pak sada B (25 proteinů ≤ 120, jedno volání predict.py na model) primární modely napřed, pak vedlejší,
+# pak sada K (6 proteinů 131–724, jedno volání na model a protein, aby OOM jednoho nezastavil ostatní). Walltime 16 h (patch39h, 39i).
+# GPU: gpu_cap=sm_80 = 8.0–8.9 (ne Hopper, torch 1.12 cu113 nemá sm_90), gpu_mem=40gb (sada K do 724 reziduí bez OOM),
+# cl_fobos=False (L40S, Ada; gen39b po Gemini 39f na Ampere jako A100 v publikaci, 25405838 na L40S = srovnání sady K mezi GPU).
+# Vzorků: sada B plná 6, destilovaná 11; sada K plná 4, destilovaná 6; první vzorek = zahřátí, do mediánu se nepočítá.
+# gen39b (opakování po 25405838, 10. 11. 2026; GPU a kontrola šablon po Gemini 39f): sada B tam spadla celá (šablony z ATLAS PDB bez ID řetězce → openfold KeyError ' '),
+# 12vrstvé váhy 202406 mají 'training' v hyper_parameters (TypeError v predict.py). Oprava: šablony s řetězcem A v $G/templates_A
+# (původní beze změny), v predict.py se 'training' z hyper_parameters vynechá (třetí úprava kódu autorů, v git diff).
+# Vše (sady B a K, všechny modely, bench) znovu v jedné úloze na jedné GPU, výstupy odděleně v $G/run_<JOB> (nic se nemíchá s 25405838).
+. /etc/profile >/dev/null 2>&1 || true
+W=/storage/brno2/home/jakub_harvalik/md_pilot_work
+L=$W/l39
+G=$L/gen
+ENV=$W/envs/af39
+J=${PBS_JOBID%%.*}
+RUN=$G/run_$J
+OUT=$RUN
+mkdir -p $RUN/rt $RUN/samples
+exec > >(tee -a $OUT/job.log) 2>&1
+set -u
+echo "$(date '+%F %T') start na $(hostname), PBS_JOBID $PBS_JOBID"
+trap 'clean_scratch' TERM EXIT
+[ -f $ENV/.af39_ok ] || { echo "chybí prostředí af39 (inst39)"; exit 2; }
+export TMPDIR=$SCRATCHDIR TORCH_HOME=$SCRATCHDIR/torch WANDB_MODE=disabled LD_LIBRARY_PATH=$ENV/lib:${LD_LIBRARY_PATH:-}
+P=$ENV/bin/python
+GPU=$(nvidia-smi --query-gpu=name,driver_version,memory.total,compute_cap,clocks.max.sm --format=csv,noheader | head -1)
+echo "GPU: $GPU" | tee $OUT/gpu.txt
+CAP=$(echo "$GPU" | awk -F', ' '{print $4}'); CAPM=${CAP%%.*}
+[ "${CAPM:-0}" -ge 9 ] && { echo "compute capability $CAP: torch 1.12 cu113 nemá jádra pro sm_90, končím (znovu odeslat s jinou GPU)"; exit 9; }
+[ "$CAP" = 8.9 ] && echo "POZOR: GPU Ada (8.9), ne Ampere; měření platí, ale srovnání s A100 v publikaci je slabší"
+$P -c "import torch; print('torch', torch.__version__, 'cuda', torch.cuda.is_available(), torch.cuda.get_device_name(0))" || exit 3
+# rychlost MD na této GPU NAPŘED (kdyby generátory nedoběhly do walltime, převod na MD-ns zůstane): kotva = box fáze B
+# $L/sys/p2_7jfl_C (p2_7jfl_C z bench1_files.tgz nemá system.xml, patch39j) a všechny už postavené p2_<N> z fáze B;
+# omm13 bez LD_LIBRARY_PATH af39, jako ve fázi B (b39.pbs)
+OP=$W/envs/omm13/bin/python
+(
+  unset LD_LIBRARY_PATH
+  cd $SCRATCHDIR && tar xzf $W/bench/bench1_files.tgz --warning=no-unknown-keyword; tar xzf $L/code39.tgz --warning=no-unknown-keyword
+  cp $L/bench39.py .
+  # zahřátí GPU z klidového taktu, výsledek se zahodí (Gemini 39g)
+  [ -s $L/sys/p2_7jfl_C/system.xml ] && $OP bench39.py --sys $L/sys/p2_7jfl_C --platform CUDA --ps 10 --out $SCRATCHDIR/bench_warm.json > /dev/null 2>&1
+  [ -s $L/sys/p2_7jfl_C/system.xml ] && $OP bench39.py --sys $L/sys/p2_7jfl_C --platform CUDA --out $RUN/bench_gen_${J}_p2_7jfl_C_anchor.json
+  for S in $L/sys/p2_*; do
+    [ -s $S/system.xml ] || continue
+    $OP bench39.py --sys $S --platform CUDA --out $RUN/bench_gen_${J}_$(basename $S).json > /dev/null 2>&1 || echo "bench $(basename $S) selhal"
+  done
+)
+echo "$(date '+%T') bench na této GPU: $(ls $RUN/bench_gen_${J}_*.json 2>/dev/null | wc -l) systémů"
+# šablony s ID řetězce A (openfold protein.from_pdb_string nezná prázdné ID); jen řádky ATOM/HETATM/TER s mezerou ve sloupci 22
+mkdir -p $G/templates_A
+$P - $G/templates $G/templates_A <<'PY'
+import sys, pathlib
+src, dst = map(pathlib.Path, sys.argv[1:3])
+nf = nfix = nl = 0
+for f in sorted(src.glob("*.pdb")):
+    out, ch = [], 0
+    for ln in f.read_text().splitlines():
+        if ln.startswith(("ATOM", "HETATM", "TER")):
+            ln = ln.ljust(22)
+            if ln[21] == " ":
+                ln = ln[:21] + "A" + ln[22:]
+                ch += 1
+        out.append(ln)
+    (dst / f.name).write_text("\n".join(out) + "\n")
+    nf += 1
+    nfix += ch > 0
+    nl += ch
+print(f"šablony templates_A: {nf} souborů, ID řetězce doplněno v {nfix} ({nl} řádků)")
+PY
+[ $(ls $G/templates_A/*.pdb 2>/dev/null | wc -l) -ge $(wc -l < $L/gen39_list.txt) ] || { echo "templates_A neúplné"; exit 4; }
+# kontrola šablon funkcí, kterou volá AlphaFlow (alphaflow.utils.protein.from_pdb_string, inference.py): vyřadit jen šablonu, která se
+# nenačte nebo má jiný počet reziduí než seqres (vypíše se s důvodem, $RUN/tmplcheck.tsv); neshody sekvence a neúplná páteř se jen hlásí
+touch $SCRATCHDIR/tmpl_bad.txt
+(cd $G/alphaflow && $P - $G/gen39_in.csv $G/templates_A $L/gen39_list.txt $RUN/tmplcheck.tsv $SCRATCHDIR/tmpl_bad.txt) <<'PY' || echo "kontrola šablon se nespustila, pokračuji bez ní"
+import sys
+import numpy as np, pandas as pd
+import alphaflow.utils.protein as protein
+from openfold.np import residue_constants as rc
+csv, td, lst, out, bad = sys.argv[1:6]
+seq = dict(pd.read_csv(csv)[["name", "seqres"]].values)
+rows, nbad = [], []
+for ln in open(lst):
+    if not ln.strip():
+        continue
+    n, _, s = ln.split()
+    r = dict(name=n, sada=s, ok=0, L=len(seq.get(n, "")), n_res=None, neshod=None, pater=None, duvod="")
+    try:
+        if n not in seq:
+            raise ValueError("není v gen39_in.csv")
+        pr = protein.from_pdb_string(open(f"{td}/{n}.pdb").read())
+        r["n_res"] = int(pr.atom_positions.shape[0])
+    except Exception as e:
+        r["duvod"] = f"{type(e).__name__}: {e}"
+    else:
+        try:
+            sq = "".join(rc.restypes_with_x[a] for a in pr.aatype)
+            r["neshod"] = sum(a != b for a, b in zip(sq, seq[n])) + abs(len(sq) - len(seq[n]))
+            r["pater"] = int((np.asarray(pr.atom_mask)[:, :3].sum(1) == 3).sum())
+        except Exception as e:
+            r["duvod"] = f"jen informativní část kontroly selhala ({type(e).__name__}: {e})"
+        if r["n_res"] != r["L"]:
+            r["duvod"] = f"počet reziduí {r['n_res']} != seqres {r['L']}"
+        else:
+            r["ok"] = 1
+    if not r["ok"]:
+        nbad.append(n)
+        print("šablona VYŘAZENA:", n, s, r["duvod"])
+    elif r["neshod"] or (r["pater"] is not None and r["pater"] != r["L"]):
+        print("šablona", n, s, "neshod v sekvenci", r["neshod"], "úplná páteř", r["pater"], "z", r["L"])
+    rows.append(r)
+pd.DataFrame(rows).to_csv(out, sep="\t", index=False)
+open(bad, "w").write("".join(x + "\n" for x in nbad))
+ok = [r for r in rows if r["ok"]]
+print(f"kontrola šablon: {len(ok)} z {len(rows)} OK (sada B {sum(r['sada'] == 'B' for r in ok)}), "
+      f"neshod v sekvenci celkem {sum(r['neshod'] or 0 for r in ok)}")
+PY
+# predict.py: 12vrstvé váhy nesou 'training' v hyper_parameters → vynechat (jinak TypeError: multiple values for 'training')
+$P - $G/alphaflow/predict.py <<'PY'
+import sys
+p = sys.argv[1]
+s = open(p).read()
+old = "model_class(**ckpt['hyper_parameters'], training=False)"
+new = "model_class(**{k: v for k, v in ckpt['hyper_parameters'].items() if k != 'training'}, training=False)"
+if new in s:
+    print("predict.py: oprava 12l už je")
+elif s.count(old) == 1:
+    open(p, "w").write(s.replace(old, new))
+    print("predict.py: oprava 12l provedena ('training' z hyper_parameters vynechán)")
+else:
+    print("predict.py: řádek pro opravu 12l nenalezen, 12vrstvé modely mohou selhat")
+PY
+(cd $G/alphaflow && $ENV/bin/git rev-parse HEAD && $ENV/bin/git diff | tee $RUN/alphaflow_diff.txt)
+HF=https://huggingface.co/bjing-mit/alphaflow/resolve/main/params
+MODELS="afT_base:alphaflow_md_templates_base_202402:alphafold:
+afT_dist:alphaflow_md_templates_distilled_202402:alphafold:--noisy_first --no_diffusion
+afT12_base:alphaflow_12l_md_templates_base_202406:alphafold:
+afT12_dist:alphaflow_12l_md_templates_distilled_202406:alphafold:--noisy_first --no_diffusion
+esT_base:esmflow_md_templates_base_202402:esmfold:
+esT_dist:esmflow_md_templates_distilled_202402:esmfold:--noisy_first --no_diffusion"
+mkdir -p $SCRATCHDIR/wt $SCRATCHDIR/pdb
+for M in $(echo "$MODELS" | cut -d: -f2); do
+  t0=$(date +%s)
+  curl -sSfL --retry 4 --retry-delay 10 -o $SCRATCHDIR/wt/$M.pt $HF/$M.pt && echo "$(date '+%T') váhy $M $(du -h $SCRATCHDIR/wt/$M.pt | cut -f1), $(( $(date +%s) - t0 )) s" || echo "$(date '+%T') váhy $M: stažení SELHALO"
+done
+# vstup sady B a K (jedno CSV na sadu, sada K po jednom proteinu)
+awk '$3=="B"{print $1}' $L/gen39_list.txt | grep -vxFf $SCRATCHDIR/tmpl_bad.txt > $SCRATCHDIR/setB.txt
+awk '$3=="K"{print $1}' $L/gen39_list.txt | grep -vxFf $SCRATCHDIR/tmpl_bad.txt > $SCRATCHDIR/setK.txt
+$P - $G/gen39_in.csv $SCRATCHDIR <<'PY'
+import sys, pandas as pd
+df = pd.read_csv(sys.argv[1]); d = sys.argv[2]
+b = [x.strip() for x in open(f"{d}/setB.txt") if x.strip()]
+df[df.name.isin(b)].to_csv(f"{d}/inB.csv", index=False)
+for n in [x.strip() for x in open(f"{d}/setK.txt") if x.strip()]:
+    df[df.name == n].to_csv(f"{d}/inK_{n}.csv", index=False)
+print("sada B", int(df.name.isin(b).sum()), "proteinů v CSV")
+PY
+echo -e "model\tsada\tprotein\tvzorku\twall_s\tkod" > $OUT/calls.tsv
+run() {  # run TAG WEIGHTS MODE FLAGS CSV SADA SAMPLES
+  local tag=$1 w=$2 mode=$3 flags=$4 csv=$5 sada=$6 ns=$7
+  [ -s $SCRATCHDIR/wt/$w.pt ] || { echo "$tag: chybí váhy"; return; }
+  local rtj=$RUN/rt/rt_${tag}_${sada}.json
+  [ -s $rtj ] && { echo "$tag $sada hotovo dřív"; return; }
+  local msa=""; [ "$mode" = alphafold ] && msa="--msa_dir $G/msa"
+  local t0=$(date +%s.%N)
+  (cd $G/alphaflow && $P predict.py --mode $mode --input_csv $csv $msa --templates_dir $G/templates_A --weights $SCRATCHDIR/wt/$w.pt \
+     --samples $ns --outpdb $SCRATCHDIR/pdb/$tag $flags --runtime_json $rtj.part < /dev/null > $OUT/predict_${tag}_${sada}.txt 2>&1)
+  local rc=$?
+  local wall=$(awk "BEGIN{print $(date +%s.%N) - $t0}")
+  [ $rc = 0 ] && [ -s $rtj.part ] && mv $rtj.part $rtj
+  echo -e "$tag\t$sada\t$(basename $csv .csv)\t$ns\t$wall\t$rc" >> $OUT/calls.tsv
+  echo "$(date '+%T') $tag $sada: kód $rc, wall $(printf %.0f $wall) s"
+  [ $rc = 0 ] || { tail -5 $OUT/predict_${tag}_${sada}.txt; grep -m1 -i "out of memory" $OUT/predict_${tag}_${sada}.txt; }
+}
+model_line() { echo "$MODELS" | grep "^$1:"; }
+for tag in afT_base afT_dist afT12_base afT12_dist esT_base esT_dist; do
+  IFS=: read -r t w mode flags <<< "$(model_line $tag)"
+  ns=6; [[ $tag == *_dist ]] && ns=11
+  run $tag $w $mode "$flags" $SCRATCHDIR/inB.csv B $ns
+done
+for tag in afT_base afT_dist afT12_base afT12_dist esT_base esT_dist; do
+  IFS=: read -r t w mode flags <<< "$(model_line $tag)"
+  ns=4; [[ $tag == *_dist ]] && ns=6
+  while read -r n; do run $tag $w $mode "$flags" $SCRATCHDIR/inK_$n.csv K_$n $ns; done < $SCRATCHDIR/setK.txt
+done
+# vzorky sady B plného AF-MD+templates na kontrolu instalace (RMSD Cα proti zveřejněným vzorkům), malé
+cp -r $SCRATCHDIR/pdb/afT_base $SCRATCHDIR/pdb/afT_dist $RUN/samples/ 2>/dev/null
+# kotva znovu na konci = kontrola driftu taktu a teploty (Gemini 39g); jiný název, gen39sum ji do v_gen nebere
+( unset LD_LIBRARY_PATH; cd $SCRATCHDIR && [ -s $L/sys/p2_7jfl_C/system.xml ] && $OP bench39.py --sys $L/sys/p2_7jfl_C --platform CUDA --out $RUN/bench_end_${J}_p2_7jfl_C.json )
+cat $OUT/calls.tsv
+echo "$(date '+%F %T') konec"

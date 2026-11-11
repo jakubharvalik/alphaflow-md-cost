@@ -1,0 +1,46 @@
+=== S18_s0 (l39srv/out_gen/sum39_S18_s0_gen.json): proteinů s ctrl_3x3_6 25 z 25
+  všechny jádro n=25: S18 < ATLAS 3×3,6 u 13/25; medián S18 0.391, ATLAS 3×3,6 0.392, medián rozdílu S18 − ATLAS -0.003
+  všechny TICA  n=25: S18 < ATLAS 3×3,6 u 15/25; medián S18 0.402, ATLAS 3×3,6 0.413, medián rozdílu S18 − ATLAS -0.020
+  good=True jádro n=15: S18 < ATLAS 3×3,6 u 9/15; medián S18 0.316, ATLAS 3×3,6 0.373, medián rozdílu S18 − ATLAS -0.029
+  good=True TICA  n=15: S18 < ATLAS 3×3,6 u 10/15; medián S18 0.308, ATLAS 3×3,6 0.378, medián rozdílu S18 − ATLAS -0.031
+=== S18_s1 (l39srv/out_gen/sum39_S18_s1_gen.json): proteinů s ctrl_3x3_6 25 z 25
+  všechny jádro n=25: S18 < ATLAS 3×3,6 u 14/25; medián S18 0.378, ATLAS 3×3,6 0.392, medián rozdílu S18 − ATLAS -0.014
+  všechny TICA  n=25: S18 < ATLAS 3×3,6 u 15/25; medián S18 0.401, ATLAS 3×3,6 0.413, medián rozdílu S18 − ATLAS -0.012
+  good=True jádro n=15: S18 < ATLAS 3×3,6 u 10/15; medián S18 0.313, ATLAS 3×3,6 0.373, medián rozdílu S18 − ATLAS -0.029
+  good=True TICA  n=15: S18 < ATLAS 3×3,6 u 11/15; medián S18 0.330, ATLAS 3×3,6 0.378, medián rozdílu S18 − ATLAS -0.034
+=== S18d50_s0 (l39srv/out_z9/sum39_S18d50_s0_gen.json): proteinů s ctrl_3x3_6 23 z 25
+  všechny jádro n=23: S18 < ATLAS 3×3,6 u 11/23; medián S18 0.357, ATLAS 3×3,6 0.379, medián rozdílu S18 − ATLAS +0.004
+  všechny TICA  n=23: S18 < ATLAS 3×3,6 u 14/23; medián S18 0.405, ATLAS 3×3,6 0.397, medián rozdílu S18 − ATLAS -0.016
+  good=True jádro n=14: S18 < ATLAS 3×3,6 u 7/14; medián S18 0.334, ATLAS 3×3,6 0.372, medián rozdílu S18 − ATLAS -0.003
+  good=True TICA  n=14: S18 < ATLAS 3×3,6 u 9/14; medián S18 0.335, ATLAS 3×3,6 0.372, medián rozdílu S18 − ATLAS -0.017
+
+Po proteinech S18_s0 (JS proti sjednocení 3 replik; S18 náhodně podvzorkovaný na n ATLAS 3×3,6):
+N        good  | jádro S18  ATLAS | TICA S18  ATLAS | n ATLAS 3×3,6 (n_split), snímků S18 (eval39)
+7lp1_A   True  |     0.061  0.094 |    0.144  0.084 | 1053, 8460
+7jfl_C   True  |     0.333  0.572 |    0.416  0.513 | 1053, 7520
+6okd_C   True  |     0.316  0.497 |    0.341  0.386 | 1053, 8460
+6ro6_A   False |     0.442  0.553 |    0.432  0.522 | 1053, 8460
+6l34_A   True  |     0.229  0.204 |    0.253  0.198 | 1053, 8460
+6pce_B   True  |     0.107  0.136 |    0.125  0.156 | 1053, 8460
+6odd_B   False |     0.173  0.144 |    0.272  0.283 | 1053, 7990
+6jv8_A   True  |     0.362  0.357 |    0.375  0.454 | 1053, 8460
+6ono_C   False |     0.651  0.583 |    0.514  0.494 | 1053, 8460
+6in7_A   False |     0.887  0.689 |    0.858  0.803 | 1053, 7520
+7a66_B   False |     0.455  0.543 |    0.641  0.597 | 1053, 8460
+6h86_A   True  |     0.423  0.396 |    0.393  0.413 | 1053, 8460
+7bwf_B   True  |     0.554  0.517 |    0.426  0.421 | 1053, 8460
+6d7y_A   False |     0.477  0.283 |    0.665  0.364 | 1053, 7990
+6ypi_A   False |     0.389  0.392 |    0.423  0.397 | 1053, 8460
+6tly_A   True  |     0.510  0.757 |    0.418  0.522 | 1053, 8460
+7s86_A   True  |     0.459  0.379 |    0.267  0.309 | 1053, 7990
+7n0j_E   True  |     0.288  0.373 |    0.308  0.311 | 1053, 8460
+6pxz_B   True  |     0.101  0.211 |    0.163  0.138 | 1053, 7990
+6p5h_A   True  |     0.293  0.372 |    0.226  0.434 | 1053, 7520
+6tgk_C   False |     0.730  0.498 |    0.735  0.784 | 1053, 7990
+6vjg_A   True  |     0.410  0.379 |    0.402  0.367 | 1053, 8460
+6yhu_B   False |     0.391  0.722 |    0.497  0.648 | 1053, 8460
+7k7p_B   False |     0.538  0.537 |    0.569  0.633 | 1053, 7990
+6uof_A   True  |     0.211  0.217 |    0.203  0.378 | 1053, 8460
+
+n ATLAS 3×3,6 (n_split) přes proteiny: min 1053, max 1053; snímků S18 v okně: min 7520, max 8460
+eval39: S18 se pro toto srovnání náhodně podvzorkuje na min(n_split, snímků S18) snímků (--draws losů, průměr JS); ATLAS 3×3,6 = všechny snímky 3 replik od --skip-ps do --t-split-ps (n_split). Obojí proti sjednocení všech 3 replik (in-sample: ATLAS snímky jsou součástí reference).

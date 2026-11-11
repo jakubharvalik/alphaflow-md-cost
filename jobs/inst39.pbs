@@ -1,0 +1,166 @@
+#!/bin/bash
+#PBS -N l39_inst
+#PBS -l select=1:ncpus=8:mem=32gb:scratch_local=60gb
+#PBS -l walltime=4:00:00
+#PBS -j oe
+# Linie 39, změna Z8 (souhlas Jakuba 9. 11. 14:34): příprava měření ceny AlphaFlow/ESMFlow, jen CPU, nic se neměří.
+# 1) prostředí $W/envs/af39 přesně podle README autorů (python 3.9, numpy 1.21.2, torch 1.12.1+cu113, openfold@103d037,
+#    CUDA 11.8 z kanálu nvidia/label/cuda-11.8.0, gcc 11 z conda-forge, nvcc 11.8 nesnese gcc > 11). Jádra OpenFold se bez GPU kompilují pro výchozí sadu
+#    architektur OpenFold (sm_37, 52, 61, 70, 80; kód sm_80 běží i na 8.6 a 8.9, sm_70 na 7.5). Značky: .af39_base_ok (základ), .af39_ok (vše).
+# 2) klon github.com/bjing2016/alphaflow do $L/gen/alphaflow (commit do logu); jediné úpravy kódu, obě v logu (git diff):
+#    predict.py bez weights_only=False (torch 1.12 ten argument nezná), mmseqs_query.py dočasné soubory v $TMPDIR.
+# 3) vstupy: gen39_in.csv + šablony (tmpl39.py: sada B = ATLAS PDB, sada K = vzorek 0 zveřejněných AF-MD+templates),
+#    MSA ze serveru ColabFold přes scripts/mmseqs_query.py autorů (jeden dotaz pro všechny proteiny, čas do logu).
+# Lze spustit znovu: hotové kroky přeskočí.
+. /etc/profile >/dev/null 2>&1 || true
+W=/storage/brno2/home/jakub_harvalik/md_pilot_work
+L=$W/l39
+G=$L/gen
+OUT=$G/out_${PBS_JOBID%%.*}
+mkdir -p $OUT
+exec > >(tee -a $OUT/job.log) 2>&1
+set -u
+echo "$(date '+%F %T') start na $(hostname), PBS_JOBID $PBS_JOBID"
+trap 'clean_scratch' TERM EXIT
+export TMPDIR=$SCRATCHDIR CONDA_PKGS_DIRS=$SCRATCHDIR/pkgs PIP_CACHE_DIR=$SCRATCHDIR/pipcache MAX_JOBS=8 WANDB_MODE=disabled
+module add mambaforge
+ENV=$W/envs/af39
+TS=https://download.pytorch.org/whl/torch_stable.html
+if [ ! -f $ENV/.af39_ok ]; then
+  t0=$(date +%s)
+  # 39e: dvě značky; .af39_base_ok = conda + pip základ (torch, mdtraj) prošel importem, pak se při opakování staví jen openfold
+  if [ -f $ENV/.af39_base_ok ]; then
+    echo "$(date '+%T') základ prostředí af39 hotový dřív (torch, mdtraj), pokračuji stavbou openfold"
+  else
+    [ -d $ENV ] && { echo "$(date '+%T') neúplné prostředí z dřívějška, mažu $ENV"; rm -rf $ENV; }
+    # 25403459: mdtraj 1.9.9 (formát TNG, -DUSE_ZLIB=1) potřebuje zlib.h, v prostředí chyběl → zlib z conda-forge
+    mamba create -y -q -p $ENV -c conda-forge --override-channels python=3.9 "gcc=11" "gxx=11" "gcc_linux-64=11" "gxx_linux-64=11" zlib git ninja \
+      || { echo "mamba create selhal"; exit 2; }
+    [ -f $ENV/include/zlib.h ] && ls $ENV/lib/libz.so* >/dev/null 2>&1 || { echo "zlib v prostředí chybí"; exit 2; }
+    mamba install -y -q -p $ENV --override-channels -c nvidia/label/cuda-11.8.0 -c conda-forge \
+      "cuda-nvcc=11.8" "cuda-cudart-dev=11.8" "cuda-cccl=11.8" "cuda-nvrtc-dev=11.8" "cuda-nvtx=11.8" "cuda-profiler-api=11.8" \
+      "libcublas-dev=11.11" "libcusparse-dev=11.7" "libcusolver-dev=11.4" "libcurand-dev=10.3" \
+      || { echo "$(date '+%T') úzký výběr CUDA selhal, celé cuda 11.8 podle README";
+           mamba install -y -q -p $ENV --override-channels -c nvidia/label/cuda-11.8.0 -c conda-forge cuda || { echo "cuda 11.8 selhala"; exit 2; }; }
+    ln -sf $ENV/lib/libcudart_static.a $ENV/lib/libcudart.a
+  fi
+  # 25400154: mdtraj 1.9.9 se stavěl ze zdroje systémovým gcc 14 (incompatible-pointer-types = chyba) → kompilátory z conda
+  # (gcc 11) nastavit už před všemi pip instalacemi, ne až před openfold
+  export CUDA_HOME=$ENV PATH=$ENV/bin:$PATH LD_LIBRARY_PATH=$ENV/lib:${LD_LIBRARY_PATH:-}
+  export CC=$ENV/bin/x86_64-conda-linux-gnu-gcc CXX=$ENV/bin/x86_64-conda-linux-gnu-g++
+  export LDFLAGS="-L$ENV/lib -Wl,-rpath,$ENV/lib -Wl,-z,noexecstack"  # knihovny prostředí; 39e: nové .so bez spustitelného zásobníku
+  # Gemini 39d: hlavičky a knihovny prostředí i pro gcc bez -I/-L (CUDA z kanálu nvidia může ležet v targets/x86_64-linux)
+  export CPATH="$ENV/include:$ENV/targets/x86_64-linux/include${CPATH:+:$CPATH}" LIBRARY_PATH="$ENV/lib:$ENV/targets/x86_64-linux/lib${LIBRARY_PATH:+:$LIBRARY_PATH}"
+  export TORCH_CUDA_ARCH_LIST="7.0;7.5;8.0;8.6+PTX"  # Gemini 39b: bez GPU na uzlu architektury výslovně
+  # pozn. 39d: setup.py openfold@103d037 předává vlastní -gencode (sm_37, 52, 61, 70, 80, bez PTX), torch pak TORCH_CUDA_ARCH_LIST
+  # nepoužije; kód sm_80 běží binárně i na 8.6/8.9 (gen39 žádá gpu_cap=sm_86 a Hopper odmítá), sm_70 na 7.5
+  $CC --version | head -1
+  $ENV/bin/nvcc --version | tail -2
+  P=$ENV/bin/python
+  echo "torch==1.12.1+cu113" > $SCRATCHDIR/cons.txt; echo "numpy==1.21.2" >> $SCRATCHDIR/cons.txt
+  PIP="$P -m pip install -q -c $SCRATCHDIR/cons.txt -f $TS"
+  # 25403724: na uzlech s glibc >= 2.41 (Debian 13) odmítne dlopen knihovny s příznakem spustitelného zásobníku
+  # („libtorch_cpu.so: cannot enable executable stack“, torch 1.12.1). Příznak PF_X v PT_GNU_STACK je u nich zbytečný
+  # (objekty bez .note.GNU-stack), proto se smaže, totéž co execstack -c / patchelf --clear-execstack. Jen knihovny s RWE.
+  cat > $SCRATCHDIR/clrx39.py <<'CLREOF'
+import os, struct, sys
+PT_GNU_STACK, PF_X = 0x6474e551, 1
+def fix(path):
+    with open(path, "r+b") as f:
+        h = f.read(64)
+        if len(h) < 64 or h[:4] != b"\x7fELF" or h[4] != 2:
+            return None
+        e = "<" if h[5] == 1 else ">"
+        phoff = struct.unpack_from(e + "Q", h, 32)[0]
+        phentsize, phnum = struct.unpack_from(e + "HH", h, 54)
+        for i in range(phnum):
+            off = phoff + i * phentsize
+            f.seek(off)
+            p_type, p_flags = struct.unpack(e + "II", f.read(8))
+            if p_type == PT_GNU_STACK:
+                if p_flags & PF_X:
+                    f.seek(off + 4)
+                    f.write(struct.pack(e + "I", p_flags & ~PF_X))
+                    return True
+                return False
+    return False
+n = fixed = bad = 0
+for root in sys.argv[1:]:
+    for d, _, fs in os.walk(root):
+        for fn in fs:
+            p = os.path.join(d, fn)
+            if (fn.endswith(".so") or ".so." in fn) and not os.path.islink(p):
+                n += 1
+                try:
+                    if fix(p):
+                        fixed += 1
+                        print("execstack odstraněn:", p)
+                except OSError as err:
+                    bad += 1
+                    print("execstack nelze upravit:", p, err)
+print(f"execstack: zkontrolováno {n} knihoven, opraveno {fixed}, chyb {bad}")
+CLREOF
+  if [ ! -f $ENV/.af39_base_ok ]; then
+    $PIP numpy==1.21.2 pandas==1.5.3 || exit 3
+    $PIP torch==1.12.1+cu113 || exit 3
+    # setuptools s pkg_resources: torch 1.12 cpp_extension (stavba OpenFold bez izolace) jej importuje, nejnovější setuptools ho nemá
+    $PIP "setuptools<70" wheel || exit 3
+    $PIP biopython==1.79 dm-tree==0.1.6 modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops \
+      || { echo "$(date '+%T') pevné verze selhaly, zkouším dm-tree bez pevné verze"; $PIP biopython==1.79 dm-tree modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops || exit 3; }
+    # pojistka k 25400154: i kdyby se mdtraj stavěl jiným gcc, ukazatelové varování nesmí být chyba
+    CFLAGS="-I$ENV/include -Wno-error=incompatible-pointer-types" $PIP pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb requests tqdm \
+      || { echo "$(date '+%T') mdtraj s izolací selhal, zkouším Cython 0.29 + numpy prostředí bez izolace";
+           $PIP "cython<3" && CFLAGS="-I$ENV/include -Wno-error=incompatible-pointer-types" $PIP --no-build-isolation mdtraj==1.9.9 \
+           && $PIP pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb requests tqdm || exit 3; }
+    $P $SCRATCHDIR/clrx39.py $ENV/lib || exit 4
+    $P -c "import torch, numpy, mdtraj; print('import torch', torch.__version__, 'OK')" || { echo "import torch/mdtraj selhal"; exit 4; }
+    touch $ENV/.af39_base_ok
+    echo "$(date '+%T') základ prostředí af39 hotový za $(( $(date +%s) - t0 )) s"
+  fi
+  $PIP --no-build-isolation 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037' || { echo "openfold selhal"; exit 4; }
+  $P $SCRATCHDIR/clrx39.py $ENV/lib || exit 4  # i nově postavené attn_core_inplace_cuda (objekty z nvcc)
+  LD_LIBRARY_PATH=$ENV/lib $P -c "import torch, openfold, attn_core_inplace_cuda, esm, pytorch_lightning, mdtraj, numpy; print('python', __import__('sys').version.split()[0], 'torch', torch.__version__, torch.version.cuda, 'numpy', numpy.__version__, 'pl', pytorch_lightning.__version__, 'esm', esm.__version__)" \
+    || { echo "kontrolní import selhal"; exit 4; }
+  $P -m pip freeze > $G/af39_pip_freeze.txt
+  mamba list -p $ENV > $G/af39_conda_list.txt 2>/dev/null
+  touch $ENV/.af39_ok
+  echo "$(date '+%T') prostředí af39 hotové za $(( $(date +%s) - t0 )) s, $(du -sh $ENV | cut -f1)"
+else
+  echo "prostředí af39 hotové dřív"
+fi
+P=$ENV/bin/python
+export LD_LIBRARY_PATH=$ENV/lib:${LD_LIBRARY_PATH:-}
+cd $G || exit 5
+if [ ! -d alphaflow/.git ]; then
+  $ENV/bin/git clone -q https://github.com/bjing2016/alphaflow.git || { echo "git clone selhal"; exit 5; }
+  cd alphaflow
+  grep -n "weights_only" predict.py
+  sed -i 's/, weights_only=False)/)/' predict.py
+  sed -i "s#prefix='/tmp/'#prefix=os.environ.get('TMPDIR', '/tmp') + '/'#" scripts/mmseqs_query.py
+  cd ..
+fi
+(cd alphaflow && $ENV/bin/git rev-parse HEAD | tee $G/alphaflow_commit.txt && $ENV/bin/git log -1 --format='%ci %s' && $ENV/bin/git diff | tee $G/alphaflow_diff.txt)
+# vstupy
+cd $SCRATCHDIR || exit 5
+tar xzf $L/code39.tgz --warning=no-unknown-keyword || exit 6
+cp $L/tmpl39.py $L/gen39_list.txt . || exit 6
+if [ ! -s $G/gen39_in.csv ] || [ $(ls $G/templates/*.pdb 2>/dev/null | wc -l) -lt $(wc -l < gen39_list.txt) ]; then
+  Z=alphaflow_md_templates_base_202402
+  curl -sSfL --retry 4 --retry-delay 10 -o $Z.zip https://huggingface.co/bjing-mit/alphaflow/resolve/main/samples/$Z.zip || echo "stažení $Z selhalo"
+  $W/envs/omm13/bin/python tmpl39.py --list gen39_list.txt --atlas-csv atlas_test.csv --atlas-pdb $L/atlas/pdb --af-zip $Z.zip \
+    --out-csv $G/gen39_in.csv --out-dir $G/templates --report $G/tmpl39.json || { echo "tmpl39 selhal"; exit 6; }
+fi
+NM=$(( $(wc -l < $G/gen39_in.csv) - 1 ))
+nmsa=$(ls $G/msa/*/a3m/*.a3m 2>/dev/null | wc -l)
+if [ $nmsa -lt $NM ]; then
+  t0=$(date +%s)
+  (cd $G/alphaflow && $P -m scripts.mmseqs_query --split $G/gen39_in.csv --outdir $G/msa) || echo "mmseqs_query kód $?"
+  echo "$(date '+%T') MSA ColabFold: $(( $(date +%s) - t0 )) s wall pro $NM proteinů (externí CPU server, mimo primární účtování)"
+fi
+for f in $G/msa/*/a3m/*.a3m; do printf "%s %s\n" "$(basename $f .a3m)" "$(grep -c '^>' $f)"; done > $G/msa_counts.txt
+echo "MSA hotových $(wc -l < $G/msa_counts.txt) z $NM (jméno, počet sekvencí):"; tr '\n' ' ' < $G/msa_counts.txt; echo
+# 39e: neúplné nebo prázdné MSA = chyba (gen39 navazuje afterok a predict.py by na sadě B spadl celý); opakování dotáhne chybějící
+nok=$(awk '$2>0' $G/msa_counts.txt | wc -l)
+[ $nok -ge $NM ] || { echo "MSA neúplné: $nok z $NM neprázdných"; exit 7; }
+du -sh $G
+echo "$(date '+%F %T') konec"

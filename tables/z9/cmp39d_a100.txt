@@ -1,0 +1,12 @@
+  fyzikálně selhalo (< 16 boxů, počítá se 0×): ['7jfl_C', '6in7_A']; chybí (technicky, spustit znovu): žádný
+=== Z9 S18d50_s0: 23 z 25 proteinů s účtováním „Z8 i-b změřeno: destil., 50“ (v xfer, t* first)
+  Z9-i jádro medián 1.01 (dolní mez 0.40, horní mez 1.20, ≥ 1,5× 32%)
+  Z9-i TICA  medián 1.45 (dolní mez 1.08, horní mez 3.26, ≥ 1,5× 48%)
+  Z9-i verdikt: nerozhodnuto
+  Z9-ii S18d50_s0: dobrý AF 15, LOO TICA 13, LOO jádro 9, Rama 13, χ1 7, průnik 4 4, LOO TICA + Rama + χ1 7 → NESPLNĚNO
+  Z9-ii S18_s0: dobrý AF 15, LOO TICA 15, LOO jádro 11, Rama 14, χ1 13, průnik 4 9, LOO TICA + Rama + χ1 13 (srovnání)
+  Z9-iii [sub38 plné n, PRIMÁRNÍ] ΔJS S18d50_s0 − S18_s0 (n = 23): jádro medián +0.017 (CI -0.013 až +0.032), TICA -0.004 (-0.035 až +0.057) → SPLNĚNO (≤ +0,03)
+  Z9-iii [sub38 plné n, PRIMÁRNÍ] ΔJS S18_s1 − S18_s0 (n = 25): jádro medián -0.001 (CI -0.014 až +0.009), TICA +0.001 (-0.012 až +0.016) (šum seedu, popisně)
+  Z9-iii [af38 n=250] ΔJS S18d50_s0 − S18_s0 (n = 23): jádro medián +0.009 (CI -0.014 až +0.027), TICA +0.016 (-0.030 až +0.035) → SPLNĚNO (≤ +0,03)
+  Z9-iii [af38 n=250] ΔJS S18_s1 − S18_s0 (n = 25): jádro medián -0.013 (CI -0.026 až +0.010), TICA +0.004 (-0.009 až +0.016) (šum seedu, popisně)
+Uloženo l39srv/out_z9/cmp39d_a100.json

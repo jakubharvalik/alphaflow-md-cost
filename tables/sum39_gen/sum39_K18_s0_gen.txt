@@ -1,0 +1,59 @@
+=== K18_s0: 3 z 25 proteinů s úplnými daty; rychlost MD z xfer, t* first
+  7lp1_A: chybí ['run', 'sub38']
+  6okd_C: chybí ['run', 'sub38']
+  6l34_A: chybí ['run', 'sub38']
+  6pce_B: chybí ['run', 'sub38']
+  6odd_B: chybí ['run', 'sub38']
+  6ono_C: chybí ['run', 'sub38']
+  6in7_A: chybí ['run', 'sub38']
+  7a66_B: chybí ['run', 'sub38']
+  6h86_A: chybí ['run', 'sub38']
+  7bwf_B: chybí ['run', 'sub38']
+  6d7y_A: chybí ['run', 'sub38']
+  6ypi_A: chybí ['run', 'sub38']
+  6tly_A: chybí ['run', 'sub38']
+  7s86_A: chybí ['run', 'sub38']
+  7n0j_E: chybí ['run', 'sub38']
+  6pxz_B: chybí ['run', 'sub38']
+  6p5h_A: chybí ['run', 'sub38']
+  6tgk_C: chybí ['run', 'sub38']
+  6vjg_A: chybí ['run', 'sub38']
+  6yhu_B: chybí ['run', 'sub38']
+  7k7p_B: chybí ['run', 'sub38']
+  6uof_A: chybí ['run', 'sub38']
+  (i) i-a plný, 250 | p=2                            n= 3 jádro medián 0.49 (horní mez 0.69, ≥1,5× 0%), TICA 0.82 (1.06, 0%) → NEVYPLÁCÍ SE
+  (i) i-a plný, 250 | p=1.5                          n= 3 jádro medián 0.33 (horní mez 0.50, ≥1,5× 0%), TICA 0.59 (0.71, 0%) → NEVYPLÁCÍ SE
+  (i) i-a plný, 250 | p=1                            n= 3 jádro medián 0.19 (horní mez 0.30, ≥1,5× 0%), TICA 0.35 (0.42, 0%) → NEVYPLÁCÍ SE
+  (i) i-a plný, 250 | p=0                            n= 3 jádro medián 0.07 (horní mez 0.09, ≥1,5× 0%), TICA 0.10 (0.15, 0%) → NEVYPLÁCÍ SE
+  (i) i-b destil., 50 | p=2                          n= 3 jádro medián 0.74 (horní mez 0.89, ≥1,5× 0%), TICA 1.05 (1.61, 33%) → nelze vyloučit ≥ 1,5×
+  (i) i-b destil., 50 | p=1.5                        n= 3 jádro medián 0.73 (horní mez 0.88, ≥1,5× 0%), TICA 1.04 (1.59, 33%) → nelze vyloučit ≥ 1,5×
+  (i) i-b destil., 50 | p=1                          n= 3 jádro medián 0.71 (horní mez 0.86, ≥1,5× 0%), TICA 1.02 (1.54, 33%) → nelze vyloučit ≥ 1,5×
+  (i) i-b destil., 50 | p=0                          n= 3 jádro medián 0.62 (horní mez 0.75, ≥1,5× 0%), TICA 0.90 (1.35, 0%) → NEVYPLÁCÍ SE
+  (i) destil., 250 | p=2                             n= 3 jádro medián 0.71 (horní mez 0.87, ≥1,5× 0%), TICA 1.03 (1.54, 33%) → nelze vyloučit ≥ 1,5×
+  (i) destil., 250 | p=1.5                           n= 3 jádro medián 0.66 (horní mez 0.83, ≥1,5× 0%), TICA 0.98 (1.44, 0%) → NEVYPLÁCÍ SE
+  (i) destil., 250 | p=1                             n= 3 jádro medián 0.58 (horní mez 0.74, ≥1,5× 0%), TICA 0.88 (1.27, 0%) → NEVYPLÁCÍ SE
+  (i) destil., 250 | p=0                             n= 3 jádro medián 0.37 (horní mez 0.46, ≥1,5× 0%), TICA 0.55 (0.81, 0%) → NEVYPLÁCÍ SE
+  (i) nula (vzorky existují) | p=2                   n= 3 jádro medián 0.75 (horní mez 0.89, ≥1,5× 0%), TICA 1.06 (1.63, 33%) → nelze vyloučit ≥ 1,5×
+  (i) Z8 i-a změřeno: plný, 250                      n= 3 jádro medián 0.23 (horní mez 0.27, ≥1,5× 0%), TICA 0.32 (0.49, 0%) → NEVYPLÁCÍ SE
+  (i) Z8 i-b změřeno: destil., 50                    n= 3 jádro medián 0.72 (horní mez 0.85, ≥1,5× 0%), TICA 1.01 (1.55, 33%) → nelze vyloučit ≥ 1,5×
+  (i) změřeno: destil., 250                          n= 3 jádro medián 0.61 (horní mez 0.72, ≥1,5× 0%), TICA 0.86 (1.32, 0%) → NEVYPLÁCÍ SE
+  (i) změřeno 12l: plný, 250                         n= 3 jádro medián 0.42 (horní mez 0.50, ≥1,5× 0%), TICA 0.60 (0.92, 0%) → NEVYPLÁCÍ SE
+  (i) změřeno 12l: destil., 50                       n= 3 jádro medián 0.74 (horní mez 0.88, ≥1,5× 0%), TICA 1.04 (1.60, 33%) → nelze vyloučit ≥ 1,5×
+  (i) změřeno ESMFlow: plný, 250                     n= 3 jádro medián 0.48 (horní mez 0.52, ≥1,5× 0%), TICA 0.61 (1.03, 0%) → NEVYPLÁCÍ SE
+  (i) změřeno ESMFlow: destil., 50                   n= 3 jádro medián 0.74 (horní mez 0.88, ≥1,5× 0%), TICA 1.04 (1.61, 33%) → nelze vyloučit ≥ 1,5×
+  ROZHODUJÍCÍ účtování: publikované Z1–Z3 (p = 2, citlivost p); kontrola instalace prošla, změřeno plné na 3 proteinech, GPU měření NVIDIA A40
+  cenzurováno (t* ≥ 100 ns): jádro 0, TICA 0
+  (ii) primární dobrý AF: 2 proteinů, S18 lepší než 100ns replika (LOO, shodné n) + Rama, χ1 ≤ 0,08: 0 → nehodnotí se (< 4)
+  (ii) sekundární dobrý AF: 2 proteinů, S18 lepší než 100ns replika (LOO, shodné n) + Rama, χ1 ≤ 0,08: 0 → nehodnotí se (< 4)
+  (iii) špatný AF: 1, S18 horší než MD 10,9 ns (LOO, shodné n) v obou 0, aspoň v jednom 0
+
+protein     L AF TICA   t* j/T ns GPU S18 s zrychl. i-a p2 j/T   nula j/T  LOO S18/rep j         TICA  Rama    χ1
+7jfl_C     47   0.321   1.5/1.7        1420     0.12/0.13      0.13/0.15  0.674/0.435   0.585/0.426  0.078 0.164
+6ro6_A     58   0.573   9.7/11.6       1028     0.69/0.82      0.89/1.06  0.539/0.371   0.535/0.383  0.085 0.156
+6jv8_A     76   0.361  12.0/26.3        944     0.49/1.06      0.75/1.63  0.442/0.583   0.438/0.787  0.106 0.161
+
+protein  GPU úlohy                    bench ns/d box MD ns/d  atomy box/p2 propust. box/bench v_B ns/d  pravidlo
+7jfl_C   NVIDIA RTX A4000                   1309         682   12977/13026               0.52      735  bench × propustnost K18_s0/S18_s0 = 0.56
+6ro6_A   NVIDIA RTX A4000                   1094         908   10634/10701               0.82      931  bench × propustnost K18_s0/S18_s0 = 0.85
+6jv8_A   Quadro RTX 5000                     962        1045   16767/16806               1.08     1489  bench × propustnost K18_s0/S18_s0 = 1.55
+Uloženo l39srv/out_gen/sum39_K18_s0_gen.json

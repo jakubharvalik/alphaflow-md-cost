@@ -1,0 +1,75 @@
+{
+ "sys": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/sys/p2_6odd_B",
+ "atlas": "/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/atlas/cache/6odd_B",
+ "win": "50:520",
+ "n_split": 1053,
+ "n_short": [
+  1081,
+  1081,
+  1081
+ ],
+ "runs": {
+  "S18": {
+   "boxes": 18,
+   "frames": 8460,
+   "jádro": {
+    "loo_run": 0.25419980469022163,
+    "loo_rep100_matched": 0.1951689261807712,
+    "loo_rep100_n": [
+     8460,
+     8460,
+     8460
+    ],
+    "loo_run_by_rep": [
+     0.2705,
+     0.2784,
+     0.2137
+    ],
+    "loo_rep100_by_rep": [
+     0.18,
+     0.1624,
+     0.243
+    ],
+    "loo_rep10_9": 0.2279725393183575,
+    "loo_run_sub_to_10_9": 0.27384609314227143,
+    "union_run_sub_to_3x3_6": 0.2620225820076155,
+    "union_atlas_3x3_6": 0.14417318589240408,
+    "run_beats_rep100_loo": false
+   },
+   "TICA": {
+    "loo_run": 0.3459719204189802,
+    "loo_rep100_matched": 0.33931632064817613,
+    "loo_rep100_n": [
+     8460,
+     8460,
+     8460
+    ],
+    "loo_run_by_rep": [
+     0.4473,
+     0.3014,
+     0.2893
+    ],
+    "loo_rep100_by_rep": [
+     0.3134,
+     0.298,
+     0.4066
+    ],
+    "loo_rep10_9": 0.4230739808513399,
+    "loo_run_sub_to_10_9": 0.3615885116804516,
+    "union_run_sub_to_3x3_6": 0.33906397757892687,
+    "union_atlas_3x3_6": 0.2832804675094445,
+    "run_beats_rep100_loo": false
+   }
+  }
+ },
+ "atlas_3x3_6ns": {
+  "jádro": {
+   "js_union": 0.14417318589240408,
+   "md_10_9ns_js_union": 0.2013193441777974
+  },
+  "TICA": {
+   "js_union": 0.2832804675094445,
+   "md_10_9ns_js_union": 0.3307582747737317
+  }
+ }
+}

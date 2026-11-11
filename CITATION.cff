@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or these data, please cite them as below."
+title: "Code and derived data: cost accounting of AlphaFlow-seeded MD on ATLAS test proteins"
+type: software
+authors:
+  - family-names: "Harvalík"
+    given-names: "Jakub"
+    affiliation: "Department of Organic Chemistry, University of Chemistry and Technology, Prague"
+    orcid: "https://orcid.org/0000-0001-5534-3586"
+version: "1.0"
+date-released: "2026-11-11"
+repository-code: "https://github.com/jakubharvalik/alphaflow-md-cost"
+license: MIT
+abstract: "Scripts, PBS job files, the AlphaFlow patch, derived per-protein tables, inputs (metrics and timings only) and the protocol log behind the preprint 'What does a generative ensemble really save? Honest cost accounting of AlphaFlow-seeded molecular dynamics on ATLAS test proteins'. Code is MIT; tables, inputs and protocol are CC BY 4.0 (see LICENSE)."
+keywords:
+  - molecular dynamics
+  - AlphaFlow
+  - generative ensembles
+  - cost accounting
+  - ATLAS

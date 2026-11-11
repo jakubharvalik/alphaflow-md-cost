@@ -1,0 +1,40 @@
+2026-11-10 18:47:02 start 7k7p_B S18d50_s0 na fobos1.meta.zcu.cz, PBS_JOBID 25424182[24].pbs-m1.metacentrum.cz
+NVIDIA L40S, 610.57.04, 46068 MiB, 8.9
+vzorky /storage/brno2/home/jakub_harvalik/md_pilot_work/l39/af/afT_dist50/7k7p_B.pdb: 50 modelů
+s39d: vynecháno 12 z 50 vzorků s dvojicí těžkých atomů < 0.5 Å: [0, 4, 6, 7, 18, 22, 26, 33, 35, 39, 40, 45]
+  soubor: 38 z 38 vzorků, jádro 5–114, rozptyl kolem středu (RMS jádra) 0.063 nm, medoid 34 (0.035 nm od středu); λ 1, strop 0 nm, šum ou, konce drift
+  výběr ED: 18 cílů, 10 PC souboru (0.84 rozptylu), zástupci [34, 6, 10, 31, 16, 29, 35, 27, 8, 21, 36, 18, 3, 20, 30, 7, 4, 9]
+s39d: ED z 38 z 50 vzorků (polovina seed 0, clash-min 0.5 Å): [46, 10, 14, 42, 21, 38, 47, 36, 12, 28, 48, 24, 5, 27, 41, 11, 8, 13]
+18:48:27 S18 p2_7k7p_B: 18 boxů ze 50 vzorků AF, cíle [46, 10, 14, 42, 21, 38, 47, 36, 12, 28, 48, 24, 5, 27, 41, 11, 8, 13]; ekvilibrace 80 ps (k 1000) + MD 520 ps; HIS ['HID', 'HID', 'HID', 'HID', 'HIE']; CHARMM36m (charmm36_2024) + CHARMM TIP3P, padding 1.0 nm, 0.15 M, HMR 1.5, dt 4.0 fs
+18:50:21 box 1/18 (vzorek 46): 15301 atomů, stavba 73 s, min 2 s, ekv 5 s, MD 33 s (1353 ns/den), Cα po ekvilibraci od cíle 0.027 nm; hotovo 1, odhad konce za 32 min
+18:52:15 box 2/18 (vzorek 10): 12720 atomů, stavba 75 s, min 2 s, ekv 5 s, MD 31 s (1440 ns/den), Cα po ekvilibraci od cíle 0.027 nm; hotovo 2, odhad konce za 30 min
+18:54:08 box 3/18 (vzorek 14): 12564 atomů, stavba 74 s, min 1 s, ekv 5 s, MD 31 s (1440 ns/den), Cα po ekvilibraci od cíle 0.024 nm; hotovo 3, odhad konce za 28 min
+18:56:16 box 4/18 (vzorek 42): 15586 atomů, stavba 85 s, min 3 s, ekv 5 s, MD 34 s (1310 ns/den), Cα po ekvilibraci od cíle 0.026 nm; hotovo 4, odhad konce za 27 min
+18:58:16 box 5/18 (vzorek 21): 12981 atomů, stavba 80 s, min 2 s, ekv 5 s, MD 32 s (1413 ns/den), Cα po ekvilibraci od cíle 0.028 nm; hotovo 5, odhad konce za 26 min
+19:00:12 box 6/18 (vzorek 38): 12957 atomů, stavba 77 s, min 2 s, ekv 5 s, MD 32 s (1417 ns/den), Cα po ekvilibraci od cíle 0.024 nm; hotovo 6, odhad konce za 24 min
+19:02:17 box 7/18 (vzorek 47): 13128 atomů, stavba 86 s, min 2 s, ekv 5 s, MD 32 s (1404 ns/den), Cα po ekvilibraci od cíle 0.028 nm; hotovo 7, odhad konce za 22 min
+19:04:13 box 8/18 (vzorek 36): 12495 atomů, stavba 77 s, min 2 s, ekv 5 s, MD 31 s (1431 ns/den), Cα po ekvilibraci od cíle 0.027 nm; hotovo 8, odhad konce za 20 min
+19:06:15 box 9/18 (vzorek 12): 15598 atomů, stavba 80 s, min 2 s, ekv 5 s, MD 34 s (1337 ns/den), Cα po ekvilibraci od cíle 0.027 nm; hotovo 9, odhad konce za 18 min
+19:08:14 box 10/18 (vzorek 28): 14042 atomů, stavba 78 s, min 2 s, ekv 5 s, MD 32 s (1395 ns/den), Cα po ekvilibraci od cíle 0.026 nm; hotovo 10, odhad konce za 16 min
+19:10:17 box 11/18 (vzorek 48): 13134 atomů, stavba 83 s, min 2 s, ekv 5 s, MD 32 s (1391 ns/den), Cα po ekvilibraci od cíle 0.028 nm; hotovo 11, odhad konce za 14 min
+19:12:16 box 12/18 (vzorek 24): 19002 atomů, stavba 84 s, min 2 s, ekv 4 s, MD 28 s (1622 ns/den), Cα po ekvilibraci od cíle 0.029 nm; hotovo 12, odhad konce za 12 min
+19:14:15 box 13/18 (vzorek 5): 13505 atomů, stavba 79 s, min 2 s, ekv 5 s, MD 32 s (1408 ns/den), Cα po ekvilibraci od cíle 0.029 nm; hotovo 13, odhad konce za 10 min
+19:16:13 box 14/18 (vzorek 27): 15190 atomů, stavba 77 s, min 2 s, ekv 5 s, MD 33 s (1357 ns/den), Cα po ekvilibraci od cíle 0.026 nm; hotovo 14, odhad konce za 8 min
+19:18:07 box 15/18 (vzorek 41): 13278 atomů, stavba 75 s, min 2 s, ekv 5 s, MD 32 s (1413 ns/den), Cα po ekvilibraci od cíle 0.026 nm; hotovo 15, odhad konce za 6 min
+19:20:04 box 16/18 (vzorek 11): 13466 atomů, stavba 78 s, min 2 s, ekv 5 s, MD 32 s (1400 ns/den), Cα po ekvilibraci od cíle 0.023 nm; hotovo 16, odhad konce za 4 min
+19:22:01 box 17/18 (vzorek 8): 15466 atomů, stavba 76 s, min 2 s, ekv 5 s, MD 33 s (1349 ns/den), Cα po ekvilibraci od cíle 0.031 nm; hotovo 17, odhad konce za 2 min
+19:24:04 box 18/18 (vzorek 13): 14276 atomů, stavba 82 s, min 2 s, ekv 5 s, MD 33 s (1353 ns/den), Cα po ekvilibraci od cíle 0.024 nm; hotovo 18, odhad konce za 0 min
+Pseudo-hybrid /storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_7k7p_B_S18d50_s0: 18/18 boxů, 9378 snímků, MD 10.8 ns za 2124 s (stavba 1420, minimalizace 34, ekvilibrace 90, MD 578 s) = 439 ns/den; Cα po ekvilibraci od cíle 0.027 nm
+19:24:23 s39 kód 0
+work uklizen (výstup v /storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_7k7p_B_S18d50_s0)
+193M	/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_7k7p_B_S18d50_s0
+19:26:32 rozbory: 4 JSON
+S18: 18 boxů, 8460 snímků
+  jádro LOO běh 0.795 vs 100ns replika (n=8460) 0.815 → běh lepší; 10,9 ns: replika 0.681 vs běh 0.799; sjednocení: ATLAS 3×3,6 ns 0.537 vs běh 0.788
+  TICA  LOO běh 0.731 vs 100ns replika (n=8460) 0.881 → běh lepší; 10,9 ns: replika 0.765 vs běh 0.735; sjednocení: ATLAS 3×3,6 ns 0.633 vs běh 0.715
+Uloženo /storage/brno2/home/jakub_harvalik/md_pilot_work/l39/ana/eval39_7k7p_B_S18d50_s0.json
+2026-11-10 19:26:32 konec
+
+**********************************************************************************************************
+
+The SCRATCHes have been SUCCESSFULLY cleaned...

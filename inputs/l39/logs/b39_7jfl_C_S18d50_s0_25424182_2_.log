@@ -1,0 +1,34 @@
+2026-11-10 17:29:23 start 7jfl_C S18d50_s0 na alfrid8.meta.zcu.cz, PBS_JOBID 25424182[2].pbs-m1.metacentrum.cz
+NVIDIA L40S, 610.57.04, 46068 MiB, 8.9
+vzorky /storage/brno2/home/jakub_harvalik/md_pilot_work/l39/af/afT_dist50/7jfl_C.pdb: 50 modelů
+s39d: vynecháno 5 z 50 vzorků s dvojicí těžkých atomů < 0.5 Å: [3, 21, 25, 28, 30]
+  soubor: 45 z 45 vzorků, jádro 5–43, rozptyl kolem středu (RMS jádra) 0.099 nm, medoid 1 (0.021 nm od středu); λ 1, strop 0 nm, šum ou, konce drift
+  výběr ED: 18 cílů, 10 PC souboru (0.98 rozptylu), zástupci [1, 13, 3, 25, 34, 2, 7, 15, 20, 4, 30, 11, 10, 5, 36, 6, 23, 42]
+s39d: ED z 45 z 50 vzorků (polovina seed 0, clash-min 0.5 Å): [1, 14, 4, 29, 39, 2, 8, 16, 22, 5, 35, 12, 11, 6, 41, 7, 26, 47]
+17:30:29 S18 p2_7jfl_C: 18 boxů ze 50 vzorků AF, cíle [1, 14, 4, 29, 39, 2, 8, 16, 22, 5, 35, 12, 11, 6, 41, 7, 26, 47]; ekvilibrace 80 ps (k 1000) + MD 520 ps; HIS žádné; CHARMM36m (charmm36_2024) + CHARMM TIP3P, padding 1.0 nm, 0.15 M, HMR 1.5, dt 4.0 fs
+17:32:13 box 1/18 (vzorek 1): 8365 atomů, stavba 70 s, min 2 s, ekv 4 s, MD 27 s (1676 ns/den), Cα po ekvilibraci od cíle 0.022 nm; hotovo 1, odhad konce za 29 min
+17:33:56 box 2/18 (vzorek 14): 10481 atomů, stavba 68 s, min 2 s, ekv 4 s, MD 29 s (1571 ns/den), Cα po ekvilibraci od cíle 0.021 nm; hotovo 2, odhad konce za 28 min
+17:35:07 box 2 (vzorek 4) SELHAL: OpenMMException: Energy or force at minimization starting point is infinite or NaN.
+17:37:01 box 4/18 (vzorek 29): 11575 atomů, stavba 76 s, min 2 s, ekv 5 s, MD 31 s (1459 ns/den), Cα po ekvilibraci od cíle 0.021 nm; hotovo 3, odhad konce za 30 min
+17:38:16 box 4 (vzorek 39) SELHAL: OpenMMException: Energy or force at minimization starting point is infinite or NaN.
+17:40:01 box 6/18 (vzorek 2): 8794 atomů, stavba 72 s, min 2 s, ekv 4 s, MD 27 s (1646 ns/den), Cα po ekvilibraci od cíle 0.020 nm; hotovo 4, odhad konce za 29 min
+17:41:52 box 7/18 (vzorek 8): 12067 atomů, stavba 73 s, min 1 s, ekv 5 s, MD 31 s (1431 ns/den), Cα po ekvilibraci od cíle 0.021 nm; hotovo 5, odhad konce za 25 min
+17:43:38 box 8/18 (vzorek 16): 9183 atomů, stavba 72 s, min 2 s, ekv 4 s, MD 28 s (1605 ns/den), Cα po ekvilibraci od cíle 0.023 nm; hotovo 6, odhad konce za 22 min
+17:45:30 box 9/18 (vzorek 22): 13679 atomů, stavba 71 s, min 2 s, ekv 5 s, MD 33 s (1370 ns/den), Cα po ekvilibraci od cíle 0.023 nm; hotovo 7, odhad konce za 19 min
+17:47:19 box 10/18 (vzorek 5): 7907 atomů, stavba 76 s, min 2 s, ekv 4 s, MD 27 s (1689 ns/den), Cα po ekvilibraci od cíle 0.018 nm; hotovo 8, odhad konce za 17 min
+17:49:11 box 11/18 (vzorek 35): 9462 atomů, stavba 78 s, min 2 s, ekv 4 s, MD 28 s (1599 ns/den), Cα po ekvilibraci od cíle 0.025 nm; hotovo 9, odhad konce za 15 min
+17:50:58 box 12/18 (vzorek 12): 8710 atomů, stavba 75 s, min 2 s, ekv 4 s, MD 26 s (1695 ns/den), Cα po ekvilibraci od cíle 0.026 nm; hotovo 10, odhad konce za 12 min
+17:52:43 box 13/18 (vzorek 11): 11186 atomů, stavba 68 s, min 2 s, ekv 5 s, MD 30 s (1503 ns/den), Cα po ekvilibraci od cíle 0.020 nm; hotovo 11, odhad konce za 10 min
+17:54:28 box 14/18 (vzorek 6): 8566 atomů, stavba 73 s, min 1 s, ekv 4 s, MD 27 s (1676 ns/den), Cα po ekvilibraci od cíle 0.024 nm; hotovo 12, odhad konce za 8 min
+17:56:19 box 15/18 (vzorek 41): 10140 atomů, stavba 75 s, min 2 s, ekv 4 s, MD 28 s (1582 ns/den), Cα po ekvilibraci od cíle 0.023 nm; hotovo 13, odhad konce za 6 min
+17:58:04 box 16/18 (vzorek 7): 10457 atomů, stavba 70 s, min 2 s, ekv 4 s, MD 29 s (1560 ns/den), Cα po ekvilibraci od cíle 0.021 nm; hotovo 14, odhad konce za 4 min
+17:59:13 box 16 (vzorek 26) SELHAL: OpenMMException: Energy or force at minimization starting point is infinite or NaN.
+18:01:03 box 18/18 (vzorek 47): 7963 atomů, stavba 75 s, min 2 s, ekv 4 s, MD 28 s (1588 ns/den), Cα po ekvilibraci od cíle 0.020 nm; hotovo 15, odhad konce za 0 min
+Pseudo-hybrid /storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_7jfl_C_S18d50_s0: 15/18 boxů, 7815 snímků, MD 9 ns za 1613 s (stavba 1091, minimalizace 25, ekvilibrace 66, MD 429 s) = 482 ns/den; Cα po ekvilibraci od cíle 0.022 nm — NEÚPLNÉ, uloženo jako partial
+18:01:12 s39 kód 0
+66M	/storage/brno2/home/jakub_harvalik/md_pilot_work/l39/runs/hyb39_7jfl_C_S18d50_s0
+2026-11-10 18:01:12 konec
+
+**********************************************************************************************************
+
+The SCRATCHes have been SUCCESSFULLY cleaned...

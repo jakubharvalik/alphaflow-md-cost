@@ -1,0 +1,24 @@
+sada        modelů  s páry < 0,5 Å  s páry < 1,0 Å  medián d_min Å
+pub_plny      6250           0.50%          33.47%           1.058  (5. percentil d_min 0.754)
+afT_base       150           0.67%          33.33%           1.056  (5. percentil d_min 0.827)
+afT_dist       275          18.18%          91.27%           0.732  (5. percentil d_min 0.303)
+
+selhané boxy S18 (16), kolize jejich zveřejněného vzorku:
+  7jfl_C   S18_s0  vzorek  56: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.096 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  7jfl_C   S18_s0  vzorek 135: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.056 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  7jfl_C   S18_s1  vzorek  61: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.141 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  6l34_A   S18_s1  vzorek  18: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.146 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  6odd_B   S18_s0  vzorek 139: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.115 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  6in7_A   S18_s0  vzorek  15: páry < 0,5 Å 0, < 1,0 Å 1, d_min 0.719 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  6in7_A   S18_s0  vzorek 177: páry < 0,5 Å 1, < 1,0 Å 2, d_min 0.367 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  6d7y_A   S18_s0  vzorek 215: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.080 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  7s86_A   S18_s0  vzorek  97: páry < 0,5 Å 0, < 1,0 Å 2, d_min 0.861 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  6pxz_B   S18_s0  vzorek  15: páry < 0,5 Å 0, < 1,0 Å 1, d_min 0.812 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  6p5h_A   S18_s0  vzorek 143: páry < 0,5 Å 0, < 1,0 Å 2, d_min 0.862 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  6p5h_A   S18_s0  vzorek 109: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.039 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  6p5h_A   S18_s1  vzorek  70: páry < 0,5 Å 0, < 1,0 Å 1, d_min 0.750 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  6tgk_C   S18_s0  vzorek  41: páry < 0,5 Å 0, < 1,0 Å 1, d_min 0.673 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  7k7p_B   S18_s0  vzorek  47: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.007 Å  OpenMMException: Particle coordinate is NaN.  For more information, see https://
+  6uof_A   S18_s1  vzorek 154: páry < 0,5 Å 0, < 1,0 Å 0, d_min 1.133 Å  OpenMMException: Energy or force at minimization starting point is infinite or N
+  selhaných s párem < 1,0 Å: 7 z 16; ve zveřejněných celkem 33.47% modelů
+Uloženo l39srv/clash39.json

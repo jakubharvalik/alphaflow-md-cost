@@ -1,0 +1,673 @@
+{
+ "per_protein": {
+  "7lp1_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.252,
+    "dmin_med": 1.1
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.1667,
+    "dmin_med": 1.094
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 0.7273,
+    "dmin_med": 0.744
+   }
+  },
+  "7jfl_C": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.18,
+    "dmin_med": 1.085
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.057
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 0.7273,
+    "dmin_med": 0.848
+   }
+  },
+  "6okd_C": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.34,
+    "dmin_med": 1.042
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.109
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.8182,
+    "dmin_med": 0.885
+   }
+  },
+  "6ro6_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.384,
+    "dmin_med": 1.032
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.1667,
+    "frac_lt10": 0.6667,
+    "dmin_med": 0.952
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.753
+   }
+  },
+  "6l34_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.264,
+    "dmin_med": 1.075
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.101
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.811
+   }
+  },
+  "6pce_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.008,
+    "frac_lt10": 0.216,
+    "dmin_med": 1.111
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.108
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.674
+   }
+  },
+  "6odd_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.004,
+    "frac_lt10": 0.148,
+    "dmin_med": 1.149
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.5,
+    "dmin_med": 1.072
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3636,
+    "dmin_med": 1.028
+   }
+  },
+  "6jv8_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.004,
+    "frac_lt10": 0.428,
+    "dmin_med": 1.03
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.5,
+    "dmin_med": 1.055
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.2727,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.619
+   }
+  },
+  "6ono_C": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.328,
+    "dmin_med": 1.071
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.0,
+    "dmin_med": 1.128
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 0.9091,
+    "dmin_med": 0.77
+   }
+  },
+  "6in7_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.024,
+    "frac_lt10": 0.34,
+    "dmin_med": 1.049
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.5,
+    "dmin_med": 0.989
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.3636,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.524
+   }
+  },
+  "7a66_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.012,
+    "frac_lt10": 0.268,
+    "dmin_med": 1.087
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.1667,
+    "dmin_med": 1.105
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 0.8182,
+    "dmin_med": 0.735
+   }
+  },
+  "6h86_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.004,
+    "frac_lt10": 0.528,
+    "dmin_med": 0.995
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.055
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.9091,
+    "dmin_med": 0.824
+   }
+  },
+  "7bwf_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.004,
+    "frac_lt10": 0.332,
+    "dmin_med": 1.055
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.5,
+    "dmin_med": 1.019
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.5455,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.445
+   }
+  },
+  "6d7y_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.004,
+    "frac_lt10": 0.18,
+    "dmin_med": 1.098
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.0,
+    "dmin_med": 1.116
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.9091,
+    "dmin_med": 0.921
+   }
+  },
+  "6ypi_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.392,
+    "dmin_med": 1.028
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.5,
+    "dmin_med": 1.026
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.9091,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.315
+   }
+  },
+  "6tly_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.012,
+    "frac_lt10": 0.736,
+    "dmin_med": 0.921
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.6667,
+    "dmin_med": 0.938
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.784
+   }
+  },
+  "7s86_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.564,
+    "dmin_med": 0.98
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.016
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.5455,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.435
+   }
+  },
+  "7n0j_E": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.068,
+    "dmin_med": 1.145
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.1667,
+    "dmin_med": 1.113
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 0.8182,
+    "dmin_med": 0.879
+   }
+  },
+  "6pxz_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.004,
+    "frac_lt10": 0.316,
+    "dmin_med": 1.095
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.3333,
+    "dmin_med": 1.071
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 0.8182,
+    "dmin_med": 0.93
+   }
+  },
+  "6p5h_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.02,
+    "frac_lt10": 0.432,
+    "dmin_med": 1.023
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.6667,
+    "dmin_med": 0.974
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.624
+   }
+  },
+  "6tgk_C": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.4,
+    "dmin_med": 1.034
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.1667,
+    "dmin_med": 1.045
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.6364,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.471
+   }
+  },
+  "6vjg_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.328,
+    "dmin_med": 1.046
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.1667,
+    "dmin_med": 1.054
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.773
+   }
+  },
+  "6yhu_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.212,
+    "dmin_med": 1.09
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.0,
+    "dmin_med": 1.057
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.1818,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.603
+   }
+  },
+  "7k7p_B": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.008,
+    "frac_lt10": 0.528,
+    "dmin_med": 0.991
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.5,
+    "dmin_med": 0.991
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.607
+   }
+  },
+  "6uof_A": {
+   "pub_plny": {
+    "n": 250,
+    "frac_lt05": 0.016,
+    "frac_lt10": 0.204,
+    "dmin_med": 1.125
+   },
+   "afT_base": {
+    "n": 6,
+    "frac_lt05": 0.0,
+    "frac_lt10": 0.1667,
+    "dmin_med": 1.117
+   },
+   "afT_dist": {
+    "n": 11,
+    "frac_lt05": 0.0909,
+    "frac_lt10": 1.0,
+    "dmin_med": 0.858
+   }
+  }
+ },
+ "failed": [
+  {
+   "protein": "7jfl_C",
+   "tag": "S18_s0",
+   "ens_idx": 56,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.096,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "7jfl_C",
+   "tag": "S18_s0",
+   "ens_idx": 135,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.056,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "7jfl_C",
+   "tag": "S18_s1",
+   "ens_idx": 61,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.141,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "6l34_A",
+   "tag": "S18_s1",
+   "ens_idx": 18,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.146,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "6odd_B",
+   "tag": "S18_s0",
+   "ens_idx": 139,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.115,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "6in7_A",
+   "tag": "S18_s0",
+   "ens_idx": 15,
+   "lt05": 0,
+   "lt10": 1,
+   "dmin": 0.719,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "6in7_A",
+   "tag": "S18_s0",
+   "ens_idx": 177,
+   "lt05": 1,
+   "lt10": 2,
+   "dmin": 0.367,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "6d7y_A",
+   "tag": "S18_s0",
+   "ens_idx": 215,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.08,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "7s86_A",
+   "tag": "S18_s0",
+   "ens_idx": 97,
+   "lt05": 0,
+   "lt10": 2,
+   "dmin": 0.861,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "6pxz_B",
+   "tag": "S18_s0",
+   "ens_idx": 15,
+   "lt05": 0,
+   "lt10": 1,
+   "dmin": 0.812,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  },
+  {
+   "protein": "6p5h_A",
+   "tag": "S18_s0",
+   "ens_idx": 143,
+   "lt05": 0,
+   "lt10": 2,
+   "dmin": 0.862,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "6p5h_A",
+   "tag": "S18_s0",
+   "ens_idx": 109,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.039,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "6p5h_A",
+   "tag": "S18_s1",
+   "ens_idx": 70,
+   "lt05": 0,
+   "lt10": 1,
+   "dmin": 0.75,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "6tgk_C",
+   "tag": "S18_s0",
+   "ens_idx": 41,
+   "lt05": 0,
+   "lt10": 1,
+   "dmin": 0.673,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "7k7p_B",
+   "tag": "S18_s0",
+   "ens_idx": 47,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.007,
+   "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://"
+  },
+  {
+   "protein": "6uof_A",
+   "tag": "S18_s1",
+   "ens_idx": 154,
+   "lt05": 0,
+   "lt10": 0,
+   "dmin": 1.133,
+   "error": "OpenMMException: Energy or force at minimization starting point is infinite or N"
+  }
+ ],
+ "summary": {
+  "pub_plny": {
+   "n": 6250,
+   "frac_lt05": 0.005,
+   "frac_lt10": 0.3347,
+   "dmin_med": 1.058,
+   "dmin_q05": 0.754
+  },
+  "afT_base": {
+   "n": 150,
+   "frac_lt05": 0.0067,
+   "frac_lt10": 0.3333,
+   "dmin_med": 1.056,
+   "dmin_q05": 0.827
+  },
+  "afT_dist": {
+   "n": 275,
+   "frac_lt05": 0.1818,
+   "frac_lt10": 0.9127,
+   "dmin_med": 0.732,
+   "dmin_q05": 0.303
+  }
+ }
+}

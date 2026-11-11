@@ -1,0 +1,79 @@
+#!/bin/bash
+#PBS -N l39_A
+#PBS -l select=1:ncpus=8:mem=48gb:scratch_local=120gb
+#PBS -l walltime=24:00:00
+#PBS -j oe
+# Linie 39, fáze A (jen CPU, nic nesimuluje): všech 82 testovacích proteinů ATLAS (atlas_test.csv) od nejkratšího,
+# stažení a převod ATLAS (atlas_fetch.py), vzorky AF-MD, AF-MD+templates, ESMFlow-MD z huggingface.co, af38 (biny 30 a 15).
+# Rozsah řádků seznamu I0..I1 (qsub -v I0=1,I1=25). Hotové proteiny (af38 JSON obou binů) přeskočí, lze znovu spustit. Na brno2 zůstane: af38 JSON + výpis, ATLAS PDB všech,
+# cache ATLAS a PDB AF-MD+templates jen pro délku ≤ 120 (fáze B). Stahování ATLAS sekvenčně (šetrně k serveru).
+. /etc/profile >/dev/null 2>&1 || true
+W=/storage/brno2/home/jakub_harvalik/md_pilot_work
+L=$W/l39
+OUT=$L/out_${PBS_JOBID%%.*}
+ZT=alphaflow_md_templates_base_202402
+mkdir -p $OUT $L/af38 $L/atlas/cache $L/atlas/pdb $L/af/$ZT
+exec > >(tee -a $OUT/job.log) 2>&1
+set -u
+echo "$(date '+%F %T') start na $(hostname), PBS_JOBID $PBS_JOBID, SCRATCHDIR $SCRATCHDIR"
+trap 'clean_scratch' TERM EXIT
+export TMPDIR=$SCRATCHDIR OMP_NUM_THREADS=3 OPENBLAS_NUM_THREADS=3 MKL_NUM_THREADS=3
+P=$W/envs/omm13/bin/python
+cd $SCRATCHDIR || exit 5
+tar xzf $L/code39.tgz --warning=no-unknown-keyword || exit 6
+I0=${I0:-1}; I1=${I1:-999}
+echo "rozsah řádků $I0..$I1"
+HF=https://huggingface.co/bjing-mit/alphaflow/resolve/main/samples
+ZIPS="alphaflow_md_base_202402:AF_MD alphaflow_md_templates_base_202402:AF_MD_templ esmflow_md_base_202402:ESMFlow_MD"
+for ZZ in $ZIPS; do
+  Z=${ZZ%%:*}; t0=$(date +%s)
+  curl -sSfL --retry 4 --retry-delay 10 -o $Z.zip $HF/$Z.zip && echo "$(date '+%T') $Z $(( $(date +%s) - t0 )) s, $(du -h $Z.zip | cut -f1)" || echo "$(date '+%T') $Z: stažení selhalo"
+done
+$P - > names.txt <<'PY'
+import csv
+r = list(csv.DictReader(open("atlas_test.csv")))
+for x in sorted(r, key=lambda x: (len(x["seqres"]), x["name"])):
+    print(x["name"], len(x["seqres"]))
+PY
+echo "$(date '+%T') proteinů $(wc -l < names.txt)"
+i=0
+PIDS=""  # explicitní PID: holé wait by po exec > >(tee) čekalo i na tee
+while read -r N LEN; do
+  i=$((i + 1))
+  { [ $i -lt $I0 ] || [ $i -gt $I1 ]; } && continue
+  for B in 30 15; do  # výstup bez řádků AF (chyba 25396836: chyběl mkdir af/<Z>) se odloží, nemaže
+    F=$L/af38/af38_${N}_b$B.json
+    if [ -s $F ] && ! grep -q "AF_MD_templ" $F; then mkdir -p $L/af38_bez_AF; mv $F ${F%.json}.txt $L/af38_bez_AF/ 2>/dev/null; echo "[$i] $N b$B bez AF odloženo"; fi
+  done
+  if [ -s $L/af38/af38_${N}_b30.json ] && [ -s $L/af38/af38_${N}_b15.json ]; then echo "[$i] $N hotovo dřív"; continue; fi
+  t0=$(date +%s)
+  if [ -s $L/atlas/cache/$N/meta.json ]; then C=$L/atlas/cache/$N; else
+    C=atlas/cache/$N
+    $P atlas_fetch.py --names $N --out atlas --min-free-gb 15 < /dev/null > fetch_$N.txt 2>&1
+    tail -1 fetch_$N.txt | sed "s/^/[$i] $N fetch: /"; grep "\[1/1\]" fetch_$N.txt
+    if [ ! -s $C/meta.json ]; then echo "[$i] $N: CHYBA převodu ATLAS, přeskakuji"; cp fetch_$N.txt $OUT/; continue; fi
+    cp atlas/raw/$N/*.pdb $L/atlas/pdb/ 2>/dev/null
+    [ "$LEN" -le 120 ] && cp -r $C $L/atlas/cache/
+    rm -rf atlas/raw/$N
+  fi
+  E=""
+  for ZZ in $ZIPS; do
+    Z=${ZZ%%:*}; [ -s $Z.zip ] || continue
+    f=$(unzip -Z1 $Z.zip | grep -E "(^|/)${N}\.pdb$" | head -1)
+    mkdir -p af/$Z
+    if [ -n "$f" ]; then unzip -o -j -q $Z.zip "$f" -d af/$Z && [ -s af/$Z/$N.pdb ] && E="$E ${ZZ##*:}=af/$Z/$N.pdb"; else echo "[$i] $N: v $Z chybí"; fi
+  done
+  [ "$LEN" -le 120 ] && [ -s af/$ZT/$N.pdb ] && cp af/$ZT/$N.pdb $L/af/$ZT/
+  [ -n "$PIDS" ] && wait $PIDS; PIDS=""
+  [ -n "$E" ] || { echo "[$i] $N: ŽÁDNÉ vzorky AF, af38 nespouštím"; continue; }
+  for B in 30 15; do
+    ( $P af38.py --name $N --atlas $C --ens $E --n 250 --reps 20 --bins $B --out $L/af38/af38_${N}_b$B.json < /dev/null > $L/af38/af38_${N}_b$B.txt 2>&1
+      rc=$?; echo "$(date '+%T') [$i] $N L=$LEN af38 biny $B: kód $rc" ) &
+    PIDS="$PIDS $!"
+  done
+  echo "$(date '+%T') [$i] $N L=$LEN připraveno za $(( $(date +%s) - t0 )) s, volno $(df -h $SCRATCHDIR | tail -1 | awk '{print $4}')"
+done < names.txt
+[ -n "$PIDS" ] && wait $PIDS
+echo "$(date '+%T') hotových af38 b30: $(ls $L/af38/af38_*_b30.json 2>/dev/null | wc -l)"
+du -sh $L/atlas $L/af $L/af38
+echo "$(date '+%F %T') konec"

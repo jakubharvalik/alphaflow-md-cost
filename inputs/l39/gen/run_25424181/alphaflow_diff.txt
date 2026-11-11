@@ -1,0 +1,29 @@
+0408d7c89dac444a43a9089d7427ce470b0a5e67
+diff --git a/predict.py b/predict.py
+index bdcaa97..0060a2c 100644
+--- a/predict.py
++++ b/predict.py
+@@ -73,8 +73,8 @@ def main():
+     model_class = {'alphafold': AlphaFoldWrapper, 'esmfold': ESMFoldWrapper}[args.mode]
+ 
+     if args.weights:
+-        ckpt = torch.load(args.weights, map_location='cpu', weights_only=False) # Compatible with pytorch = 2.6.0
+-        model = model_class(**ckpt['hyper_parameters'], training=False)
++        ckpt = torch.load(args.weights, map_location='cpu') # Compatible with pytorch = 2.6.0
++        model = model_class(**{k: v for k, v in ckpt['hyper_parameters'].items() if k != 'training'}, training=False)
+         model.model.load_state_dict(ckpt['params'], strict=False)
+         model = model.cuda()
+         
+diff --git a/scripts/mmseqs_query.py b/scripts/mmseqs_query.py
+index 1768199..c4e598c 100644
+--- a/scripts/mmseqs_query.py
++++ b/scripts/mmseqs_query.py
+@@ -284,7 +284,7 @@ def run_mmseqs2(x, prefix, use_env=True, use_filter=True,
+ df = pd.read_csv(args.split, index_col='name')
+ os.makedirs(args.outdir, exist_ok=True)
+ 
+-msas = run_mmseqs2(list(df.seqres), prefix='/tmp/', user_agent='bjing2016/alphaflow')
++msas = run_mmseqs2(list(df.seqres), prefix=os.environ.get('TMPDIR', '/tmp') + '/', user_agent='bjing2016/alphaflow')
+ os.system('rm -r /tmp/_env')
+ 
+ for name, msa in zip(df.index, msas):

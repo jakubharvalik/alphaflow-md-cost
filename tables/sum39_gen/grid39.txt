@@ -1,0 +1,32 @@
+režie volání sady B na protein (s, GPU měření): {'afT_base': 1.9, 'afT_dist': 1.1}
+
+=== S18_s0 (v bench, t* first), 25 proteinů
+  mřížka plný    250: jádro 0.36 (0.48), TICA 0.46 (0.93)  nevyplácí se
+  mřížka plný     50: jádro 0.86 (1.14), TICA 1.26 (2.42)
+  mřížka plný     18: jádro 1.12 (1.43), TICA 1.74 (3.26)
+  mřížka destil. 250: jádro 1.05 (1.32), TICA 1.59 (3.03)
+  mřížka destil.  50: jádro 1.29 (1.69), TICA 1.98 (3.91)
+  mřížka destil.  18: jádro 1.34 (1.76), TICA 2.05 (4.11)
+  wall-clock plný    250: jádro 0.28 (0.36), TICA 0.39 (0.71)
+  wall-clock destil.  50: jádro 0.60 (0.76), TICA 0.76 (1.64)
+  stavba 18 boxů na CPU: medián 1323.4 s (1103.8–2124.0)
+  bod zvratu jádro, 250 vzorků : medián -0.30 s/vzorek [-3.34–3.11], ≤ 0 u 13; změřený afT_base pod ním u 2 z 25
+  bod zvratu TICA, 250 vzorků  : medián 1.54 s/vzorek [-1.89–8.90], ≤ 0 u 10; změřený afT_base pod ním u 4 z 25
+  bod zvratu jádro, 50 vzorků  : medián -1.48 s/vzorek [-16.71–15.54], ≤ 0 u 13; změřený afT_dist pod ním u 11 z 25
+  bod zvratu TICA, 50 vzorků   : medián 7.69 s/vzorek [-9.47–44.49], ≤ 0 u 10; změřený afT_dist pod ním u 15 z 25
+
+=== S18_s1 (v xfer, t* first), 25 proteinů
+  mřížka plný    250: jádro 0.38 (0.45), TICA 0.41 (0.67)  nevyplácí se
+  mřížka plný     50: jádro 0.87 (1.11), TICA 1.17 (1.80)
+  mřížka plný     18: jádro 1.08 (1.53), TICA 1.67 (2.46)
+  mřížka destil. 250: jádro 1.02 (1.41), TICA 1.53 (2.27)
+  mřížka destil.  50: jádro 1.21 (1.79), TICA 1.88 (2.89)
+  mřížka destil.  18: jádro 1.24 (1.90), TICA 1.94 (3.02)
+  wall-clock plný    250: jádro 0.28 (0.36), TICA 0.31 (0.48)
+  wall-clock destil.  50: jádro 0.56 (0.68), TICA 0.70 (1.03)
+  stavba 18 boxů na CPU: medián 1319.0 s (1168.4–1925.6)
+  bod zvratu jádro, 250 vzorků : medián -0.61 s/vzorek [-3.20–1.99], ≤ 0 u 14; změřený afT_base pod ním u 3 z 25
+  bod zvratu TICA, 250 vzorků  : medián 1.32 s/vzorek [-2.68–7.23], ≤ 0 u 12; změřený afT_base pod ním u 3 z 25
+  bod zvratu jádro, 50 vzorků  : medián -3.05 s/vzorek [-16.02–9.93], ≤ 0 u 14; změřený afT_dist pod ním u 10 z 25
+  bod zvratu TICA, 50 vzorků   : medián 6.58 s/vzorek [-13.42–36.15], ≤ 0 u 12; změřený afT_dist pod ním u 13 z 25
+Uloženo l39srv/out_gen/grid39.json

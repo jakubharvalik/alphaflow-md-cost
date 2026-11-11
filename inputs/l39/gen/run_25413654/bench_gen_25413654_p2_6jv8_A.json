@@ -1,0 +1,10 @@
+{
+ "sys": "p2_6jv8_A",
+ "n_atoms": 16806,
+ "dt_fs": 4.0,
+ "ps": 50.0,
+ "wall_s": 3.47,
+ "ns_per_day": 1243.3,
+ "platform": "CUDA",
+ "barostat": true
+}
