@@ -74,4 +74,35 @@ for f in chi39 ctrl39; do
   "$PY" "$S/$f.py" > "l39srv/out_z9/$f.txt" 2>&1 || echo "FAILED $f"
   SAME "l39srv/out_z9/$f.txt" "$T/z9/$f.txt"
 done
+
+# ---- Version 1.1: corrected re-analysis Z10 (protocol/prereg39.md, entry Z10) ----
+# Inputs: inputs/l39/ana40/sub40_<N>.json (per-protein output of sub40.py, run on the cluster by jobs/ana40.pbs because it
+# needs the ATLAS and S18 trajectories) and inputs/l39/fail40.json (time of failed boxes, fail40.py on the b39 job logs).
+step "Z10: corrected accounting (sum40) in all reported variants"
+mkdir -p l39srv/out_z10
+s40() {  # output-name reference-name arguments...
+  out=$1; ref=$2; shift 2
+  "$PY" "$S/sum40.py" --root l39srv --v-src xfer --fail l39srv/fail40.json "$@" --out "l39srv/out_z10/$out.json" \
+    > "l39srv/out_z10/$out.txt" 2>&1 && CMP "l39srv/out_z10/$out.json" "$T/z10/$ref.json" || echo "FAILED $out"
+}
+PIL=7jfl_C,6ro6_A,6okd_C,6ono_C,6jv8_A,6pce_B
+for TAG in S18_s0 S18_s1 S18d50_s0; do
+  s40 z10_$TAG z10_$TAG --tag $TAG --gen l39srv/gen39b_sum.json
+  s40 z10_${TAG}_bezpilot z10_${TAG}_bezpilot --tag $TAG --gen l39srv/gen39b_sum.json --exclude $PIL
+  s40 z10_${TAG}_last z10_${TAG}_last --tag $TAG --gen l39srv/gen39b_sum.json --tstar last
+  s40 z10_${TAG}_js15 z10_${TAG}_js15 --tag $TAG --gen l39srv/gen39b_sum.json --metric js15
+  s40 z10_${TAG}_ed z10_${TAG}_ed --tag $TAG --gen l39srv/gen39b_sum.json --metric ed
+  s40 z10_${TAG}_upper z10_${TAG}_upper --tag $TAG --gen l39srv/gen39b_sum.json --fail-mode upper
+  s40 z10_${TAG}_nofail z10_${TAG}_nofail --tag $TAG --gen l39srv/gen39b_sum.json --fail-mode none
+  s40 z10_${TAG}_a100 z10_${TAG}_a100 --tag $TAG --gen l39srv/gen39e_sum.json
+done
+s40 z10_K18_s0 z10_K18_s0 --tag K18_s0 --gen l39srv/gen39b_sum.json
+
+step "Z10: per-protein comparison original -> Z10 (cmp40)"
+for TAG in S18_s0 S18_s1 S18d50_s0; do
+  case $TAG in S18d50_s0) OLD="$T/z9/sum39_S18d50_s0_gen.json" ;; *) OLD="$T/sum39_gen/sum39_${TAG}_gen.json" ;; esac
+  "$PY" "$S/cmp40.py" --old "$OLD" --new "l39srv/out_z10/z10_$TAG.json" --tag $TAG --out "l39srv/out_z10/cmp40_$TAG.md" \
+    > /dev/null 2>&1 || echo "FAILED cmp40 $TAG"
+  SAME "l39srv/out_z10/cmp40_$TAG.md" "$T/z10/cmp40_$TAG.md"
+done
 echo; echo "Done. Outputs are in ./work/l39srv."

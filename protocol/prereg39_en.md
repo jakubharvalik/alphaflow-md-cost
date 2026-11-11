@@ -94,3 +94,42 @@ Installing AlphaFlow/ESMFlow to measure the generator cost directly (cost only f
 - **Z9-iii (secondary):** paired ΔJS = JS(S18d50_s0) − JS(S18_s0) over proteins with both runs; distillation does not worsen the quality of S18 if the median ΔJS ≤ +0.03 in both core and TICA. Primarily the JS of all frames of the window 50–520 ps against the union of the replicas (sub38 js_union, n ≈ 8 460 depending on the number of boxes), secondarily af38 (run, 250 evenly spaced). Noise scale: the same difference S18_s1 − S18_s0 (descriptive).
 - **Z9b (A100, sensitivity, not decisive):** gen39e.pbs = gen39b.pbs modified by patch39l.py (SHA 904a5214…) for the A100 (cluster zia.cerit-sc.cz, 4× A100 40 GB, checked with pbsnodes on 10 Nov), only afT_base and afT_dist (sets B and K, same number of samples) + bench39 on the same A100 (warm-up, anchor, all 25 p2, anchor at the end). If the GPU is not an A100, the job ends. (i-a) and (i-b) of both seeds and Z9-i are recomputed with t_gen and v_gen from the A100 and replace the sensitivity "÷ 2.57". The primary accounting remains the A40 (Z8). The fit and the ratio to 38 s / 3.8 s from the publication are reported.
 - **Evaluation:** sum39.py `--root l39 --tag S18d50_s0 --gen gen39b_sum.json --v-src xfer --tstar first`, then cmp39d.py (SHA b6cb9de9…). The result of Z9 will be reported in the preprint whatever it is; atom clashes in the distilled samples will be reported as a separate result.
+
+## Z10 — corrected re-analysis after external review (recorded 11 Nov 2026 16:00 CET, BEFORE computation)
+
+Reason: an external review (11 Nov) and a check of the code showed three defects of the primary evaluation that favour MD: (1) t* compares the replica window with the union of all three replicas, which contains it; (2) sub38 does not keep equal n over the whole grid (100 ns: 9,991 replica frames against 8,460 S18 frames); (4) eval39 fits PCA/TICA and the histogram edges also on the held-out replica and does not apply the 100 ps burn-in when building the references. In addition, (6) the cost does not include the time of failed boxes. Rules after Gemini 39t, modified. The original pre-specified evaluations (Z3, Z8, Z9) stay unchanged and are reported in the text; Z10 is a corrected re-analysis reported next to them, not a replacement.
+
+- **Data:** existing runs S18_s0, S18_s1, S18d50_s0, K18 and ATLAS 3 × 100 ns for the 25 phase-B proteins. No new simulations.
+- **Folds k = 1, 2, 3:** reference R_-k = the two other replicas, frames from 100 ps. The 100 ps burn-in applies everywhere in the same way (reference, replica, controls).
+- **Projection without leakage:** alignment of the core Cα (trim 4), PCA (first 10 components) and TICA (lag 5 ns computed only within each continuous trajectory, never across a seam; 10 PCs → 2 TICs) are fitted on R_-k only. Edges of the 30 × 30 2D histogram from R_-k with a 25 % margin as before; points outside the edges go to the edge bins. JS in bits (log2), not square-rooted.
+- **MD branch:** prefix of the held-out replica R_k from 0.1 ns to t on the sub38 grid. **S18 branch:** valid boxes, window 50–520 ps.
+- **Equal n:** at each grid point n(t) = min(|R_k[0.1; t]|, n_S18); both branches are subsampled to n(t) (also at 100 ns): the replica with a uniform time stride and a random offset, S18 with the same number of frames from each box. 20 repetitions, JS averaged.
+- **t\*:** JS_MD(t) and JS_S18 are averaged over the 3 folds; t* = the first t at which the mean JS_MD(t) ≤ the mean JS_S18, with linear interpolation in time between grid points as before; sensitivity t* "last"; censoring at 100 ns as before.
+- **Cost:** as in sum39 (v_B xfer, generator from gen39b on the A40) plus the GPU time of failed boxes and attempts where the log has it; where it does not, an upper estimate = the time of a successful box of the same protein, and both variants are reported.
+- **Decision rules:** the same thresholds as Z3 and Z9-i (does not pay off: upper bound of the one-sided 95 % CI of the median < 1.5×; pays off: median ≥ 1.5× and lower bound > 1.0×; otherwise undecided), bootstrap 10,000 over proteins. The result is labelled as the corrected re-analysis after external review.
+- **Subsets:** all 25 proteins and the 19 proteins without the six pilot proteins of line 38 (7jfl_C, 6ro6_A, 6okd_C, 6ono_C, 6jv8_A, 6pce_B); both are reported.
+- **Sensitivity (not decisive):** 15 × 15 bins; energy distance on the same 2D projections (no binning).
+- **LOO (exploratory 23/25):** recomputed with projection and edges fitted per fold and with equal n.
+- **Equal-MD-budget control without an in-sample reference:** for fold k the reference = R_k alone (projection from R_k), the control = the first 5.4 ns of each of the two other replicas, pooled, and S18 against the same R_k; reported as the number of proteins on which S18 is closer and the median JS difference with a paired bootstrap. The original Z7a (3 × 3.6 ns) stays reported.
+- **Evaluation:** the new scripts (sub40.py, eval40.py) are recorded with SHA256 in this log before running; the results are reported whatever they are.
+
+**Z10 — implementation (recorded 11 Nov 2026 ~17:10 CET, before running on the real data; tested on synthetic data only).** Scripts (SHA256):
+- `l39/sub40.py` 27f6042d50513bda6a1edae76a06d17e579cd04b86e8e0c03481b294be8e5805 (t*, LOO, (iii), 2 × 5.4 ns control; per fold; also prints the RMSD of the core Cα from the crystal as a check of the atom mapping)
+- `l39/patch40.py` c3cc232243a340d4383e558b118ba3140e4729554fd43915a7619ae1797ac566 → `l39/sum40.py` 9a5a325cd9ca1b4c63b42f1e73fb292669d0162d056f59a343a5c9fa60200bfe (= sum39 539504c3… + patch40: cost, decision)
+- `l39/fail40.py` 57d950d9ebe3c68569cd5a828fa7b093db513b6ec2566857dd70fd598cdfefcc (time of failed attempts from the b39 logs)
+- `metacentrum/jobs/ana40.pbs` 9a4b8557a2ed962c3fdedb1ee40b4b64b8b212e6f45ac6696e23b2a4b58a288b (CPU only, 25 proteins)
+
+Details that Z10 did not state explicitly (fixed now, before computation):
+- sub40 computes the PCA/TICA projections with the same formulas as core36.Space (verified on synthetic data: with a fit on all three replicas, identical mu, |W| and histogram).
+- Within an S18 box, frames are also picked with a uniform stride and a random offset; the remainder of n(t) mod the number of boxes is given to random boxes, one frame each.
+- Energy distance: V-statistic, reference = R_-k subsampled to 1,500 points, each branch at most 1,500 points from the same draw with equal n, 5 of the 20 draws (computational cost); sensitivity only.
+- 2 × 5.4 ns control: frames 100–5,400 ps of both other replicas (same convention as Z7a, 100–3,600 ps); S18 subsampled to the same number, 20 draws; 30 bins only.
+- Time of failed attempts: "log" = the FAILED time stamp minus the previous time stamp (includes building the box on the CPU, so an upper estimate for that failure); "upper" = number of failures × mean GPU time of a successful box (min + eq + MD) of the same run. Number of failures = max(count in hybrid_summary, count in the log). Both are reported, "log" as primary.
+- Physical failures (only hybrid_summary_partial.json, i.e. S18d50 for 7jfl_C and 6in7_A) = 0× in all accountings and a failure in (ii), as in Z9.
+- The Z9 rule "undecided with < 20 proteins" does not apply in Z10 (the subset of 19 would be undecided automatically); the number of proteins is reported with each result.
+- The decision bounds of (i) are the 5th and 95th percentiles of the bootstrap median (one-sided 95 % bounds, i.e. a two-sided 90 % interval); the paired difference of the 2 × 5.4 ns control uses the 2.5th and 97.5th percentiles.
+
+**After Z10 — post hoc, exploratory (recorded 11 Nov 2026 ~22:05 CET, AFTER the Z10 results; decides no verdict).**
+- `l39/diag40.py` 33e693fac072eff889450f671f68060f44598f3dafaace40a56969c372991ad4: decomposition of the LOO drop between eval39 and sub40 (variants A–D basis/edges), 8 proteins with local data, S18d50_s0 (7jfl_C from the partial run, diagnostic only). Result: the change comes from the basis alone (A ≈ B, C ≈ D within 0.005); defect 4 favoured S18 in LOO. Preprint SI Table S9.
+- `l39/cmp40.py` 0c67cff5d4e261fa641addd3fceedd17407133658fa8024c8a7ee9c306a96bb6: per-protein tables only (original → Z10), no new computation of metrics. Preprint SI Tables S6–S7, Figure 5.
+- Implementation note: `eval40.py`, named in the Z10 rules, was never written; LOO, (iii) and the 2 × 5.4 ns control are computed directly by `sub40.py` (recorded in the implementation entry, ~17:10 CET).

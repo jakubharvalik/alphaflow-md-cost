@@ -1,0 +1,5 @@
+=== diag40 p2_6l34_A
+  S18d50_s0: 18 boxů, 8460 snímků v okně 50:520 ps, Cα jádra od krystalu 0.121 nm (ATLAS 0.185, 0.120, 0.122)
+  S18d50_s0 jádro A běh 0.217 vs rep 0.475 ✓; B běh 0.218 vs rep 0.477 ✓; C běh 0.218 vs rep 0.312 ✓; D běh 0.218 vs rep 0.312 ✓
+  S18d50_s0 TICA  A běh 0.213 vs rep 0.503 ✓; B běh 0.216 vs rep 0.504 ✓; C běh 0.225 vs rep 0.233 ✓; D běh 0.224 vs rep 0.233 ✓; 1. TIC (báze 3) oddělení R_k [22.938, 0.954, 0.908] sd
+Uloženo l39srv/diag40/diag40_6l34_A.json

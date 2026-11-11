@@ -4,7 +4,7 @@ This repository accompanies the preprint "What does a generative ensemble really
 
 - Author: Jakub Harvalík, Department of Organic Chemistry, University of Chemistry and Technology, Prague, Czech Republic
 - Preprint: [DOI to be added]
-- Version: 1.0 (GitHub release v1.0, archived at Zenodo: https://doi.org/10.5281/zenodo.24135297; all versions: https://doi.org/10.5281/zenodo.24135296)
+- Version: 1.1 (GitHub release v1.1, archived at Zenodo; all versions: https://doi.org/10.5281/zenodo.24135296; version 1.0: https://doi.org/10.5281/zenodo.24135297)
 - Repository: https://github.com/jakubharvalik/alphaflow-md-cost
 
 ## Contents
@@ -52,11 +52,31 @@ The other .py files in scripts/ (analyze, atlas_compare, atlas_fetch, core36, hy
 
 1. Download splits/atlas_test.csv from the AlphaFlow repository into inputs/l39/ (SHA-256 starting c5029649db0b7ff6).
 2. From the archive root run `PY=/path/to/python bash reproduce.sh` (Python 3 with NumPy, SciPy and mdtraj). The script copies inputs/l39 into ./work/l39srv, runs sumA39, gen39sum, sum39, cmp39d, grid39, fig39, fig39c, si39, chi39 and ctrl39 there, and compares each output with tables/ (JSON numerically with tools/jcmp39.py, CSV and text byte by byte).
-3. Expected result: all 23 comparisons EQUAL or IDENTICAL. gen39sum is run with --no-rmsd, because the RMSD installation check needs the generated samples; its timing part is compared, and the accounting then uses the archived generator summaries, which contain that check.
+3. Expected result: all 51 comparisons EQUAL or IDENTICAL (23 of version 1.0 and 28 of the Z10 re-analysis, see below). gen39sum is run with --no-rmsd, because the RMSD installation check needs the generated samples; its timing part is compared, and the accounting then uses the archived generator summaries, which contain that check.
 
-When the archive was assembled (11 November 2026), the script ran from a clean copy of the archive on a laptop CPU in about 5 seconds, and all 23 comparisons were EQUAL or IDENTICAL.
+When version 1.1 was assembled (11 November 2026), the script ran from a clean clone of the repository on a laptop CPU in well under a minute, and all 51 comparisons were EQUAL or IDENTICAL.
 
 The MD simulations and the generator runs themselves need the cluster, the ATLAS data and the AlphaFlow weights; jobs/ shows how they were run.
+
+## Version 1.1 — corrected re-analysis (Z10)
+
+An external review (11 November 2026) and a check of the code found defects in the first evaluation. Version 1.1 adds a corrected re-analysis, Z10, whose rules and script checksums were recorded in protocol/prereg39.md before it was run (entry "Z10"; English translation in protocol/prereg39_en.md). It uses the existing trajectories only; no new simulations. All files of version 1.0 are kept unchanged, and the original pre-specified results are reported next to the corrected ones.
+
+What changed:
+- Defect 1: t* compared a replica window with the union of all three replicas, which contains that replica. Z10 uses three folds; the reference is the two other replicas (R_-k).
+- Defect 2: sub38 did not keep an equal number of frames over the whole time grid (at 100 ns, 9,991 replica frames against 8,460 S18 frames). Z10 subsamples both branches to the same n at every grid point.
+- Defect 4: eval39 fitted the PCA/TICA basis and the histogram edges also on the held-out replica, and did not apply the 100 ps burn-in when building the references. Z10 fits basis and edges on R_-k only, with the same burn-in everywhere.
+- Defect 6: the cost did not include the GPU time of failed boxes. Z10 adds it (from the job logs, and an upper estimate as sensitivity).
+
+Defects are numbered as in the external review; item 3 (first vs last crossing) is addressed by reporting both crossing definitions and further sensitivity analyses, item 5 (normalisation of MD speed to the A40) and the remaining items concern the text of the preprint, not the code.
+
+New files:
+- scripts/sub40.py (t*, leave-one-out and the equal-budget 2 × 5.4 ns control, per fold), scripts/patch40.py (documents how sum40.py was derived from sum39.py; sum40.py is included, no patching needed), scripts/sum40.py (accounting and decisions), scripts/fail40.py (time of failed boxes from the b39 logs), scripts/cmp40.py (per-protein tables, original → Z10), scripts/diag40.py (post hoc diagnostic, see below), jobs/ana40.pbs (runs sub40.py for the 25 proteins on the cluster).
+- inputs/l39/ana40/sub40_<protein>.json (output of sub40.py, metrics only) and inputs/l39/fail40.json.
+- tables/z10/: sum40 outputs for every reported variant (z10_<run>[_variant].json/.txt: primary, last crossing, 15 × 15 bins, energy distance, without the six pilot proteins, A100 generator cost, failed boxes upper estimate or not counted, and K18), cmp40_<run>.md, fig1_z10.csv (data of the preprint's Figure 1) and tfl_rows.txt (first and last crossing per protein).
+- tables/diag40/: post hoc decomposition of the change in the leave-one-out comparison (variants A–D of basis and edges) on 8 proteins.
+
+Recomputing: reproduce.sh now also runs sum40 in all variants and cmp40 from inputs/ and compares them with tables/z10 (51 comparisons in total, all EQUAL or IDENTICAL when the archive was assembled). Three parts cannot be recomputed from this archive: sub40.py and diag40.py need the ATLAS and S18 trajectories (not included), and fail40.py needs the b39 job logs of all runs (only those of S18d50 are included). fig1_z10.csv and tfl_rows.txt were extracted from the z10 JSON files and sub40 outputs without a separate script.
 
 ## Environment
 
@@ -82,4 +102,4 @@ The MD simulations and the generator runs themselves need the cluster, the ATLAS
 
 ## How to cite
 
-Harvalík J. What does a generative ensemble really save? Honest cost accounting of AlphaFlow-seeded molecular dynamics on ATLAS test proteins. Code and derived data, version 1.0. https://github.com/jakubharvalik/alphaflow-md-cost, archived at Zenodo, https://doi.org/10.5281/zenodo.24135297. CITATION.cff holds the same information in machine-readable form.
+Harvalík J. What does a generative ensemble really save? Honest cost accounting of AlphaFlow-seeded molecular dynamics on ATLAS test proteins. Code and derived data, version 1.1. https://github.com/jakubharvalik/alphaflow-md-cost, archived at Zenodo, https://doi.org/10.5281/zenodo.24135296 (all versions; version 1.0: https://doi.org/10.5281/zenodo.24135297). CITATION.cff holds the same information in machine-readable form.

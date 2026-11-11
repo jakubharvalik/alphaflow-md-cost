@@ -92,3 +92,42 @@ Instalace AlphaFlow/ESMFlow pro přímé měření ceny generátoru (cena jen z 
 - **Z9-iii (sekundární):** párový ΔJS = JS(S18d50_s0) − JS(S18_s0) přes proteiny s oběma během; destilace kvalitu S18 nezhorší, když medián ΔJS ≤ +0,03 v jádru i TICA. Primárně JS všech snímků okna 50–520 ps proti sjednocení replik (sub38 js_union, n ≈ 8 460 podle počtu boxů), sekundárně af38 (běh 250 rovnoměrně). Měřítko šumu: týž rozdíl S18_s1 − S18_s0 (popisně).
 - **Z9b (A100, citlivost, nerozhoduje):** gen39e.pbs = gen39b.pbs upravená patch39l.py (SHA 904a5214…) na A100 (cluster zia.cerit-sc.cz, 4× A100 40 GB, ověřeno pbsnodes 10. 11.), jen afT_base a afT_dist (sady B a K, stejný počet vzorků) + bench39 na téže A100 (zahřátí, kotva, všech 25 p2, kotva na konci). Když GPU není A100, úloha končí. (i-a) a (i-b) obou seedů a Z9-i se přepočtou s t_gen a v_gen z A100 a nahradí citlivost „÷ 2,57“. Primární účtování zůstává A40 (Z8). Fit a poměr k 38 s / 3,8 s z publikace se hlásí.
 - **Vyhodnocení:** sum39.py `--root l39 --tag S18d50_s0 --gen gen39b_sum.json --v-src xfer --tstar first`, pak cmp39d.py (SHA b6cb9de9…). Výsledek Z9 se do preprintu uvede vždy, ať vyjde jakkoli; kolize atomů v destilovaných vzorcích se uvedou jako samostatný výsledek.
+
+## Z10 — opravený přepočet po externím posudku (zapsáno 11. 11. 2026 16:00 CET, PŘED výpočtem)
+
+Důvod: externí posudek (11. 11.) a kontrola kódu ukázaly tři vady primárního vyhodnocení, které zvýhodňují MD: (1) t* porovnává okno repliky se sjednocením všech tří replik, které ji obsahuje; (2) sub38 nedrží stejné n na celé mřížce (100 ns: 9 991 snímků repliky proti 8 460 S18); (4) eval39 fituje PCA/TICA a hrany histogramu i z vynechané repliky a burn-in 100 ps neuplatní při stavbě referencí. Dále (6) cena nezahrnuje čas selhaných boxů. Pravidla podle Gemini 39t, upravená. Původní předem daná vyhodnocení (Z3, Z8, Z9) zůstávají beze změny a v textu se uvádějí; Z10 je opravený přepočet uvedený vedle nich, ne jejich náhrada.
+
+- **Data:** existující běhy S18_s0, S18_s1, S18d50_s0, K18 a ATLAS 3 × 100 ns pro 25 proteinů fáze B. Žádné nové simulace.
+- **Foldy k = 1, 2, 3:** reference R_-k = dvě zbylé repliky, snímky od 100 ps. Burn-in 100 ps platí všude stejně (reference, replika, kontroly).
+- **Projekce bez úniku:** zarovnání Cα jádra (trim 4), PCA (prvních 10 složek) a TICA (lag 5 ns počítaný jen uvnitř každé souvislé trajektorie, nikdy přes šev; 10 PC → 2 TIC) se fitují jen na R_-k. Hrany 2D histogramu 30 × 30 z R_-k s okrajem 25 % jako dosud; body mimo hrany se přiřadí do krajních binů. JS v bitech (log2), neodmocněná.
+- **Větev MD:** prefix vynechané repliky R_k od 0,1 ns do t na mřížce sub38. **Větev S18:** platné boxy, okno 50–520 ps.
+- **Stejné n:** na každém bodě mřížky n(t) = min(|R_k[0,1; t]|, n_S18); obě větve se podvzorkují na n(t) (i v bodě 100 ns): replika rovnoměrným krokem v čase s náhodným posunem, S18 stejným počtem snímků z každého boxu. 20 opakování, JS se průměruje.
+- **t*:** JS_MD(t) a JS_S18 se průměrují přes 3 foldy; t* = první t, kdy průměrná JS_MD(t) ≤ průměrná JS_S18, lineární interpolace v čase mezi body mřížky jako dosud; citlivost t* „last“; cenzura na 100 ns jako dosud.
+- **Cena:** jako v sum39 (v_B xfer, generátor z gen39b na A40) a navíc GPU čas selhaných boxů a pokusů, pokud je v logu; kde v logu není, horní odhad = čas úspěšného boxu stejného proteinu a hlásí se obě varianty.
+- **Rozhodovací pravidla:** stejné prahy jako Z3 a Z9-i (nevyplácí se: horní mez jednostranného 95% CI mediánu < 1,5×; vyplácí se: medián ≥ 1,5× a dolní mez > 1,0×; jinak nerozhodnuto), bootstrap 10 000 přes proteiny. Výsledek se označí jako opravený přepočet po externím posudku.
+- **Podskupiny:** všech 25 proteinů a 19 proteinů bez šesti pilotních z linie 38 (7jfl_C, 6ro6_A, 6okd_C, 6ono_C, 6jv8_A, 6pce_B); obě se hlásí.
+- **Citlivost (nerozhoduje):** 15 × 15 binů; energy distance na týchž 2D projekcích (bez binování).
+- **LOO (exploratorní 23/25):** přepočítá se s projekcí a hranami fitovanými po foldech a se stejným n.
+- **Kontrola stejného rozpočtu MD bez in-sample reference:** pro fold k reference = samotná R_k (projekce z R_k), kontrola = prvních 5,4 ns každé ze dvou zbylých replik spojených, S18 proti téže R_k; hlásí se počet proteinů, kde je S18 blíž, a medián rozdílu JS s párovým bootstrapem. Původní Z7a (3 × 3,6 ns) zůstává uvedena.
+- **Vyhodnocení:** nové skripty (sub40.py, eval40.py) se před spuštěním zapíšou se SHA256 do tohoto logu; výsledky se uvedou vždy, ať vyjdou jakkoli.
+
+**Z10 — implementace (zapsáno 11. 11. 2026 ~17:10 CET, před spuštěním na skutečných datech; testováno jen na umělých datech).** Skripty (SHA256):
+- `l39/sub40.py` 27f6042d50513bda6a1edae76a06d17e579cd04b86e8e0c03481b294be8e5805 (t*, LOO, (iii), kontrola 2 × 5,4 ns; po foldech; vypisuje i RMSD Cα jádra od krystalu jako kontrolu mapování atomů)
+- `l39/patch40.py` c3cc232243a340d4383e558b118ba3140e4729554fd43915a7619ae1797ac566 → `l39/sum40.py` 9a5a325cd9ca1b4c63b42f1e73fb292669d0162d056f59a343a5c9fa60200bfe (= sum39 539504c3… + patch40: cena, rozhodnutí)
+- `l39/fail40.py` 57d950d9ebe3c68569cd5a828fa7b093db513b6ec2566857dd70fd598cdfefcc (čas selhaných pokusů z logů b39)
+- `metacentrum/jobs/ana40.pbs` 9a4b8557a2ed962c3fdedb1ee40b4b64b8b212e6f45ac6696e23b2a4b58a288b (jen CPU, 25 proteinů)
+
+Upřesnění, která Z10 výslovně neurčovalo (stanovena teď, před výpočtem):
+- Projekce PCA/TICA počítá sub40 stejnými vzorci jako core36.Space (ověřeno na umělých datech: při fitu na všech třech replikách shodné mu, |W| i histogram).
+- Uvnitř boxu S18 se snímky vybírají také rovnoměrným krokem s náhodným posunem; zbytek n(t) mod počet boxů dostanou náhodné boxy po jednom snímku.
+- Energy distance: V-statistika, reference = R_-k podvzorkovaná na 1 500 bodů, každá větev nejvýš 1 500 bodů z téhož výběru se shodným n, 5 losů z 20 (výpočetní cena); jen citlivost.
+- Kontrola 2 × 5,4 ns: snímky 100–5 400 ps obou zbylých replik (stejná konvence jako Z7a 100–3 600 ps); S18 podvzorkován na stejný počet, 20 losů; jen 30 binů.
+- Čas selhaných pokusů: „log“ = razítko SELHAL minus předchozí razítko (zahrnuje i stavbu boxu na CPU, tedy horní odhad pro dané selhání); „upper“ = počet selhání × průměrný GPU čas úspěšného boxu (min + ekv + MD) téhož běhu. Počet selhání = max(počet v hybrid_summary, počet v logu). Hlásí se obě, primárně „log“.
+- Fyzikální selhání (jen hybrid_summary_partial.json, tj. S18d50 u 7jfl_C a 6in7_A) = 0× ve všech účtováních a neúspěch v (ii), jako Z9.
+- Pravidlo Z9 „nerozhodnuto při < 20 proteinech“ se v Z10 neuplatňuje (podskupina 19 by byla nerozhodnutá automaticky); počet proteinů se hlásí u každého výsledku.
+- Meze rozhodnutí (i) jsou 5. a 95. percentil bootstrapového mediánu (jednostranné 95% meze, tj. dvoustranný 90% interval), párový rozdíl u kontroly 2 × 5,4 ns s 2,5. a 97,5. percentilem.
+
+**Po Z10 — post hoc, exploratorní (zapsáno 11. 11. 2026 ~22:05 CET, PO výsledcích Z10; nerozhoduje o žádném verdiktu).**
+- `l39/diag40.py` 33e693fac072eff889450f671f68060f44598f3dafaace40a56969c372991ad4: rozklad poklesu LOO mezi eval39 a sub40 (varianty A–D báze/hrany), 8 proteinů s lokálními daty, S18d50_s0 (7jfl_C z partial, jen diagnostika). Výsledek: změnu dělá jen báze (A ≈ B, C ≈ D ≤ 0,005); vada 4 v LOO zvýhodňovala S18. Preprint SI Tabulka S9.
+- `l39/cmp40.py` 0c67cff5d4e261fa641addd3fceedd17407133658fa8024c8a7ee9c306a96bb6: jen tabulky po proteinech (původní → Z10), žádný nový výpočet metrik. Preprint SI Tabulky S6–S7, Obr. 5.
+- Poznámka k implementaci: `eval40.py` uvedený v pravidlech Z10 nevznikl; LOO, (iii) i kontrolu 2 × 5,4 ns počítá přímo `sub40.py` (zapsáno v implementaci ~17:10 CET).

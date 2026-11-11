@@ -1,0 +1,47 @@
+#!/bin/bash
+#PBS -N l39_ana40
+#PBS -l select=1:ncpus=8:mem=32gb:scratch_local=10gb
+#PBS -l walltime=8:00:00
+#PBS -j oe
+# prereg39 Z10 (opravený přepočet po externím posudku 11. 11. 2026): sub40.py pro 25 proteinů fáze B, jen CPU.
+# Jen čte běhy S18_s0, S18_s1, S18d50_s0, K18_s0 (kde mají hybrid_summary.json a pos.npz) a ATLAS; nic nemaže, nic nesimuluje.
+# 4 proteiny souběžně po 2 vláknech. Hotové ana40/sub40_<N>.json přeskočí, lze spustit znovu.
+. /etc/profile >/dev/null 2>&1 || true
+W=/storage/brno2/home/jakub_harvalik/md_pilot_work
+L=$W/l39
+A=$L/ana40
+P=$W/envs/omm13/bin/python
+mkdir -p $L/logs $A
+exec > >(tee -a $L/logs/ana40_${PBS_JOBID%%.*}.log) 2>&1
+set -u
+echo "$(date '+%F %T') start na $(hostname), PBS_JOBID $PBS_JOBID"
+trap 'clean_scratch' TERM EXIT
+export TMPDIR=$SCRATCHDIR OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2
+cd $SCRATCHDIR || exit 5
+tar xzf $L/code39.tgz --warning=no-unknown-keyword || exit 6
+cp $L/sub40.py . || { echo "chybí $L/sub40.py"; exit 6; }
+sha256sum sub40.py
+for N in $(awk 'NF{print $1}' $L/listB.txt); do
+  m=""
+  [ -s $L/atlas/cache/$N/R3_bb.npy ] || m="$m ATLAS"
+  [ -s $L/sys/p2_$N/solute.pdb ] || m="$m p2"
+  for T in S18_s0 S18_s1 S18d50_s0; do [ -s $L/runs/hyb39_${N}_$T/pos.npz ] || m="$m $T"; done
+  [ -n "$m" ] && echo "$N chybí:$m"
+done
+one() {
+  N=$1
+  [ -s $A/sub40_$N.json ] && return 0
+  RUNS=""
+  for T in S18_s0 S18_s1 S18d50_s0 K18_s0; do
+    D=$L/runs/hyb39_${N}_$T
+    [ -s $D/hybrid_summary.json ] && [ -s $D/pos.npz ] && RUNS="$RUNS $T=$D"
+  done
+  [ -n "$RUNS" ] || { echo "$N: žádný běh"; return 0; }
+  t0=$(date +%s)
+  $P sub40.py --sys $L/sys/p2_$N --atlas $L/atlas/cache/$N --runs $RUNS --out $A/sub40_$N.json < /dev/null > $A/sub40_$N.txt 2>&1
+  echo "$(date '+%T') $N kód $? za $(( $(date +%s) - t0 )) s"
+}
+export -f one
+export L A P
+awk 'NF{print $1}' $L/listB.txt | xargs -P 4 -I{} bash -c 'one {}'
+echo "$(date '+%F %T') konec, sub40 JSON $(ls $A/sub40_*.json 2>/dev/null | wc -l) z $(awk 'NF' $L/listB.txt | wc -l)"

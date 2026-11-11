@@ -1,0 +1,5343 @@
+{
+ "tag": "S18_s1",
+ "v_src": "xfer",
+ "tstar": "last",
+ "metric": "js30",
+ "fail_mode": "log",
+ "exclude": [],
+ "n_list": 25,
+ "n_ok": 25,
+ "n_phys_fail": 0,
+ "rows": [
+  {
+   "name": "7lp1_A",
+   "L": 39,
+   "af_tica": 0.386,
+   "af_core": 0.237,
+   "good": true,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 1001.7,
+   "build_s": 1863.9,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1001.7,
+   "gpu_B": "NVIDIA RTX A4000",
+   "v_bench_nsd": 963.4,
+   "v_s18md_nsd": 986.7,
+   "v_ratio_s18md_bench": 1.024,
+   "n_atoms_box": 8411.833333333334,
+   "n_atoms_p2": 9505,
+   "thr_ratio_box_bench": 0.906,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 963.4,
+   "t_jádro": 25.935834779166804,
+   "cens_jádro": false,
+   "md_cost_jádro": 2336.1039252508604,
+   "md_cost_build_jádro": 2439.6539252508605,
+   "t_TICA": 0.5,
+   "cens_TICA": false,
+   "md_cost_TICA": 54.957854127742024,
+   "md_cost_build_TICA": 158.50785412774204,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.063,
+     0.05
+    ],
+    "TICA": [
+     0.145,
+     0.088
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.1071,
+     0.1305
+    ],
+    "TICA": [
+     0.1705,
+     0.1888
+    ]
+   },
+   "rama": 0.059,
+   "chi1": 0.053,
+   "dJS_run_minus_af": {
+    "jádro": -0.095,
+    "TICA": -0.222,
+    "rama": -0.225,
+    "chi1": -0.232
+   },
+   "v_gen": 1161.4,
+   "v_gen_src": "změřeno",
+   "v_B": 963.4,
+   "tgen": {
+    "afT_base": {
+     "t_s": 5.7414,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 0.5729,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 2.0794,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.2194,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.6907,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2832,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 9.219,
+    "jádro, 250 vzorků": 1.844,
+    "TICA, 50 vzorků": -16.011,
+    "TICA, 250 vzorků": -3.202
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 2.0573519888747067,
+     "TICA": 0.04840009439299854
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 1.612367662546419,
+     "TICA": 0.03793164586588284
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.9779784563548102,
+     "TICA": 0.023007365709832597
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.22245007239312303,
+     "TICA": 0.005233234059984766
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 2.3259261080448574,
+     "TICA": 0.05471841658076462
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 2.3115018927314273,
+     "TICA": 0.05437908068370366
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 2.2692955493289064,
+     "TICA": 0.053386158220405266
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 1.9603120963756484,
+     "TICA": 0.04611718899701437
+    },
+    "destil., 250 | p=2": {
+     "jádro": 2.301400953134501,
+     "TICA": 0.054141451715693865
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 2.232479903846291,
+     "TICA": 0.05252005425466026
+    },
+    "destil., 250 | p=1": {
+     "jádro": 2.0484939527575787,
+     "TICA": 0.048191705266332825
+    },
+    "destil., 250 | p=0": {
+     "jádro": 1.1969585106578164,
+     "TICA": 0.028158966095066875
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 2.3321392884604775,
+     "TICA": 0.054864584334373585
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.85507483729107,
+     "TICA": 0.020116004972295515
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 2.2544213241928914,
+     "TICA": 0.053036235647846555
+    },
+    "změřeno: destil., 250": {
+     "jádro": 1.9892555321923924,
+     "TICA": 0.04679809582927418
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 1.4346090102885234,
+     "TICA": 0.03374979677298155
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 2.30175126009662,
+     "TICA": 0.054149692838323715
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 1.2887963369997524,
+     "TICA": 0.030319490637213276
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 2.293062695738886,
+     "TICA": 0.05394529060801601
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.8133831896486527,
+    "TICA": 0.052846685605840195
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 11.11,
+    "jádro, 250 vzorků": 2.22,
+    "TICA, 50 vzorků": -19.3,
+    "TICA, 250 vzorků": -3.86
+   }
+  },
+  {
+   "name": "7jfl_C",
+   "L": 47,
+   "af_tica": 0.321,
+   "af_core": 0.354,
+   "good": true,
+   "good2": true,
+   "boxes": 17,
+   "gpu_s18_s": 1090.2,
+   "build_s": 1575.5,
+   "fail_n": 1,
+   "fail_log_s": 93.0,
+   "fail_upper_s": 58.7,
+   "fail_added_s": 93.0,
+   "gpu_s18_ok_s": 997.2,
+   "gpu_B": "Quadro RTX 5000",
+   "v_bench_nsd": 1308.7,
+   "v_s18md_nsd": 935.4,
+   "v_ratio_s18md_bench": 0.715,
+   "n_atoms_box": 10165.588235294117,
+   "n_atoms_p2": 13026,
+   "thr_ratio_box_bench": 0.558,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.60",
+   "v_B_nsd": 789.6,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 10952.72409082731,
+   "md_cost_build_jádro": 11045.400561415547,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 10952.72409082731,
+   "md_cost_build_TICA": 11045.400561415547,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.311,
+     0.396
+    ],
+    "TICA": [
+     0.381,
+     0.415
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.3742,
+     0.5312
+    ],
+    "TICA": [
+     0.4076,
+     0.5278
+    ]
+   },
+   "rama": 0.045,
+   "chi1": 0.06,
+   "dJS_run_minus_af": {
+    "jádro": 0.007,
+    "TICA": 0.071,
+    "rama": -0.234,
+    "chi1": -0.211
+   },
+   "v_gen": 864.3,
+   "v_gen_src": "změřeno",
+   "v_B": 789.6111533865999,
+   "tgen": {
+    "afT_base": {
+     "t_s": 6.7638,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 0.6758,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 2.3547,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.247,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.6867,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2845,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 113.497,
+    "jádro, 250 vzorků": 22.699,
+    "TICA, 50 vzorků": 113.497,
+    "TICA, 250 vzorků": 22.699
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 8.5267808219445,
+     "TICA": 8.5267808219445
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 6.512553548704187,
+     "TICA": 6.512553548704187
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 3.965905087333742,
+     "TICA": 3.965905087333742
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 1.0342320344117495,
+     "TICA": 1.0342320344117495
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 10.010842246680392,
+     "TICA": 10.010842246680392
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 9.938664930773268,
+     "TICA": 9.938664930773268
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 9.747621513383072,
+     "TICA": 9.747621513383072
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 8.555478902380338,
+     "TICA": 8.555478902380338
+    },
+    "destil., 250 | p=2": {
+     "jádro": 9.87060147086212,
+     "TICA": 9.87060147086212
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 9.529422492274026,
+     "TICA": 9.529422492274026
+    },
+    "destil., 250 | p=1": {
+     "jádro": 8.710944158852609,
+     "TICA": 8.710944158852609
+    },
+    "destil., 250 | p=0": {
+     "jádro": 5.368456078241011,
+     "TICA": 5.368456078241011
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 10.04652732602028,
+     "TICA": 10.04652732602028
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 3.7240281450078543,
+     "TICA": 3.7240281450078543
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 9.716872265778834,
+     "TICA": 9.716872265778834
+    },
+    "změřeno: destil., 250": {
+     "jádro": 8.589490120231122,
+     "TICA": 8.589490120231122
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 6.314420029757752,
+     "TICA": 6.314420029757752
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 9.923478926154223,
+     "TICA": 9.923478926154223
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 6.0001501430130135,
+     "TICA": 6.0001501430130135
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 9.905060545275164,
+     "TICA": 9.905060545275164
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 3.8620164294130728,
+    "TICA": 3.8620164294130728
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 124.23,
+    "jádro, 250 vzorků": 24.85,
+    "TICA, 50 vzorků": 124.23,
+    "TICA, 250 vzorků": 24.85
+   }
+  },
+  {
+   "name": "6okd_C",
+   "L": 51,
+   "af_tica": 0.403,
+   "af_core": 0.381,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 1264.0,
+   "build_s": 1638.5,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1264.0,
+   "gpu_B": "Quadro RTX 5000",
+   "v_bench_nsd": 692.7,
+   "v_s18md_nsd": 776.9,
+   "v_ratio_s18md_bench": 1.122,
+   "n_atoms_box": 14191.222222222223,
+   "n_atoms_p2": 15071,
+   "thr_ratio_box_bench": 1.056,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 1.12",
+   "v_B_nsd": 773.1,
+   "t_jádro": 26.396722224472683,
+   "cens_jádro": false,
+   "md_cost_jádro": 2962.6002523259745,
+   "md_cost_build_jádro": 3053.6280301037523,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 11188.804086495997,
+   "md_cost_build_TICA": 11279.831864273774,
+   "loo_beats": false,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.367,
+     0.314
+    ],
+    "TICA": [
+     0.497,
+     0.554
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.4737,
+     0.5609
+    ],
+    "TICA": [
+     0.5561,
+     0.5928
+    ]
+   },
+   "rama": 0.066,
+   "chi1": 0.081,
+   "dJS_run_minus_af": {
+    "jádro": -0.027,
+    "TICA": -0.033,
+    "rama": -0.244,
+    "chi1": -0.228
+   },
+   "v_gen": 902.1,
+   "v_gen_src": "změřeno",
+   "v_B": 773.0568471194684,
+   "tgen": {
+    "afT_base": {
+     "t_s": 7.2478,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 0.7237,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 2.492,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.2571,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5412,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2688,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 12.187,
+    "jádro, 250 vzorků": 2.437,
+    "TICA, 50 vzorků": 106.18,
+    "TICA, 250 vzorků": 21.236
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 1.9846062949856005,
+     "TICA": 7.495230247815868
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 1.5328872738673622,
+     "TICA": 5.789230383180873
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.9625775343185587,
+     "TICA": 3.635350885120933
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.2752322791086933,
+     "TICA": 1.0394652625878853
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 2.33537503752886,
+     "TICA": 8.819972840712687
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 2.3192898748855777,
+     "TICA": 8.759224269124669
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 2.278440301079214,
+     "TICA": 8.604948349524168
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 2.037551755382376,
+     "TICA": 7.695188505155431
+    },
+    "destil., 250 | p=2": {
+     "jádro": 2.3021591564264585,
+     "TICA": 8.694526963928153
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 2.2260640386498336,
+     "TICA": 8.407139772870892
+    },
+    "destil., 250 | p=1": {
+     "jádro": 2.0497064433546743,
+     "TICA": 7.741092917115083
+    },
+    "destil., 250 | p=0": {
+     "jádro": 1.3381211618455169,
+     "TICA": 5.053660382337848
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 2.3438293135490302,
+     "TICA": 8.851901967164554
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.8769211420573877,
+     "TICA": 3.3118537845540073
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 2.2680623734193373,
+     "TICA": 8.565754199277599
+    },
+    "změřeno: destil., 250": {
+     "jádro": 2.008370906394245,
+     "TICA": 7.58498166839118
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 1.4880000026359028,
+     "TICA": 5.619705357524138
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 2.316339582721094,
+     "TICA": 8.748081948792922
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 1.4773497097591703,
+     "TICA": 5.579482570002263
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 2.3151039233081137,
+     "TICA": 8.74341525402753
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.9751981189687918,
+    "TICA": 3.6022955998181216
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 14.22,
+    "jádro, 250 vzorků": 2.84,
+    "TICA, 50 vzorků": 123.9,
+    "TICA, 250 vzorků": 24.78
+   }
+  },
+  {
+   "name": "6ro6_A",
+   "L": 58,
+   "af_tica": 0.573,
+   "af_core": 0.621,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 1112.1,
+   "build_s": 1700.7,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1112.1,
+   "gpu_B": "NVIDIA RTX A4000",
+   "v_bench_nsd": 1093.7,
+   "v_s18md_nsd": 882.6,
+   "v_ratio_s18md_bench": 0.807,
+   "n_atoms_box": 10085.722222222223,
+   "n_atoms_p2": 10701,
+   "thr_ratio_box_bench": 0.761,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.78",
+   "v_B_nsd": 857.8,
+   "t_jádro": 14.182792078237956,
+   "cens_jádro": false,
+   "md_cost_jádro": 1439.473389166479,
+   "md_cost_build_jádro": 1533.9567224998123,
+   "t_TICA": 14.614620864595022,
+   "cens_TICA": false,
+   "md_cost_TICA": 1482.9703752082892,
+   "md_cost_build_TICA": 1577.4537085416225,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.448,
+     0.338
+    ],
+    "TICA": [
+     0.46,
+     0.336
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.5159,
+     0.6077
+    ],
+    "TICA": [
+     0.5664,
+     0.6056
+    ]
+   },
+   "rama": 0.048,
+   "chi1": 0.063,
+   "dJS_run_minus_af": {
+    "jádro": -0.151,
+    "TICA": -0.076,
+    "rama": -0.211,
+    "chi1": -0.195
+   },
+   "v_gen": 1084.4,
+   "v_gen_src": "změřeno",
+   "v_B": 857.760744741884,
+   "tgen": {
+    "afT_base": {
+     "t_s": 8.1537,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 0.8157,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 2.7457,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.2822,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5582,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2693,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": -2.412,
+    "jádro, 250 vzorků": -0.482,
+    "TICA, 50 vzorků": -1.953,
+    "TICA, 250 vzorků": -0.391
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 1.0223495305880124,
+     "TICA": 1.053242163683222
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.7485226006723827,
+     "TICA": 0.771140925789375
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.45340196926819043,
+     "TICA": 0.4671025484362482
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.13564453681801705,
+     "TICA": 0.13974334723648374
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 1.2875224342805924,
+     "TICA": 1.3264278741267914
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 1.275767286321323,
+     "TICA": 1.3143175174428925
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 1.2480753381307068,
+     "TICA": 1.2857887936001644
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 1.1055014124617764,
+     "TICA": 1.1389066701545882
+    },
+    "destil., 250 | p=2": {
+     "jádro": 1.2608262678056514,
+     "TICA": 1.2989250218254436
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 1.20639881766637,
+     "TICA": 1.2428529215961939
+    },
+    "destil., 250 | p=1": {
+     "jádro": 1.091856081842986,
+     "TICA": 1.124849014612025
+    },
+    "destil., 250 | p=0": {
+     "jádro": 0.6980618734137428,
+     "TICA": 0.7191554120596912
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 1.2943740573387996,
+     "TICA": 1.3334865346716027
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.3901940619781891,
+     "TICA": 0.40198466942893907
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 1.2370209411483766,
+     "TICA": 1.274400362689274
+    },
+    "změřeno: destil., 250": {
+     "jádro": 1.0507822397589694,
+     "TICA": 1.0825340322962695
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 0.7270458379970687,
+     "TICA": 0.7490151935302242
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 1.2739399591858895,
+     "TICA": 1.312434973431967
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 0.7494785607423414,
+     "TICA": 0.7721257723827891
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 1.27485996560866,
+     "TICA": 1.3133827799563795
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.4934391187727563,
+    "TICA": 0.5074311135578272
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": -3.05,
+    "jádro, 250 vzorků": -0.61,
+    "TICA, 50 vzorků": -2.47,
+    "TICA, 250 vzorků": -0.49
+   }
+  },
+  {
+   "name": "6l34_A",
+   "L": 68,
+   "af_tica": 0.263,
+   "af_core": 0.297,
+   "good": true,
+   "good2": true,
+   "boxes": 17,
+   "gpu_s18_s": 1412.6,
+   "build_s": 1925.6,
+   "fail_n": 1,
+   "fail_log_s": 116.0,
+   "fail_upper_s": 76.3,
+   "fail_added_s": 116.0,
+   "gpu_s18_ok_s": 1296.6,
+   "gpu_B": "NVIDIA GeForce RTX 2080",
+   "v_bench_nsd": 883.1,
+   "v_s18md_nsd": 711.6,
+   "v_ratio_s18md_bench": 0.806,
+   "n_atoms_box": 22404.117647058825,
+   "n_atoms_p2": 18019,
+   "thr_ratio_box_bench": 1.002,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.97",
+   "v_B_nsd": 860.2,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 10057.294759793675,
+   "md_cost_build_jádro": 10170.56534802897,
+   "t_TICA": 3.90077266318582,
+   "cens_TICA": false,
+   "md_cost_TICA": 404.93512080152846,
+   "md_cost_build_TICA": 518.2057090368226,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.236,
+     0.313
+    ],
+    "TICA": [
+     0.258,
+     0.233
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.3394,
+     0.3506
+    ],
+    "TICA": [
+     0.3628,
+     0.3831
+    ]
+   },
+   "rama": 0.029,
+   "chi1": 0.068,
+   "dJS_run_minus_af": {
+    "jádro": -0.035,
+    "TICA": 0.014,
+    "rama": -0.238,
+    "chi1": -0.251
+   },
+   "v_gen": 1203.2,
+   "v_gen_src": "změřeno",
+   "v_B": 860.2013965952581,
+   "tgen": {
+    "afT_base": {
+     "t_s": 9.4005,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 0.9406,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 3.1035,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.3233,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5715,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.274,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 75.672,
+    "jádro, 250 vzorků": 15.134,
+    "TICA, 50 vzorků": -16.338,
+    "TICA, 250 vzorků": -3.268
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 5.527998026460816,
+     "TICA": 0.22257282918507637
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 4.118264001423204,
+     "TICA": 0.1658129517666739
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 2.625259905676979,
+     "TICA": 0.10570038588215003
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.9216222311633959,
+     "TICA": 0.037107116617628104
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 7.078939079330603,
+     "TICA": 0.2850181007615416
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 7.017417060564868,
+     "TICA": 0.28254105035227556
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 6.883996598388302,
+     "TICA": 0.27716916534152225
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 6.27561135641687,
+     "TICA": 0.2526738554857909
+    },
+    "destil., 250 | p=2": {
+     "jádro": 6.920440610985976,
+     "TICA": 0.2786365043224506
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 6.636060511069163,
+     "TICA": 0.26718655750636183
+    },
+    "destil., 250 | p=1": {
+     "jádro": 6.078982824396938,
+     "TICA": 0.24475703488261794
+    },
+    "destil., 250 | p=0": {
+     "jádro": 4.256875797762497,
+     "TICA": 0.1713938545676494
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 7.119704629614665,
+     "TICA": 0.2866594370674844
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 2.139932345669181,
+     "TICA": 0.08615972620836508
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 6.802902771102128,
+     "TICA": 0.2739040985882178
+    },
+    "změřeno: destil., 250": {
+     "jádro": 5.7750287574935975,
+     "TICA": 0.23251898481654376
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 4.026382025993673,
+     "TICA": 0.1621135236690924
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 7.007539022385619,
+     "TICA": 0.2821433326081972
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.350386464764095,
+     "TICA": 0.1751588583925249
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 7.024414227629709,
+     "TICA": 0.2828227760805496
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.715817027262393,
+    "TICA": 0.13837499097329192
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 105.85,
+    "jádro, 250 vzorků": 21.17,
+    "TICA, 50 vzorků": -22.85,
+    "TICA, 250 vzorků": -4.57
+   }
+  },
+  {
+   "name": "6pce_B",
+   "L": 70,
+   "af_tica": 0.201,
+   "af_core": 0.184,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 898.6,
+   "build_s": 1255.0,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 898.6,
+   "gpu_B": "NVIDIA H100 NVL",
+   "v_bench_nsd": 865.0,
+   "v_s18md_nsd": 1106.8,
+   "v_ratio_s18md_bench": 1.279,
+   "n_atoms_box": 25278.61111111111,
+   "n_atoms_p2": 20332,
+   "thr_ratio_box_bench": 1.591,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 1.56",
+   "v_B_nsd": 1352.5,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 6397.669650027619,
+   "md_cost_build_jádro": 6467.391872249842,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 6397.669650027619,
+   "md_cost_build_TICA": 6467.391872249842,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.14,
+     0.156
+    ],
+    "TICA": [
+     0.149,
+     0.191
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.1873,
+     0.1975
+    ],
+    "TICA": [
+     0.1904,
+     0.2606
+    ]
+   },
+   "rama": 0.031,
+   "chi1": 0.052,
+   "dJS_run_minus_af": {
+    "jádro": -0.016,
+    "TICA": -0.051,
+    "rama": -0.26,
+    "chi1": -0.238
+   },
+   "v_gen": 1138.1,
+   "v_gen_src": "změřeno",
+   "v_B": 1352.463624016598,
+   "tgen": {
+    "afT_base": {
+     "t_s": 9.8823,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 0.9855,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 3.2851,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.3315,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5787,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2714,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 80.012,
+    "jádro, 250 vzorků": 16.002,
+    "TICA, 50 vzorků": 80.012,
+    "TICA, 250 vzorků": 16.002
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 4.811670028057003,
+     "TICA": 4.811670028057003
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 3.2411770433411458,
+     "TICA": 3.2411770433411458
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.888276715469763,
+     "TICA": 1.888276715469763
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.6152433644940298,
+     "TICA": 0.6152433644940298
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 7.051947162722765,
+     "TICA": 7.051947162722765
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 6.9531918054185535,
+     "TICA": 6.9531918054185535
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 6.745821549471377,
+     "TICA": 6.745821549471377
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 5.876970099235367,
+     "TICA": 5.876970099235367
+    },
+    "destil., 250 | p=2": {
+     "jádro": 6.793734010229184,
+     "TICA": 6.793734010229184
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 6.358708368641032,
+     "TICA": 6.358708368641032
+    },
+    "destil., 250 | p=1": {
+     "jádro": 5.575068496924664,
+     "TICA": 5.575068496924664
+    },
+    "destil., 250 | p=0": {
+     "jádro": 3.460818808843243,
+     "TICA": 3.460818808843243
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 7.1195967616599365,
+     "TICA": 7.1195967616599365
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 2.148605010163799,
+     "TICA": 2.148605010163799
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 6.805561088041347,
+     "TICA": 6.805561088041347
+    },
+    "změřeno: destil., 250": {
+     "jádro": 5.784904238898181,
+     "TICA": 5.784904238898181
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 4.024440701008207,
+     "TICA": 4.024440701008207
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 7.010776917120851,
+     "TICA": 7.010776917120851
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.439450624100921,
+     "TICA": 4.439450624100921
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 7.030258081544127,
+     "TICA": 7.030258081544127
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.502264882490825,
+    "TICA": 2.502264882490825
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 67.33,
+    "jádro, 250 vzorků": 13.47,
+    "TICA, 50 vzorků": 67.33,
+    "TICA, 250 vzorků": 13.47
+   }
+  },
+  {
+   "name": "6odd_B",
+   "L": 74,
+   "af_tica": 0.474,
+   "af_core": 0.271,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 852.9000000000001,
+   "build_s": 1221.4,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 852.9000000000001,
+   "gpu_B": "NVIDIA H100 NVL",
+   "v_bench_nsd": 1653.9,
+   "v_s18md_nsd": 1149.4,
+   "v_ratio_s18md_bench": 0.695,
+   "n_atoms_box": 16337.055555555555,
+   "n_atoms_p2": 19321,
+   "thr_ratio_box_bench": 0.588,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.70",
+   "v_B_nsd": 1163.6,
+   "t_jádro": 2.4818218793691136,
+   "cens_jádro": false,
+   "md_cost_jádro": 192.57228242936785,
+   "md_cost_build_jádro": 260.42783798492337,
+   "t_TICA": 2.845538080756335,
+   "cens_TICA": false,
+   "md_cost_TICA": 219.57858606013608,
+   "md_cost_build_TICA": 287.4341416156916,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.236,
+     0.163
+    ],
+    "TICA": [
+     0.326,
+     0.187
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.2811,
+     0.2227
+    ],
+    "TICA": [
+     0.3505,
+     0.3432
+    ]
+   },
+   "rama": 0.032,
+   "chi1": 0.076,
+   "dJS_run_minus_af": {
+    "jádro": 0.035,
+    "TICA": -0.069,
+    "rama": -0.254,
+    "chi1": -0.207
+   },
+   "v_gen": 1151.2,
+   "v_gen_src": "změřeno",
+   "v_B": 1163.620176589194,
+   "tgen": {
+    "afT_base": {
+     "t_s": 10.4894,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.0471,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 3.475,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.3558,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.6191,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2678,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": -14.647,
+    "jádro, 250 vzorků": -2.929,
+    "TICA, 50 vzorků": -14.283,
+    "TICA, 250 vzorků": -2.857
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 0.14429413592016951,
+     "TICA": 0.1645299206220969
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.09525534028949445,
+     "TICA": 0.10861393276114874
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.05526291278358185,
+     "TICA": 0.06301297412847699
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.01860080580604158,
+     "TICA": 0.021209379599932007
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 0.2232635062461697,
+     "TICA": 0.2545739418046489
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 0.21976241891359166,
+     "TICA": 0.25058186258918597
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 0.21266130375010775,
+     "TICA": 0.2424848882615337
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 0.1846507646268749,
+     "TICA": 0.21054615596906323
+    },
+    "destil., 250 | p=2": {
+     "jádro": 0.21371555826820865,
+     "TICA": 0.2436869912511839
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 0.1985743326107075,
+     "TICA": 0.22642236272235605
+    },
+    "destil., 250 | p=1": {
+     "jádro": 0.1725441084564306,
+     "TICA": 0.19674166442808863
+    },
+    "destil., 250 | p=0": {
+     "jádro": 0.10681251452069879,
+     "TICA": 0.12179188311061959
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 0.225785300069607,
+     "TICA": 0.25744939155837265
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.05586242344815393,
+     "TICA": 0.06369656006511351
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 0.21285851254805735,
+     "TICA": 0.24270975358724992
+    },
+    "změřeno: destil., 250": {
+     "jádro": 0.17319506567133117,
+     "TICA": 0.1974839117703869
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 0.1124590326918105,
+     "TICA": 0.12823026801489745
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 0.22122028393423954,
+     "TICA": 0.252244178348557
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 0.1283228264701162,
+     "TICA": 0.14631879749300436
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 0.2223320809776727,
+     "TICA": 0.2535118936173545
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.10188956349897477,
+    "TICA": 0.11245548651991945
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": -14.49,
+    "jádro, 250 vzorků": -2.9,
+    "TICA, 50 vzorků": -14.13,
+    "TICA, 250 vzorků": -2.83
+   }
+  },
+  {
+   "name": "6jv8_A",
+   "L": 76,
+   "af_tica": 0.361,
+   "af_core": 0.384,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 661.0999999999999,
+   "build_s": 1280.7,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 661.0999999999999,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 962.0,
+   "v_s18md_nsd": 1485.5,
+   "v_ratio_s18md_bench": 1.544,
+   "n_atoms_box": 15547.5,
+   "n_atoms_p2": 16806,
+   "thr_ratio_box_bench": 1.429,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 2.04",
+   "v_B_nsd": 1963.1,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 4407.595658793181,
+   "md_cost_build_jádro": 4478.745658793181,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 4407.595658793181,
+   "md_cost_build_TICA": 4478.745658793181,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.344,
+     0.531
+    ],
+    "TICA": [
+     0.365,
+     0.53
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.4694,
+     0.5355
+    ],
+    "TICA": [
+     0.525,
+     0.5497
+    ]
+   },
+   "rama": 0.057,
+   "chi1": 0.08,
+   "dJS_run_minus_af": {
+    "jádro": -0.059,
+    "TICA": 0.029,
+    "rama": -0.232,
+    "chi1": -0.216
+   },
+   "v_gen": 1243.3,
+   "v_gen_src": "změřeno",
+   "v_B": 1963.140079388284,
+   "tgen": {
+    "afT_base": {
+     "t_s": 10.5663,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.055,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 3.4969,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.3543,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.6013,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2765,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 71.916,
+    "jádro, 250 vzorků": 14.383,
+    "TICA, 50 vzorků": 71.916,
+    "TICA, 250 vzorků": 14.383
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 3.769849557357093,
+     "TICA": 3.769849557357093
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 2.34753369430529,
+     "TICA": 2.34753369430529
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.3102303495607885,
+     "TICA": 1.3102303495607885
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.43377150690310906,
+     "TICA": 0.43377150690310906
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 6.566138967750999,
+     "TICA": 6.566138967750999
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 6.430420288443742,
+     "TICA": 6.430420288443742
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 6.163110065970897,
+     "TICA": 6.163110065970897
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 5.178704804127813,
+     "TICA": 5.178704804127813
+    },
+    "destil., 250 | p=2": {
+     "jádro": 6.191251879451432,
+     "TICA": 6.191251879451432
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 5.630952036203481,
+     "TICA": 5.630952036203481
+    },
+    "destil., 250 | p=1": {
+     "jádro": 4.7322846571809185,
+     "TICA": 4.7322846571809185
+    },
+    "destil., 250 | p=0": {
+     "jádro": 2.7357678969605748,
+     "TICA": 2.7357678969605748
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 6.6670634681488155,
+     "TICA": 6.6670634681488155
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.8883751376889182,
+     "TICA": 1.8883751376889182
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 6.34635929828201,
+     "TICA": 6.34635929828201
+    },
+    "změřeno: destil., 250": {
+     "jádro": 5.322291587755657,
+     "TICA": 5.322291587755657
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 3.6283494996783747,
+     "TICA": 3.6283494996783747
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 6.55580711737688,
+     "TICA": 6.55580711737688
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.1078645211133455,
+     "TICA": 4.1078645211133455
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 6.579918336486023,
+     "TICA": 6.579918336486023
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 1.8281563277641741,
+    "TICA": 1.8281563277641741
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 45.55,
+    "jádro, 250 vzorků": 9.11,
+    "TICA, 50 vzorků": 45.55,
+    "TICA, 250 vzorků": 9.11
+   }
+  },
+  {
+   "name": "6ono_C",
+   "L": 76,
+   "af_tica": 0.476,
+   "af_core": 0.636,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 665.4000000000001,
+   "build_s": 1284.1,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 665.4000000000001,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 651.0,
+   "v_s18md_nsd": 1480.6,
+   "v_ratio_s18md_bench": 2.274,
+   "n_atoms_box": 14951.833333333334,
+   "n_atoms_p2": 15135,
+   "thr_ratio_box_bench": 2.247,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 2.01",
+   "v_B_nsd": 1306.2,
+   "t_jádro": 0.9635321857527971,
+   "cens_jádro": false,
+   "md_cost_jádro": 70.35693026064239,
+   "md_cost_build_jádro": 141.69581914953127,
+   "t_TICA": 31.880738079110664,
+   "cens_TICA": false,
+   "md_cost_TICA": 2115.435569161903,
+   "md_cost_build_TICA": 2186.774458050792,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.65,
+     0.559
+    ],
+    "TICA": [
+     0.597,
+     0.531
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.6435,
+     0.6209
+    ],
+    "TICA": [
+     0.5962,
+     0.5976
+    ]
+   },
+   "rama": 0.107,
+   "chi1": 0.074,
+   "dJS_run_minus_af": {
+    "jádro": 0.007,
+    "TICA": 0.044,
+    "rama": -0.212,
+    "chi1": -0.198
+   },
+   "v_gen": 888.8,
+   "v_gen_src": "změřeno",
+   "v_B": 1306.1828226914904,
+   "tgen": {
+    "afT_base": {
+     "t_s": 10.5447,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.0529,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 3.5001,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.3593,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5941,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2706,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": -18.179,
+    "jádro, 250 vzorků": -3.636,
+    "TICA, 50 vzorků": 21.894,
+    "TICA, 250 vzorků": 4.379
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 0.059956300454228124,
+     "TICA": 1.8027178005971474
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.03738724591536457,
+     "TICA": 1.1241296280177298
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.020888055382326312,
+     "TICA": 0.6280452424899949
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.006921216111578726,
+     "TICA": 0.2081015571607515
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 0.10414587023548101,
+     "TICA": 3.1313742293941424
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 0.10200664951665392,
+     "TICA": 3.0670538620596055
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 0.09779161393251655,
+     "TICA": 2.940319563577068
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 0.08225032763694456,
+     "TICA": 2.473036671921794
+    },
+    "destil., 250 | p=2": {
+     "jádro": 0.0982354662299063,
+     "TICA": 2.9536649573268257
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 0.08939386192699275,
+     "TICA": 2.6878227131932557
+    },
+    "destil., 250 | p=1": {
+     "jádro": 0.07519268204257457,
+     "TICA": 2.2608330628450504
+    },
+    "destil., 250 | p=0": {
+     "jádro": 0.04355387536253707,
+     "TICA": 1.3095428805013636
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 0.105736294350229,
+     "TICA": 3.1791938220046627
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.028609667931146943,
+     "TICA": 0.8602124757184694
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 0.10033465749548688,
+     "TICA": 3.016781751269259
+    },
+    "změřeno: destil., 250": {
+     "jádro": 0.083310649668872,
+     "TICA": 2.5049175816316946
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 0.05580269233303402,
+     "TICA": 1.677830453645215
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 0.10382880398008054,
+     "TICA": 3.121840936341555
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 0.0635740405506124,
+     "TICA": 1.911493098944063
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 0.10429327752900204,
+     "TICA": 3.1358063532902967
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.057656876174631506,
+    "TICA": 0.8898116042268457
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": -12.37,
+    "jádro, 250 vzorků": -2.47,
+    "TICA, 50 vzorků": 14.9,
+    "TICA, 250 vzorků": 2.98
+   }
+  },
+  {
+   "name": "6in7_A",
+   "L": 81,
+   "af_tica": 0.795,
+   "af_core": 0.752,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 654.5,
+   "build_s": 1288.9,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 654.5,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 864.9,
+   "v_s18md_nsd": 1514.4,
+   "v_ratio_s18md_bench": 1.751,
+   "n_atoms_box": 20918.277777777777,
+   "n_atoms_p2": 20455,
+   "thr_ratio_box_bench": 1.791,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 2.04",
+   "v_B_nsd": 1766.8,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 4896.848494932419,
+   "md_cost_build_jádro": 4968.454050487975,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 4896.848494932419,
+   "md_cost_build_TICA": 4968.454050487975,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.671,
+     0.918
+    ],
+    "TICA": [
+     0.811,
+     0.947
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.8019,
+     0.794
+    ],
+    "TICA": [
+     0.8208,
+     0.7798
+    ]
+   },
+   "rama": 0.06,
+   "chi1": 0.071,
+   "dJS_run_minus_af": {
+    "jádro": 0.041,
+    "TICA": 0.041,
+    "rama": -0.201,
+    "chi1": -0.189
+   },
+   "v_gen": 1136.6,
+   "v_gen_src": "změřeno",
+   "v_B": 1766.8155053597623,
+   "tgen": {
+    "afT_base": {
+     "t_s": 11.5201,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.1492,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 3.8015,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.3843,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5769,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2712,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 81.146,
+    "jádro, 250 vzorků": 16.229,
+    "TICA, 50 vzorků": 81.146,
+    "TICA, 250 vzorků": 16.229
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 3.9759391972262583,
+     "TICA": 3.9759391972262583
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 2.4570976992834486,
+     "TICA": 2.4570976992834486
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.38516609705037,
+     "TICA": 1.38516609705037
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.4822343291085154,
+     "TICA": 0.4822343291085154
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 7.35215717695907,
+     "TICA": 7.35215717695907
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 7.187836112372783,
+     "TICA": 7.187836112372783
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 6.876493891005504,
+     "TICA": 6.876493891005504
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 5.7985180520218105,
+     "TICA": 5.7985180520218105
+    },
+    "destil., 250 | p=2": {
+     "jádro": 6.875548437778383,
+     "TICA": 6.875548437778383
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 6.211563026831551,
+     "TICA": 6.211563026831551
+    },
+    "destil., 250 | p=1": {
+     "jádro": 5.195205664972125,
+     "TICA": 5.195205664972125
+    },
+    "destil., 250 | p=0": {
+     "jádro": 3.0519467092131003,
+     "TICA": 3.0519467092131003
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 7.481815882249686,
+     "TICA": 7.481815882249686
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.9530891523028733,
+     "TICA": 1.9530891523028733
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 7.081853314750602,
+     "TICA": 7.081853314750602
+    },
+    "změřeno: destil., 250": {
+     "jádro": 5.8342953504142745,
+     "TICA": 5.8342953504142745
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 3.868334491363969,
+     "TICA": 3.868334491363969
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 7.343131206354598,
+     "TICA": 7.343131206354598
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.581063388543449,
+     "TICA": 4.581063388543449
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 7.383409460091961,
+     "TICA": 7.383409460091961
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 1.9712015495217299,
+    "TICA": 1.9712015495217299
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 52.2,
+    "jádro, 250 vzorků": 10.44,
+    "TICA, 50 vzorků": 52.2,
+    "TICA, 250 vzorků": 10.44
+   }
+  },
+  {
+   "name": "7a66_B",
+   "L": 86,
+   "af_tica": 0.572,
+   "af_core": 0.439,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 600.3,
+   "build_s": 1260.9,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 600.3,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 1371.5,
+   "v_s18md_nsd": 1647.4,
+   "v_ratio_s18md_bench": 1.201,
+   "n_atoms_box": 17941.055555555555,
+   "n_atoms_p2": 15194,
+   "thr_ratio_box_bench": 1.418,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 1371.5,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 6305.749669866731,
+   "md_cost_build_jádro": 6375.799669866731,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 6305.749669866731,
+   "md_cost_build_TICA": 6375.799669866731,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.542,
+     0.7
+    ],
+    "TICA": [
+     0.623,
+     0.724
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.6435,
+     0.6483
+    ],
+    "TICA": [
+     0.6413,
+     0.6723
+    ]
+   },
+   "rama": 0.071,
+   "chi1": 0.074,
+   "dJS_run_minus_af": {
+    "jádro": -0.004,
+    "TICA": -0.024,
+    "rama": -0.193,
+    "chi1": -0.206
+   },
+   "v_gen": 898.9,
+   "v_gen_src": "změřeno",
+   "v_B": 1371.5,
+   "tgen": {
+    "afT_base": {
+     "t_s": 12.3965,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.2372,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.0911,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.411,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5935,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2761,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 109.962,
+    "jádro, 250 vzorků": 21.992,
+    "TICA, 50 vzorků": 109.962,
+    "TICA, 250 vzorků": 21.992
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 5.041094849214123,
+     "TICA": 5.041094849214123
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 3.054278181739356,
+     "TICA": 3.054278181739356
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.7234342413394435,
+     "TICA": 1.7234342413394435
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.6243131065281954,
+     "TICA": 0.6243131065281954
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 10.281481575763179,
+     "TICA": 10.281481575763179
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 10.01571998926766,
+     "TICA": 10.01571998926766
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 9.53292561723326,
+     "TICA": 9.53292561723326
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 7.978931633388247,
+     "TICA": 7.978931633388247
+    },
+    "destil., 250 | p=2": {
+     "jádro": 9.47724386001697,
+     "TICA": 9.47724386001697
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 8.44452604027862,
+     "TICA": 8.44452604027862
+    },
+    "destil., 250 | p=1": {
+     "jádro": 6.958814875890717,
+     "TICA": 6.958814875890717
+    },
+    "destil., 250 | p=0": {
+     "jádro": 4.067438347330666,
+     "TICA": 4.067438347330666
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 10.504330617802317,
+     "TICA": 10.504330617802317
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 2.396248355038272,
+     "TICA": 2.396248355038272
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 9.839759268462753,
+     "TICA": 9.839759268462753
+    },
+    "změřeno: destil., 250": {
+     "jádro": 7.852548797022435,
+     "TICA": 7.852548797022435
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 4.962653114904461,
+     "TICA": 4.962653114904461
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 10.273819964105181,
+     "TICA": 10.273819964105181
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 6.15042733185794,
+     "TICA": 6.15042733185794
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 10.348355622582142,
+     "TICA": 10.348355622582142
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.538370156650891,
+    "TICA": 2.538370156650891
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 72.07,
+    "jádro, 250 vzorků": 14.41,
+    "TICA, 50 vzorků": 72.07,
+    "TICA, 250 vzorků": 14.41
+   }
+  },
+  {
+   "name": "6h86_A",
+   "L": 88,
+   "af_tica": 0.424,
+   "af_core": 0.421,
+   "good": true,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 2166.9,
+   "build_s": 1668.0,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 2166.9,
+   "gpu_B": "NVIDIA A100-SXM4-40GB",
+   "v_bench_nsd": 161.5,
+   "v_s18md_nsd": 454.8,
+   "v_ratio_s18md_bench": 2.816,
+   "n_atoms_box": 70210.88888888889,
+   "n_atoms_p2": 108210,
+   "thr_ratio_box_bench": 1.827,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 1.73",
+   "v_B_nsd": 279.3,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 30956.027279743008,
+   "md_cost_build_jádro": 31048.693946409676,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 30956.027279743008,
+   "md_cost_build_TICA": 31048.693946409676,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.472,
+     0.527
+    ],
+    "TICA": [
+     0.453,
+     0.475
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.4904,
+     0.4491
+    ],
+    "TICA": [
+     0.575,
+     0.4699
+    ]
+   },
+   "rama": 0.027,
+   "chi1": 0.067,
+   "dJS_run_minus_af": {
+    "jádro": -0.021,
+    "TICA": -0.006,
+    "rama": -0.249,
+    "chi1": -0.259
+   },
+   "v_gen": 293.5,
+   "v_gen_src": "změřeno",
+   "v_B": 279.3005176251422,
+   "tgen": {
+    "afT_base": {
+     "t_s": 12.4538,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.2445,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.0822,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.413,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.5901,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2759,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 351.537,
+    "jádro, 250 vzorků": 70.307,
+    "TICA, 50 vzorků": 351.537,
+    "TICA, 250 vzorků": 70.307
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 10.869086462093447,
+     "TICA": 10.869086462093447
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 8.406166986231058,
+     "TICA": 8.406166986231058
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 5.844556969426293,
+     "TICA": 5.844556969426293
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 2.653320700421107,
+     "TICA": 2.653320700421107
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 14.19660272999338,
+     "TICA": 14.19660272999338
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 14.08877097068727,
+     "TICA": 14.08877097068727
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 13.884782514995834,
+     "TICA": 13.884782514995834
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 13.1342132800471,
+     "TICA": 13.1342132800471
+    },
+    "destil., 250 | p=2": {
+     "jádro": 13.850459970496253,
+     "TICA": 13.850459970496253
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 13.351956416288422,
+     "TICA": 13.351956416288422
+    },
+    "destil., 250 | p=1": {
+     "jádro": 12.482945215365962,
+     "TICA": 12.482945215365962
+    },
+    "destil., 250 | p=0": {
+     "jádro": 9.931671622362927,
+     "TICA": 9.931671622362927
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 14.285858728941347,
+     "TICA": 14.285858728941347
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 5.691873282213024,
+     "TICA": 5.691873282213024
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 13.867395499301589,
+     "TICA": 13.867395499301589
+    },
+    "změřeno: destil., 250": {
+     "jádro": 12.412984483488916,
+     "TICA": 12.412984483488916
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 9.556293189598794,
+     "TICA": 9.556293189598794
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 14.144215307058126,
+     "TICA": 14.144215307058126
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 10.871892710991075,
+     "TICA": 10.871892710991075
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 14.190922966462562,
+     "TICA": 14.190922966462562
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 6.875142658483461,
+    "TICA": 6.875142658483461
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 369.41,
+    "jádro, 250 vzorků": 73.88,
+    "TICA, 50 vzorků": 369.41,
+    "TICA, 250 vzorků": 73.88
+   }
+  },
+  {
+   "name": "7bwf_B",
+   "L": 92,
+   "af_tica": 0.389,
+   "af_core": 0.471,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 1061.2,
+   "build_s": 1589.5,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1061.2,
+   "gpu_B": "NVIDIA A100-SXM4-40GB",
+   "v_bench_nsd": 941.9,
+   "v_s18md_nsd": 941.0,
+   "v_ratio_s18md_bench": 0.999,
+   "n_atoms_box": 20469.61111111111,
+   "n_atoms_p2": 33754,
+   "thr_ratio_box_bench": 0.606,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.74",
+   "v_B_nsd": 692.4,
+   "t_jádro": 32.44581355837203,
+   "cens_jádro": false,
+   "md_cost_jádro": 4060.112475098993,
+   "md_cost_build_jádro": 4148.418030654549,
+   "t_TICA": 41.89750421513132,
+   "cens_TICA": false,
+   "md_cost_TICA": 5239.585540962974,
+   "md_cost_build_TICA": 5327.89109651853,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.502,
+     0.344
+    ],
+    "TICA": [
+     0.489,
+     0.419
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.538,
+     0.6587
+    ],
+    "TICA": [
+     0.6246,
+     0.7011
+    ]
+   },
+   "rama": 0.063,
+   "chi1": 0.063,
+   "dJS_run_minus_af": {
+    "jádro": 0.031,
+    "TICA": 0.041,
+    "rama": -0.178,
+    "chi1": -0.198
+   },
+   "v_gen": 815.1,
+   "v_gen_src": "změřeno",
+   "v_B": 692.3651725322034,
+   "tgen": {
+    "afT_base": {
+     "t_s": 13.1199,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.3149,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.2992,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.4346,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.6697,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2787,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 27.955,
+    "jádro, 250 vzorků": 5.591,
+    "TICA, 50 vzorků": 41.314,
+    "TICA, 250 vzorků": 8.263
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 2.2484818576647645,
+     "TICA": 2.9016715923000684
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 1.5142089667342193,
+     "TICA": 1.9540905471845726
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.9369965011674448,
+     "TICA": 1.2091963829967884
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.38443666203641563,
+     "TICA": 0.4961164963226692
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 3.7730222463419945,
+     "TICA": 4.869094865945345
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 3.7126023343813404,
+     "TICA": 4.791122814915507
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 3.603740935469815,
+     "TICA": 4.650636900989706
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 3.244974804267098,
+     "TICA": 4.187648290411584
+    },
+    "destil., 250 | p=2": {
+     "jádro": 3.5751401384761143,
+     "TICA": 4.613727499265667
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 3.3192162032765498,
+     "TICA": 4.283457005853957
+    },
+    "destil., 250 | p=1": {
+     "jádro": 2.9243284940539107,
+     "TICA": 3.773853406388037
+    },
+    "destil., 250 | p=0": {
+     "jádro": 2.018751230657813,
+     "TICA": 2.6052036301526322
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 3.825963508385783,
+     "TICA": 4.937415700115881
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.8247881317142742,
+     "TICA": 1.0643911950204308
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 3.565882747838542,
+     "TICA": 4.601780812953612
+    },
+    "změřeno: destil., 250": {
+     "jádro": 2.803562249494195,
+     "TICA": 3.618004258682823
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 1.7451375455674072,
+     "TICA": 2.2521044692299212
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 3.7359031292467404,
+     "TICA": 4.821192550327632
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 2.198293020316117,
+     "TICA": 2.8369027692434354
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 3.7677178202782846,
+     "TICA": 4.862249490533462
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 1.2218433049031878,
+    "TICA": 1.5692362769205612
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 32.91,
+    "jádro, 250 vzorků": 6.58,
+    "TICA, 50 vzorků": 48.64,
+    "TICA, 250 vzorků": 9.73
+   }
+  },
+  {
+   "name": "6d7y_A",
+   "L": 96,
+   "af_tica": 0.701,
+   "af_core": 0.545,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 1193.7,
+   "build_s": 1542.6,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1193.7,
+   "gpu_B": "NVIDIA A100-SXM4-40GB",
+   "v_bench_nsd": 1508.3,
+   "v_s18md_nsd": 827.7,
+   "v_ratio_s18md_bench": 0.549,
+   "n_atoms_box": 12545.277777777777,
+   "n_atoms_p2": 10941,
+   "thr_ratio_box_bench": 0.629,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.53",
+   "v_B_nsd": 802.9,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 10773.365961900654,
+   "md_cost_build_jádro": 10859.065961900655,
+   "t_TICA": 0.5,
+   "cens_TICA": false,
+   "md_cost_TICA": 65.84552425394772,
+   "md_cost_build_TICA": 151.5455242539477,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.483,
+     0.486
+    ],
+    "TICA": [
+     0.691,
+     0.595
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.3271,
+     0.3686
+    ],
+    "TICA": [
+     0.6126,
+     0.4899
+    ]
+   },
+   "rama": 0.08,
+   "chi1": 0.081,
+   "dJS_run_minus_af": {
+    "jádro": -0.045,
+    "TICA": -0.032,
+    "rama": -0.206,
+    "chi1": -0.176
+   },
+   "v_gen": 1064.7,
+   "v_gen_src": "změřeno",
+   "v_B": 802.8749559771469,
+   "tgen": {
+    "afT_base": {
+     "t_s": 13.7149,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.3707,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.4806,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.4573,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.7069,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2805,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 90.317,
+    "jádro, 250 vzorků": 18.063,
+    "TICA, 50 vzorků": -17.341,
+    "TICA, 250 vzorků": -3.468
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 5.374964370531504,
+     "TICA": 0.03285113938165137
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 3.6886953523466315,
+     "TICA": 0.022544864821942272
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 2.338035533324826,
+     "TICA": 0.014289793548326792
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 1.0074498033328645,
+     "TICA": 0.006157412705980877
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 8.904246918846965,
+     "TICA": 0.05442169221128364
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 8.771393038193766,
+     "TICA": 0.05360970518218637
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 8.53685223079048,
+     "TICA": 0.052176219818649255
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 7.785911658524719,
+     "TICA": 0.04758656085419362
+    },
+    "destil., 250 | p=2": {
+     "jádro": 8.451249553474915,
+     "TICA": 0.05165302649306111
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 7.884521452276363,
+     "TICA": 0.048189252119775136
+    },
+    "destil., 250 | p=1": {
+     "jádro": 7.017944111658524,
+     "TICA": 0.04289283505742308
+    },
+    "destil., 250 | p=0": {
+     "jádro": 5.025594048561205,
+     "TICA": 0.030715829758803808
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 9.02518720105609,
+     "TICA": 0.05516086475156883
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.8767085119529265,
+     "TICA": 0.011470217968868258
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 8.38665152906444,
+     "TICA": 0.05125821109385169
+    },
+    "změřeno: destil., 250": {
+     "jádro": 6.536742692820745,
+     "TICA": 0.03995178953765062
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 4.02120094520008,
+     "TICA": 0.024577099237465875
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 8.801615040156916,
+     "TICA": 0.05379441844360392
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 5.151980979750204,
+     "TICA": 0.031488291566229405
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 8.886725775726752,
+     "TICA": 0.05431460508007889
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 3.061513129118103,
+    "TICA": 0.04272546218895427
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 119.77,
+    "jádro, 250 vzorků": 23.95,
+    "TICA, 50 vzorků": -23.0,
+    "TICA, 250 vzorků": -4.6
+   }
+  },
+  {
+   "name": "6ypi_A",
+   "L": 97,
+   "af_tica": 0.552,
+   "af_core": 0.48,
+   "good": false,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 642.1,
+   "build_s": 1253.9,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 642.1,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 1074.9,
+   "v_s18md_nsd": 1537.5,
+   "v_ratio_s18md_bench": 1.43,
+   "n_atoms_box": 16214.388888888889,
+   "n_atoms_p2": 11639,
+   "thr_ratio_box_bench": 1.993,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 1074.9,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 8044.407019257605,
+   "md_cost_build_jádro": 8114.068130368716,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 8044.407019257605,
+   "md_cost_build_TICA": 8114.068130368716,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.325,
+     0.54
+    ],
+    "TICA": [
+     0.412,
+     0.581
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.3375,
+     0.4375
+    ],
+    "TICA": [
+     0.415,
+     0.5409
+    ]
+   },
+   "rama": 0.031,
+   "chi1": 0.067,
+   "dJS_run_minus_af": {
+    "jádro": -0.049,
+    "TICA": -0.087,
+    "rama": -0.255,
+    "chi1": -0.21
+   },
+   "v_gen": 735.3,
+   "v_gen_src": "změřeno",
+   "v_B": 1074.9,
+   "tgen": {
+    "afT_base": {
+     "t_s": 14.1306,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.4136,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.6167,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.4661,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.7734,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.287,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 138.023,
+    "jádro, 250 vzorků": 27.605,
+    "TICA, 50 vzorků": 138.023,
+    "TICA, 250 vzorků": 27.605
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 5.473364366495143,
+     "TICA": 5.473364366495143
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 3.3572951476744644,
+     "TICA": 3.3572951476744644
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.9659655411277897,
+     "TICA": 1.9659655411277897
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.7931697596412581,
+     "TICA": 0.7931697596412581
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 12.213426728172308,
+     "TICA": 12.213426728172308
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 11.879275195945223,
+     "TICA": 11.879275195945223
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 11.312708380692122,
+     "TICA": 11.312708380692122
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 9.667596465878626,
+     "TICA": 9.667596465878626
+    },
+    "destil., 250 | p=2": {
+     "jádro": 11.097819959419148,
+     "TICA": 11.097819959419148
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 9.840256061270463,
+     "TICA": 9.840256061270463
+    },
+    "destil., 250 | p=1": {
+     "jádro": 8.14975465311861,
+     "TICA": 8.14975465311861
+    },
+    "destil., 250 | p=0": {
+     "jádro": 5.052702103672888,
+     "TICA": 5.052702103672888
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 12.52827755685657,
+     "TICA": 12.52827755685657
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 2.6300451399626823,
+     "TICA": 2.6300451399626823
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 11.65096889584397,
+     "TICA": 11.65096889584397
+    },
+    "změřeno: destil., 250": {
+     "jádro": 9.101572008480284,
+     "TICA": 9.101572008480284
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 5.619057875260619,
+     "TICA": 5.619057875260619
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 12.224760365257032,
+     "TICA": 12.224760365257032
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 7.2056962532035405,
+     "TICA": 7.2056962532035405
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 12.339631417481206,
+     "TICA": 12.339631417481206
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.979129613469001,
+    "TICA": 2.979129613469001
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 94.42,
+    "jádro, 250 vzorků": 18.88,
+    "TICA, 50 vzorků": 94.42,
+    "TICA, 250 vzorků": 18.88
+   }
+  },
+  {
+   "name": "6tly_A",
+   "L": 99,
+   "af_tica": 0.435,
+   "af_core": 0.535,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 659.3000000000001,
+   "build_s": 1341.4,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 659.3000000000001,
+   "gpu_B": "NVIDIA L40",
+   "v_bench_nsd": 893.1,
+   "v_s18md_nsd": 1507.1,
+   "v_ratio_s18md_bench": 1.687,
+   "n_atoms_box": 19043.833333333332,
+   "n_atoms_p2": 17673,
+   "thr_ratio_box_bench": 1.818,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 1.98",
+   "v_B_nsd": 1765.5,
+   "t_jádro": 28.24909645003571,
+   "cens_jádro": false,
+   "md_cost_jádro": 1389.2512839224116,
+   "md_cost_build_jádro": 1463.7735061446338,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 4900.54705447168,
+   "md_cost_build_TICA": 4975.069276693902,
+   "loo_beats": false,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.558,
+     0.52
+    ],
+    "TICA": [
+     0.637,
+     0.651
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.6291,
+     0.7935
+    ],
+    "TICA": [
+     0.7447,
+     0.775
+    ]
+   },
+   "rama": 0.121,
+   "chi1": 0.086,
+   "dJS_run_minus_af": {
+    "jádro": -0.007,
+    "TICA": 0.064,
+    "rama": -0.135,
+    "chi1": -0.151
+   },
+   "v_gen": 1171.7,
+   "v_gen_src": "změřeno",
+   "v_B": 1765.5243168954596,
+   "tgen": {
+    "afT_base": {
+     "t_s": 14.4629,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.4471,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.7109,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.4782,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.8128,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2939,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 8.042,
+    "jádro, 250 vzorků": 1.608,
+    "TICA, 50 vzorků": 78.587,
+    "TICA, 250 vzorků": 15.717
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 0.9131290261177846,
+     "TICA": 3.2210384190971304
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.562945926302618,
+     "TICA": 1.98577682302376
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.33234374551711277,
+     "TICA": 1.1723337469716761
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.13674675262295746,
+     "TICA": 0.48237054270192636
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 2.053457921398667,
+     "TICA": 7.24351835024382
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 1.9975704748244492,
+     "TICA": 7.046376864854685
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 1.9038212891318929,
+     "TICA": 6.715679098999366
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 1.6357603719797615,
+     "TICA": 5.77010132399821
+    },
+    "destil., 250 | p=2": {
+     "jádro": 1.8634865511903866,
+     "TICA": 6.573399380780171
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 1.653570635380372,
+     "TICA": 5.832926555730801
+    },
+    "destil., 250 | p=1": {
+     "jádro": 1.3736108332372685,
+     "TICA": 4.8453757795391255
+    },
+    "destil., 250 | p=0": {
+     "jádro": 0.8632643285418576,
+     "TICA": 3.0451420210474613
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 2.107161055547416,
+     "TICA": 7.432954731490489
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.45416755301520406,
+     "TICA": 1.6020639965732582
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 1.9641090977885096,
+     "TICA": 6.92834274491559
+    },
+    "změřeno: destil., 250": {
+     "jádro": 1.5446526308605195,
+     "TICA": 5.448721183811559
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 0.9641527465769708,
+     "TICA": 3.401023239624686
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 2.0576379147140376,
+     "TICA": 7.258263165790447
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 1.2338124149324525,
+     "TICA": 4.352240567089161
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 2.076446099152048,
+     "TICA": 7.324608537512847
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.5113050538646018,
+    "TICA": 1.7378221793343165
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 5.34,
+    "jádro, 250 vzorků": 1.07,
+    "TICA, 50 vzorků": 52.15,
+    "TICA, 250 vzorků": 10.43
+   }
+  },
+  {
+   "name": "7s86_A",
+   "L": 99,
+   "af_tica": 0.269,
+   "af_core": 0.404,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 1113.8,
+   "build_s": 1573.8,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1113.8,
+   "gpu_B": "NVIDIA A100-SXM4-40GB",
+   "v_bench_nsd": 1026.2,
+   "v_s18md_nsd": 883.8,
+   "v_ratio_s18md_bench": 0.861,
+   "n_atoms_box": 22803.055555555555,
+   "n_atoms_p2": 27891,
+   "thr_ratio_box_bench": 0.704,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.78",
+   "v_B_nsd": 803.0,
+   "t_jádro": 4.77210416136139,
+   "cens_jádro": false,
+   "md_cost_jádro": 524.529214765229,
+   "md_cost_build_jádro": 611.9625480985624,
+   "t_TICA": 35.064151665869105,
+   "cens_TICA": false,
+   "md_cost_TICA": 3783.9939140774572,
+   "md_cost_build_TICA": 3871.4272474107906,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.447,
+     0.27
+    ],
+    "TICA": [
+     0.353,
+     0.319
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.488,
+     0.4449
+    ],
+    "TICA": [
+     0.4892,
+     0.4645
+    ]
+   },
+   "rama": 0.072,
+   "chi1": 0.055,
+   "dJS_run_minus_af": {
+    "jádro": 0.038,
+    "TICA": 0.029,
+    "rama": -0.16,
+    "chi1": -0.196
+   },
+   "v_gen": 931.4,
+   "v_gen_src": "změřeno",
+   "v_B": 802.964028093853,
+   "tgen": {
+    "afT_base": {
+     "t_s": 14.4096,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.4486,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.7327,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.4808,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.889,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.2938,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": -13.175,
+    "jádro, 250 vzorků": -2.635,
+    "TICA, 50 vzorků": 24.292,
+    "TICA, 250 vzorků": 4.858
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 0.265460972474577,
+     "TICA": 1.91505577953076
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.17949045805304092,
+     "TICA": 1.2948579064593706
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.11317524655270647,
+     "TICA": 0.816454893501665
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.04941954952658134,
+     "TICA": 0.3565164139212589
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 0.46375735320636147,
+     "TICA": 3.3455810520048668
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 0.45612407176071285,
+     "TICA": 3.2905139752402244
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 0.44293325698644936,
+     "TICA": 3.195354427549679
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 0.4023080340276338,
+     "TICA": 2.9022809587954113
+    },
+    "destil., 250 | p=2": {
+     "jádro": 0.4371033669353269,
+     "TICA": 3.1532971543755584
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 0.40515062420364345,
+     "TICA": 2.922787621958208
+    },
+    "destil., 250 | p=1": {
+     "jádro": 0.35782392348050623,
+     "TICA": 2.581369179536709
+    },
+    "destil., 250 | p=0": {
+     "jádro": 0.2541569991109744,
+     "TICA": 1.8335080502361938
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 0.47093662665220776,
+     "TICA": 3.397372880299387
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.09910966598159211,
+     "TICA": 0.7149847183792267
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 0.43790490393895304,
+     "TICA": 3.1590795036866197
+    },
+    "změřeno: destil., 250": {
+     "jádro": 0.3419630806197496,
+     "TICA": 2.4669478448087574
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 0.21097401729755033,
+     "TICA": 1.5219827132788402
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 0.4594341679168508,
+     "TICA": 3.3143932623366417
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 0.26877217649091095,
+     "TICA": 1.9389430588154501
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 0.4638404672665768,
+     "TICA": 3.3461806431986
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.17239749257139195,
+    "TICA": 1.090629405671883
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": -15.28,
+    "jádro, 250 vzorků": -3.06,
+    "TICA, 50 vzorků": 28.18,
+    "TICA, 250 vzorků": 5.64
+   }
+  },
+  {
+   "name": "7n0j_E",
+   "L": 101,
+   "af_tica": 0.292,
+   "af_core": 0.284,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 603.7,
+   "build_s": 1319.0,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 603.7,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 1656.1,
+   "v_s18md_nsd": 1644.7,
+   "v_ratio_s18md_bench": 0.993,
+   "n_atoms_box": 19101.11111111111,
+   "n_atoms_p2": 19497,
+   "thr_ratio_box_bench": 0.973,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 1656.1,
+   "t_jádro": 38.12049402475761,
+   "cens_jádro": false,
+   "md_cost_jádro": 1994.9974675208503,
+   "md_cost_build_jádro": 2068.275245298628,
+   "t_TICA": 71.38438604116286,
+   "cens_TICA": false,
+   "md_cost_TICA": 3730.4000822285448,
+   "md_cost_build_TICA": 3803.6778600063226,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.289,
+     0.128
+    ],
+    "TICA": [
+     0.303,
+     0.281
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.2988,
+     0.3837
+    ],
+    "TICA": [
+     0.3234,
+     0.4305
+    ]
+   },
+   "rama": 0.028,
+   "chi1": 0.051,
+   "dJS_run_minus_af": {
+    "jádro": 0.07,
+    "TICA": 0.061,
+    "rama": -0.22,
+    "chi1": -0.214
+   },
+   "v_gen": 1118.9,
+   "v_gen_src": "změřeno",
+   "v_B": 1656.1,
+   "tgen": {
+    "afT_base": {
+     "t_s": 14.8101,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.4797,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.7781,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.4907,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 2.9496,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3006,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 21.5,
+    "jádro, 250 vzorků": 4.3,
+    "TICA, 50 vzorků": 55.748,
+    "TICA, 250 vzorků": 11.15
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 1.329109318905415,
+     "TICA": 2.4852710809186362
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.8085740740765909,
+     "TICA": 1.5119341460475613
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.4754870735340515,
+     "TICA": 0.8891023908988986
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.1974521677722864,
+     "TICA": 0.36921128717485124
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 3.2092175547059174,
+     "TICA": 6.000842419535114
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 3.11245618085774,
+     "TICA": 5.819910542258925
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 2.953189922921309,
+     "TICA": 5.522102213489163
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 2.51354096953616,
+     "TICA": 4.700012702820391
+    },
+    "destil., 250 | p=2": {
+     "jádro": 2.8769977062678675,
+     "TICA": 5.379632132250224
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 2.5251204193642027,
+     "TICA": 4.721664850902751
+    },
+    "destil., 250 | p=1": {
+     "jádro": 2.071865257666107,
+     "TICA": 3.8741334028702643
+    },
+    "destil., 250 | p=0": {
+     "jádro": 1.2840300363782262,
+     "TICA": 2.400978362765363
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 3.304617305815554,
+     "TICA": 6.179228229631513
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.6424672461218571,
+     "TICA": 1.2013347920388147
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 3.051920132937622,
+     "TICA": 5.706715572432911
+    },
+    "změřeno: destil., 250": {
+     "jádro": 2.3370751427603595,
+     "TICA": 4.370043294120832
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 1.4141405163385925,
+     "TICA": 2.644268969918915
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 3.2163038907399244,
+     "TICA": 6.014092997019209
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 1.8104990440091375,
+     "TICA": 3.3854107048262714
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 3.2499510485326266,
+     "TICA": 6.077009046909052
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.7334300809964509,
+    "TICA": 1.3488203600029303
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 14.53,
+    "jádro, 250 vzorků": 2.91,
+    "TICA, 50 vzorků": 37.66,
+    "TICA, 250 vzorků": 7.53
+   }
+  },
+  {
+   "name": "6pxz_B",
+   "L": 104,
+   "af_tica": 0.223,
+   "af_core": 0.189,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 916.3,
+   "build_s": 1273.1,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 916.3,
+   "gpu_B": "NVIDIA H100 NVL",
+   "v_bench_nsd": 1626.7,
+   "v_s18md_nsd": 1082.9,
+   "v_ratio_s18md_bench": 0.666,
+   "n_atoms_box": 25029.833333333332,
+   "n_atoms_p2": 19179,
+   "thr_ratio_box_bench": 0.869,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.74",
+   "v_B_nsd": 1204.7,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 7181.1025993332905,
+   "md_cost_build_jádro": 7251.830377111069,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 7181.1025993332905,
+   "md_cost_build_TICA": 7251.830377111069,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.11,
+     0.13
+    ],
+    "TICA": [
+     0.132,
+     0.164
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.1716,
+     0.3447
+    ],
+    "TICA": [
+     0.2264,
+     0.2902
+    ]
+   },
+   "rama": 0.024,
+   "chi1": 0.059,
+   "dJS_run_minus_af": {
+    "jádro": -0.032,
+    "TICA": -0.056,
+    "rama": -0.248,
+    "chi1": -0.234
+   },
+   "v_gen": 1151.0,
+   "v_gen_src": "změřeno",
+   "v_B": 1204.7376420438727,
+   "tgen": {
+    "afT_base": {
+     "t_s": 15.144,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.5172,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 4.9449,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.5021,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.0388,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3097,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 81.037,
+    "jádro, 250 vzorků": 16.207,
+    "TICA, 50 vzorků": 81.037,
+    "TICA, 250 vzorků": 16.207
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 3.8448906176106648,
+     "TICA": 3.8448906176106648
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 2.5077634206471893,
+     "TICA": 2.5077634206471893
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.5560402324658282,
+     "TICA": 1.5560402324658282
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.6894101167721063,
+     "TICA": 0.6894101167721063
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 7.67763028974354,
+     "TICA": 7.67763028974354
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 7.517550785203679,
+     "TICA": 7.517550785203679
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 7.251634143608227,
+     "TICA": 7.251634143608227
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 6.491098797191802,
+     "TICA": 6.491098797191802
+    },
+    "destil., 250 | p=2": {
+     "jádro": 7.099879900731413,
+     "TICA": 7.099879900731413
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 6.463494035847945,
+     "TICA": 6.463494035847945
+    },
+    "destil., 250 | p=1": {
+     "jádro": 5.5833294809279606,
+     "TICA": 5.5833294809279606
+    },
+    "destil., 250 | p=0": {
+     "jádro": 3.8477750626015594,
+     "TICA": 3.8477750626015594
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 7.837064934337325,
+     "TICA": 7.837064934337325
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.5840349063682717,
+     "TICA": 1.5840349063682717
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 7.262616429848192,
+     "TICA": 7.262616429848192
+    },
+    "změřeno: destil., 250": {
+     "jádro": 5.6160225634934005,
+     "TICA": 5.6160225634934005
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 3.423839657494364,
+     "TICA": 3.423839657494364
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 7.637153828743507,
+     "TICA": 7.637153828743507
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.373085736186609,
+     "TICA": 4.373085736186609
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 7.7125407125640475,
+     "TICA": 7.7125407125640475
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.30891178719305,
+    "TICA": 2.30891178719305
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 77.42,
+    "jádro, 250 vzorků": 15.48,
+    "TICA, 50 vzorků": 77.42,
+    "TICA, 250 vzorků": 15.48
+   }
+  },
+  {
+   "name": "6p5h_A",
+   "L": 105,
+   "af_tica": 0.326,
+   "af_core": 0.249,
+   "good": true,
+   "good2": true,
+   "boxes": 17,
+   "gpu_s18_s": 939.3,
+   "build_s": 1168.4,
+   "fail_n": 1,
+   "fail_log_s": 98.0,
+   "fail_upper_s": 49.5,
+   "fail_added_s": 98.0,
+   "gpu_s18_ok_s": 841.3,
+   "gpu_B": "NVIDIA H100 NVL",
+   "v_bench_nsd": 1371.9,
+   "v_s18md_nsd": 1107.9,
+   "v_ratio_s18md_bench": 0.808,
+   "n_atoms_box": 21948.764705882353,
+   "n_atoms_p2": 28558,
+   "thr_ratio_box_bench": 0.621,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.79",
+   "v_B_nsd": 1078.5,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 8020.0534430055795,
+   "md_cost_build_jádro": 8088.782854770286,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 8020.0534430055795,
+   "md_cost_build_TICA": 8088.782854770286,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.273,
+     0.28
+    ],
+    "TICA": [
+     0.295,
+     0.316
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.3287,
+     0.4839
+    ],
+    "TICA": [
+     0.3907,
+     0.538
+    ]
+   },
+   "rama": 0.045,
+   "chi1": 0.06,
+   "dJS_run_minus_af": {
+    "jádro": 0.057,
+    "TICA": 0.015,
+    "rama": -0.197,
+    "chi1": -0.193
+   },
+   "v_gen": 916.8,
+   "v_gen_src": "změřeno",
+   "v_B": 1078.5011329784677,
+   "tgen": {
+    "afT_base": {
+     "t_s": 15.5399,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.5604,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 5.014,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.515,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.1449,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3203,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 103.695,
+    "jádro, 250 vzorků": 20.739,
+    "TICA, 50 vzorků": 103.695,
+    "TICA, 250 vzorků": 20.739
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 4.20099509380963,
+     "TICA": 4.20099509380963
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 2.7515866543324456,
+     "TICA": 2.7515866543324456
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.71605190553996,
+     "TICA": 1.71605190553996
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.7682558641868306,
+     "TICA": 0.7682558641868306
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 8.36558834410575,
+     "TICA": 8.36558834410575
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 8.193693978190288,
+     "TICA": 8.193693978190288
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 7.909440011113128,
+     "TICA": 7.909440011113128
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 7.101791767471513,
+     "TICA": 7.101791767471513
+    },
+    "destil., 250 | p=2": {
+     "jádro": 7.739284416751031,
+     "TICA": 7.739284416751031
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 7.054688842048292,
+     "TICA": 7.054688842048292
+    },
+    "destil., 250 | p=1": {
+     "jádro": 6.109469826284955,
+     "TICA": 6.109469826284955
+    },
+    "destil., 250 | p=0": {
+     "jádro": 4.244986737418928,
+     "TICA": 4.244986737418928
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 8.538330078788013,
+     "TICA": 8.538330078788013
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.8907214045084697,
+     "TICA": 1.8907214045084697
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 7.975213951642544,
+     "TICA": 7.975213951642544
+    },
+    "změřeno: destil., 250": {
+     "jádro": 6.310472191527151,
+     "TICA": 6.310472191527151
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 4.0003038823208055,
+     "TICA": 4.0003038823208055
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 8.343885759678574,
+     "TICA": 8.343885759678574
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.9886960937102875,
+     "TICA": 4.9886960937102875
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 8.416346816736645,
+     "TICA": 8.416346816736645
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.6283750868662237,
+    "TICA": 2.6283750868662237
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 88.15,
+    "jádro, 250 vzorků": 17.63,
+    "TICA, 50 vzorků": 88.15,
+    "TICA, 250 vzorků": 17.63
+   }
+  },
+  {
+   "name": "6tgk_C",
+   "L": 105,
+   "af_tica": 0.728,
+   "af_core": 0.727,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 659.5,
+   "build_s": 1296.5,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 659.5,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 1301.1,
+   "v_s18md_nsd": 1495.9,
+   "v_ratio_s18md_bench": 1.15,
+   "n_atoms_box": 20273.722222222223,
+   "n_atoms_p2": 28573,
+   "thr_ratio_box_bench": 0.816,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 1301.1,
+   "t_jádro": 38.77357092712408,
+   "cens_jádro": false,
+   "md_cost_jádro": 2581.3780773475164,
+   "md_cost_build_jádro": 2653.4058551252942,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 6647.140487536188,
+   "md_cost_build_TICA": 6719.168265313965,
+   "loo_beats": false,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.769,
+     0.726
+    ],
+    "TICA": [
+     0.757,
+     0.763
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.7192,
+     0.6587
+    ],
+    "TICA": [
+     0.8024,
+     0.8057
+    ]
+   },
+   "rama": 0.093,
+   "chi1": 0.064,
+   "dJS_run_minus_af": {
+    "jádro": 0.029,
+    "TICA": 0.06,
+    "rama": -0.178,
+    "chi1": -0.185
+   },
+   "v_gen": 904.7,
+   "v_gen_src": "změřeno",
+   "v_B": 1301.1,
+   "tgen": {
+    "afT_base": {
+     "t_s": 15.5968,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.5608,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 5.0818,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.5161,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.1447,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3197,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 30.53,
+    "jádro, 250 vzorků": 6.106,
+    "TICA, 50 vzorků": 108.492,
+    "TICA, 250 vzorků": 21.698
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 1.5843632714533713,
+     "TICA": 4.0797918526776105
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.9796867876126008,
+     "TICA": 2.5227283706288697
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.5875114422105959,
+     "TICA": 1.512862888500887
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.25408514959865314,
+     "TICA": 0.6542783097136855
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 3.8023191730975614,
+     "TICA": 9.791107294132857
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 3.692916210926328,
+     "TICA": 9.50939077004583
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 3.5159777384061823,
+     "TICA": 9.053767901465493
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 3.0387028573837744,
+     "TICA": 7.824768084209756
+    },
+    "destil., 250 | p=2": {
+     "jádro": 3.4123618099140582,
+     "TICA": 8.786953195213174
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 3.0119687051027983,
+     "TICA": 7.755926689922626
+    },
+    "destil., 250 | p=1": {
+     "jádro": 2.499095495083621,
+     "TICA": 6.435259907630056
+    },
+    "destil., 250 | p=0": {
+     "jádro": 1.6038385072056642,
+     "TICA": 4.129941278369797
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 3.914144165803664,
+     "TICA": 10.079060633110217
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.7658173241562484,
+     "TICA": 1.9720068850535601
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 3.616571250414994,
+     "TICA": 9.312799777626891
+    },
+    "změřeno: destil., 250": {
+     "jádro": 2.7732313107266617,
+     "TICA": 7.141169396532599
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 1.6730819686983849,
+     "TICA": 4.308245657888804
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 3.810472097546597,
+     "TICA": 9.812101364963695
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 2.1401715099020535,
+     "TICA": 5.511017862350206
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 3.849270243462305,
+     "TICA": 9.91200797253148
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.9069041512857471,
+    "TICA": 2.296535820643595
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 21.23,
+    "jádro, 250 vzorků": 4.25,
+    "TICA, 50 vzorků": 75.44,
+    "TICA, 250 vzorků": 15.09
+   }
+  },
+  {
+   "name": "6vjg_A",
+   "L": 110,
+   "af_tica": 0.413,
+   "af_core": 0.412,
+   "good": true,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 635.1,
+   "build_s": 1361.0,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 635.1,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 737.2,
+   "v_s18md_nsd": 1559.7,
+   "v_ratio_s18md_bench": 2.116,
+   "n_atoms_box": 20784.11111111111,
+   "n_atoms_p2": 22501,
+   "thr_ratio_box_bench": 1.954,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 2.07",
+   "v_B_nsd": 1525.2,
+   "t_jádro": 72.58475252259701,
+   "cens_jádro": false,
+   "md_cost_jádro": 4118.170682140448,
+   "md_cost_build_jádro": 4193.781793251559,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 5671.1563245326515,
+   "md_cost_build_TICA": 5746.767435643763,
+   "loo_beats": false,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.408,
+     0.394
+    ],
+    "TICA": [
+     0.483,
+     0.522
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.5945,
+     0.6642
+    ],
+    "TICA": [
+     0.6516,
+     0.6884
+    ]
+   },
+   "rama": 0.054,
+   "chi1": 0.058,
+   "dJS_run_minus_af": {
+    "jádro": 0.013,
+    "TICA": 0.029,
+    "rama": -0.176,
+    "chi1": -0.207
+   },
+   "v_gen": 1039.2,
+   "v_gen_src": "změřeno",
+   "v_B": 1525.24100506102,
+   "tgen": {
+    "afT_base": {
+     "t_s": 16.5982,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.6627,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 5.4,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.5486,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.3632,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3407,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 61.947,
+    "jádro, 250 vzorků": 12.389,
+    "TICA, 50 vzorků": 92.338,
+    "TICA, 250 vzorků": 18.468
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 2.4232463435515395,
+     "TICA": 3.337066354906426
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 1.4957390469771328,
+     "TICA": 2.059790768969763
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.905655585371206,
+     "TICA": 1.2471834698596573
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.40632758257347706,
+     "TICA": 0.5595560304814606
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 6.273999142656943,
+     "TICA": 8.639959988131908
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 6.078809433514932,
+     "TICA": 8.371163126873826
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 5.773071047695649,
+     "TICA": 7.95012905271296
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 4.991117055072655,
+     "TICA": 6.873295751463642
+    },
+    "destil., 250 | p=2": {
+     "jádro": 5.553580333153525,
+     "TICA": 7.647867138375601
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 4.862544476743412,
+     "TICA": 6.696237720839624
+    },
+    "destil., 250 | p=1": {
+     "jádro": 4.012610592354266,
+     "TICA": 5.525788923078084
+    },
+    "destil., 250 | p=0": {
+     "jádro": 2.5980510265222687,
+     "TICA": 3.577790880406695
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 6.484287013289951,
+     "TICA": 8.929548613655568
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.1894205928129484,
+     "TICA": 1.6379578793840972
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 5.953326577623561,
+     "TICA": 8.19835997063386
+    },
+    "změřeno: destil., 250": {
+     "jádro": 4.484491264893189,
+     "TICA": 6.175618487476545
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 2.648507885371474,
+     "TICA": 3.647275308388197
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 6.298929121213455,
+     "TICA": 8.674291203730709
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 3.40917644812593,
+     "TICA": 4.6947963228149066
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 6.367912526226424,
+     "TICA": 8.769288644056266
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 1.370318238986475,
+    "TICA": 1.8777563117251614
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 42.21,
+    "jádro, 250 vzorků": 8.44,
+    "TICA, 50 vzorků": 62.91,
+    "TICA, 250 vzorků": 12.58
+   }
+  },
+  {
+   "name": "6yhu_B",
+   "L": 117,
+   "af_tica": 0.48,
+   "af_core": 0.367,
+   "good": false,
+   "good2": true,
+   "boxes": 18,
+   "gpu_s18_s": 633.2,
+   "build_s": 1274.9,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 633.2,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 1483.8,
+   "v_s18md_nsd": 1560.6,
+   "v_ratio_s18md_bench": 1.052,
+   "n_atoms_box": 18914.333333333332,
+   "n_atoms_p2": 24868,
+   "thr_ratio_box_bench": 0.8,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 1483.8,
+   "t_jádro": 46.302235522790816,
+   "cens_jádro": false,
+   "md_cost_jádro": 2702.5158259215928,
+   "md_cost_build_jádro": 2773.3436036993708,
+   "t_TICA": 55.48344151212609,
+   "cens_TICA": false,
+   "md_cost_TICA": 3237.127092587294,
+   "md_cost_build_TICA": 3307.9548703650717,
+   "loo_beats": false,
+   "loo_beats_tica": false,
+   "loo": {
+    "jádro": [
+     0.471,
+     0.405
+    ],
+    "TICA": [
+     0.507,
+     0.47
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.5949,
+     0.763
+    ],
+    "TICA": [
+     0.4981,
+     0.7687
+    ]
+   },
+   "rama": 0.053,
+   "chi1": 0.058,
+   "dJS_run_minus_af": {
+    "jádro": 0.096,
+    "TICA": 0.052,
+    "rama": -0.192,
+    "chi1": -0.195
+   },
+   "v_gen": 1002.9,
+   "v_gen_src": "změřeno",
+   "v_B": 1483.8,
+   "tgen": {
+    "afT_base": {
+     "t_s": 17.9223,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.7956,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 5.814,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.5916,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.7004,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3753,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 34.575,
+    "jádro, 250 vzorků": 6.915,
+    "TICA, 50 vzorků": 45.122,
+    "TICA, 250 vzorků": 9.024
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 1.4709043993057518,
+     "TICA": 1.7618784822378437
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 0.914018683917009,
+     "TICA": 1.0948297199442838
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 0.5637028264759696,
+     "TICA": 0.6752144332516989
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.26669914991528765,
+     "TICA": 0.3194575348939421
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 4.111651513957964,
+     "TICA": 4.925017786555248
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 3.9762129056720728,
+     "TICA": 4.7627867335270695
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 3.7722484789641673,
+     "TICA": 4.5184740951746045
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 3.282939535861993,
+     "TICA": 3.932370131908763
+    },
+    "destil., 250 | p=2": {
+     "jádro": 3.5860858750446285,
+     "TICA": 4.2954848334673095
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 3.1222959514218394,
+     "TICA": 3.739948058204821
+    },
+    "destil., 250 | p=1": {
+     "jádro": 2.5755365139997646,
+     "TICA": 3.085028752633977
+    },
+    "destil., 250 | p=0": {
+     "jádro": 1.7069958476008038,
+     "TICA": 2.0446735046660525
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 4.268028783830689,
+     "TICA": 5.112329583997622
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 0.7380657435157868,
+     "TICA": 0.884069795828406
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 3.8947756948252263,
+     "TICA": 4.665239626106461
+    },
+    "změřeno: destil., 250": {
+     "jádro": 2.885418515255338,
+     "TICA": 3.456211563904844
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 1.6727419980220894,
+     "TICA": 2.0036435638112735
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 4.137391790483759,
+     "TICA": 4.955850000640035
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 2.1474532231267296,
+     "TICA": 2.5722620907416394
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 4.184217181138235,
+     "TICA": 5.011938382900256
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 0.8911154696979968,
+    "TICA": 1.0628938131261876
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 23.37,
+    "jádro, 250 vzorků": 4.67,
+    "TICA, 50 vzorků": 30.5,
+    "TICA, 250 vzorků": 6.1
+   }
+  },
+  {
+   "name": "7k7p_B",
+   "L": 118,
+   "af_tica": 0.6,
+   "af_core": 0.555,
+   "good": false,
+   "good2": false,
+   "boxes": 18,
+   "gpu_s18_s": 1298.0,
+   "build_s": 1741.2,
+   "fail_n": 0,
+   "fail_log_s": null,
+   "fail_upper_s": 0.0,
+   "fail_added_s": 0.0,
+   "gpu_s18_ok_s": 1298.0,
+   "gpu_B": "Quadro RTX 5000",
+   "v_bench_nsd": 1359.0,
+   "v_s18md_nsd": 758.0,
+   "v_ratio_s18md_bench": 0.558,
+   "n_atoms_box": 15920.222222222223,
+   "n_atoms_p2": 14722,
+   "thr_ratio_box_bench": 0.603,
+   "bench_src": "S18_s0",
+   "v_rule": "bench × propustnost S18_s1/S18_s0 = 0.57",
+   "v_B_nsd": 781.1,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 11074.718310599601,
+   "md_cost_build_jádro": 11171.451643932935,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 11074.718310599601,
+   "md_cost_build_TICA": 11171.451643932935,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.606,
+     0.633
+    ],
+    "TICA": [
+     0.673,
+     0.764
+    ]
+   },
+   "lose_10_9": {
+    "jádro": false,
+    "TICA": true
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.6057,
+     0.6005
+    ],
+    "TICA": [
+     0.6572,
+     0.6806
+    ]
+   },
+   "rama": 0.079,
+   "chi1": 0.056,
+   "dJS_run_minus_af": {
+    "jádro": 0.03,
+    "TICA": 0.053,
+    "rama": -0.165,
+    "chi1": -0.184
+   },
+   "v_gen": 921.3,
+   "v_gen_src": "změřeno",
+   "v_B": 781.0607646872932,
+   "tgen": {
+    "afT_base": {
+     "t_s": 18.0802,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.8124,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 5.8644,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.5955,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.7459,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3786,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 103.177,
+    "jádro, 250 vzorků": 20.635,
+    "TICA, 50 vzorků": 103.177,
+    "TICA, 250 vzorků": 20.635
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 4.389874684320088,
+     "TICA": 4.389874684320088
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 3.0330120508624954,
+     "TICA": 3.0330120508624954
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 2.015569531063767,
+     "TICA": 2.015569531063767
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 1.025626811502093,
+     "TICA": 1.025626811502093
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 8.374105105781078,
+     "TICA": 8.374105105781078
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 8.233575922688672,
+     "TICA": 8.233575922688672
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 8.013940410220105,
+     "TICA": 8.013940410220105
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 7.44268703669328,
+     "TICA": 7.44268703669328
+    },
+    "destil., 250 | p=2": {
+     "jádro": 7.796469172606983,
+     "TICA": 7.796469172606983
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 7.222614373717914,
+     "TICA": 7.222614373717914
+    },
+    "destil., 250 | p=1": {
+     "jádro": 6.447566991354085,
+     "TICA": 6.447566991354085
+    },
+    "destil., 250 | p=0": {
+     "jádro": 4.9264761168147695,
+     "TICA": 4.9264761168147695
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 8.532140455007397,
+     "TICA": 8.532140455007397
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.6704897370796363,
+     "TICA": 1.6704897370796363
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 7.882974499391184,
+     "TICA": 7.882974499391184
+    },
+    "změřeno: destil., 250": {
+     "jádro": 6.043654282625597,
+     "TICA": 6.043654282625597
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 3.6582366827475674,
+     "TICA": 3.6582366827475674
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 8.307361102802883,
+     "TICA": 8.307361102802883
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.60943626786086,
+     "TICA": 4.60943626786086
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 8.38784829409734,
+     "TICA": 8.38784829409734
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 2.6199544996740847,
+    "TICA": 2.6199544996740847
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 121.7,
+    "jádro, 250 vzorků": 24.34,
+    "TICA, 50 vzorků": 121.7,
+    "TICA, 250 vzorků": 24.34
+   }
+  },
+  {
+   "name": "6uof_A",
+   "L": 119,
+   "af_tica": 0.227,
+   "af_core": 0.311,
+   "good": true,
+   "good2": true,
+   "boxes": 17,
+   "gpu_s18_s": 641.8,
+   "build_s": 1243.3,
+   "fail_n": 1,
+   "fail_log_s": 21.0,
+   "fail_upper_s": 36.5,
+   "fail_added_s": 21.0,
+   "gpu_s18_ok_s": 620.8,
+   "gpu_B": "NVIDIA L40S",
+   "v_bench_nsd": 1608.8,
+   "v_s18md_nsd": 1501.1,
+   "v_ratio_s18md_bench": 0.933,
+   "n_atoms_box": 17228.647058823528,
+   "n_atoms_p2": 18996,
+   "thr_ratio_box_bench": 0.846,
+   "bench_src": "S18_s0",
+   "v_rule": "bench (stejná GPU jako S18_s0)",
+   "v_B_nsd": 1608.8,
+   "t_jádro": 100.0,
+   "cens_jádro": true,
+   "md_cost_jádro": 5377.050691783426,
+   "md_cost_build_jádro": 5450.185985901074,
+   "t_TICA": 100.0,
+   "cens_TICA": true,
+   "md_cost_TICA": 5377.050691783426,
+   "md_cost_build_TICA": 5450.185985901074,
+   "loo_beats": true,
+   "loo_beats_tica": true,
+   "loo": {
+    "jádro": [
+     0.25,
+     0.254
+    ],
+    "TICA": [
+     0.229,
+     0.241
+    ]
+   },
+   "lose_10_9": {
+    "jádro": true,
+    "TICA": false
+   },
+   "ctrl_2x5_4": {
+    "jádro": [
+     0.3346,
+     0.2672
+    ],
+    "TICA": [
+     0.395,
+     0.4602
+    ]
+   },
+   "rama": 0.044,
+   "chi1": 0.073,
+   "dJS_run_minus_af": {
+    "jádro": 0.004,
+    "TICA": 0.051,
+    "rama": -0.175,
+    "chi1": -0.202
+   },
+   "v_gen": 1147.7,
+   "v_gen_src": "změřeno",
+   "v_B": 1608.8,
+   "tgen": {
+    "afT_base": {
+     "t_s": 18.2697,
+     "src": "změřeno"
+    },
+    "afT_dist": {
+     "t_s": 1.8343,
+     "src": "změřeno"
+    },
+    "afT12_base": {
+     "t_s": 5.9684,
+     "src": "změřeno"
+    },
+    "afT12_dist": {
+     "t_s": 0.6038,
+     "src": "změřeno"
+    },
+    "esT_base": {
+     "t_s": 3.7908,
+     "src": "změřeno"
+    },
+    "esT_dist": {
+     "t_s": 0.3815,
+     "src": "změřeno"
+    }
+   },
+   "tgen_max_gen_s": {
+    "jádro, 50 vzorků": 82.505,
+    "jádro, 250 vzorků": 16.501,
+    "TICA, 50 vzorků": 82.505,
+    "TICA, 250 vzorků": 16.501
+   },
+   "speedup": {
+    "i-a plný, 250 | p=2": {
+     "jádro": 2.8488682638680003,
+     "TICA": 2.8488682638680003
+    },
+    "i-a plný, 250 | p=1.5": {
+     "jádro": 1.777436305150089,
+     "TICA": 1.777436305150089
+    },
+    "i-a plný, 250 | p=1": {
+     "jádro": 1.1032225149549206,
+     "TICA": 1.1032225149549206
+    },
+    "i-a plný, 250 | p=0": {
+     "jádro": 0.5301870172734058,
+     "TICA": 0.5301870172734058
+    },
+    "i-b destil., 50 | p=2": {
+     "jádro": 8.0650194011585,
+     "TICA": 8.0650194011585
+    },
+    "i-b destil., 50 | p=1.5": {
+     "jádro": 7.798846423625441,
+     "TICA": 7.798846423625441
+    },
+    "i-b destil., 50 | p=1": {
+     "jádro": 7.401889458221472,
+     "TICA": 7.401889458221472
+    },
+    "i-b destil., 50 | p=0": {
+     "jádro": 6.464355243788683,
+     "TICA": 6.464355243788683
+    },
+    "destil., 250 | p=2": {
+     "jádro": 7.016319834738108,
+     "TICA": 7.016319834738108
+    },
+    "destil., 250 | p=1.5": {
+     "jádro": 6.109332318123723,
+     "TICA": 6.109332318123723
+    },
+    "destil., 250 | p=1": {
+     "jádro": 5.048803073439479,
+     "TICA": 5.048803073439479
+    },
+    "destil., 250 | p=0": {
+     "jádro": 3.377968772322796,
+     "TICA": 3.377968772322796
+    },
+    "nula (vzorky existují) | p=2": {
+     "jádro": 8.378078360522634,
+     "TICA": 8.378078360522634
+    },
+    "Z8 i-a změřeno: plný, 250": {
+     "jádro": 1.3786778782402087,
+     "TICA": 1.3786778782402087
+    },
+    "Z8 i-b změřeno: destil., 50": {
+     "jádro": 7.602989699062107,
+     "TICA": 7.602989699062107
+    },
+    "změřeno: destil., 250": {
+     "jádro": 5.54940238250885,
+     "TICA": 5.54940238250885
+    },
+    "změřeno 12l: plný, 250": {
+     "jádro": 3.151389601508803,
+     "TICA": 3.151389601508803
+    },
+    "změřeno 12l: destil., 50": {
+     "jádro": 8.106059200328454,
+     "TICA": 8.106059200328454
+    },
+    "změřeno ESMFlow: plný, 250": {
+     "jádro": 4.080080361423283,
+     "TICA": 4.080080361423283
+    },
+    "změřeno ESMFlow: destil., 50": {
+     "jádro": 8.204128685479398,
+     "TICA": 8.204128685479398
+    }
+   },
+   "speedup_serial_build_i-a_p2": {
+    "jádro": 1.7408652622446894,
+    "TICA": 1.7408652622446894
+   },
+   "tgen_max_s": {
+    "jádro, 50 vzorků": 58.86,
+    "jádro, 250 vzorků": 11.77,
+    "TICA, 50 vzorků": 58.86,
+    "TICA, 250 vzorků": 11.77
+   }
+  }
+ ],
+ "criteria": {
+  "i": {
+   "i-a plný, 250 | p=2": {
+    "n": 25,
+    "jádro": {
+     "median": 2.849,
+     "upper95": 4.201,
+     "lower95": 1.985,
+     "frac_ge_1_5": 0.72,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 3.337,
+     "upper95": 4.08,
+     "lower95": 2.485,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "i-a plný, 250 | p=1.5": {
+    "n": 25,
+    "jádro": {
+     "median": 1.777,
+     "upper95": 2.752,
+     "lower95": 1.496,
+     "frac_ge_1_5": 0.64,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 2.06,
+     "upper95": 2.523,
+     "lower95": 1.512,
+     "frac_ge_1_5": 0.68,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "i-a plný, 250 | p=1": {
+    "n": 25,
+    "jádro": {
+     "median": 1.103,
+     "upper95": 1.716,
+     "lower95": 0.906,
+     "frac_ge_1_5": 0.4,
+     "vyplácí_se": false
+    },
+    "TICA": {
+     "median": 1.247,
+     "upper95": 1.556,
+     "lower95": 0.889,
+     "frac_ge_1_5": 0.4,
+     "vyplácí_se": false
+    },
+    "nevyplácí_se": false,
+    "verdikt": "NEROZHODNUTO"
+   },
+   "i-a plný, 250 | p=0": {
+    "n": 25,
+    "jádro": {
+     "median": 0.434,
+     "upper95": 0.624,
+     "lower95": 0.267,
+     "frac_ge_1_5": 0.04,
+     "vyplácí_se": false
+    },
+    "TICA": {
+     "median": 0.496,
+     "upper95": 0.624,
+     "lower95": 0.369,
+     "frac_ge_1_5": 0.04,
+     "vyplácí_se": false
+    },
+    "nevyplácí_se": true,
+    "verdikt": "NEVYPLÁCÍ SE"
+   },
+   "i-b destil., 50 | p=2": {
+    "n": 25,
+    "jádro": {
+     "median": 6.566,
+     "upper95": 7.678,
+     "lower95": 3.773,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 7.244,
+     "upper95": 8.366,
+     "lower95": 4.925,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "i-b destil., 50 | p=1.5": {
+    "n": 25,
+    "jádro": {
+     "median": 6.43,
+     "upper95": 7.518,
+     "lower95": 3.693,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 7.046,
+     "upper95": 8.194,
+     "lower95": 4.791,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "i-b destil., 50 | p=1": {
+    "n": 25,
+    "jádro": {
+     "median": 6.163,
+     "upper95": 7.252,
+     "lower95": 3.516,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 6.746,
+     "upper95": 7.909,
+     "lower95": 4.651,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "i-b destil., 50 | p=0": {
+    "n": 25,
+    "jádro": {
+     "median": 5.179,
+     "upper95": 6.464,
+     "lower95": 3.039,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 5.799,
+     "upper95": 6.873,
+     "lower95": 4.188,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "destil., 250 | p=2": {
+    "n": 25,
+    "jádro": {
+     "median": 6.191,
+     "upper95": 7.016,
+     "lower95": 3.412,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 6.794,
+     "upper95": 7.648,
+     "lower95": 4.614,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "destil., 250 | p=1.5": {
+    "n": 25,
+    "jádro": {
+     "median": 5.631,
+     "upper95": 6.463,
+     "lower95": 3.012,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 6.109,
+     "upper95": 6.696,
+     "lower95": 4.283,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "destil., 250 | p=1": {
+    "n": 25,
+    "jádro": {
+     "median": 4.732,
+     "upper95": 5.583,
+     "lower95": 2.499,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 5.049,
+     "upper95": 5.583,
+     "lower95": 3.774,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "destil., 250 | p=0": {
+    "n": 25,
+    "jádro": {
+     "median": 2.736,
+     "upper95": 3.848,
+     "lower95": 1.604,
+     "frac_ge_1_5": 0.68,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 3.052,
+     "upper95": 3.848,
+     "lower95": 2.401,
+     "frac_ge_1_5": 0.76,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "nula (vzorky existují) | p=2": {
+    "n": 25,
+    "jádro": {
+     "median": 6.667,
+     "upper95": 7.837,
+     "lower95": 3.826,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 7.433,
+     "upper95": 8.532,
+     "lower95": 5.112,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "Z8 i-a změřeno: plný, 250": {
+    "n": 25,
+    "jádro": {
+     "median": 1.379,
+     "upper95": 1.888,
+     "lower95": 0.825,
+     "frac_ge_1_5": 0.48,
+     "vyplácí_se": false
+    },
+    "TICA": {
+     "median": 1.602,
+     "upper95": 1.891,
+     "lower95": 1.064,
+     "frac_ge_1_5": 0.56,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (TICA)"
+   },
+   "Z8 i-b změřeno: destil., 50": {
+    "n": 25,
+    "jádro": {
+     "median": 6.346,
+     "upper95": 7.263,
+     "lower95": 3.566,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 6.928,
+     "upper95": 7.883,
+     "lower95": 4.665,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "změřeno: destil., 250": {
+    "n": 25,
+    "jádro": {
+     "median": 5.322,
+     "upper95": 5.785,
+     "lower95": 2.773,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 5.549,
+     "upper95": 6.044,
+     "lower95": 3.618,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "změřeno 12l: plný, 250": {
+    "n": 25,
+    "jádro": {
+     "median": 3.151,
+     "upper95": 3.868,
+     "lower95": 1.673,
+     "frac_ge_1_5": 0.68,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 3.424,
+     "upper95": 3.868,
+     "lower95": 2.252,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "změřeno 12l: destil., 50": {
+    "n": 25,
+    "jádro": {
+     "median": 6.556,
+     "upper95": 7.637,
+     "lower95": 3.736,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 7.258,
+     "upper95": 8.307,
+     "lower95": 4.956,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "změřeno ESMFlow: plný, 250": {
+    "n": 25,
+    "jádro": {
+     "median": 4.08,
+     "upper95": 4.439,
+     "lower95": 2.14,
+     "frac_ge_1_5": 0.72,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 4.352,
+     "upper95": 4.609,
+     "lower95": 2.837,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   },
+   "změřeno ESMFlow: destil., 50": {
+    "n": 25,
+    "jádro": {
+     "median": 6.58,
+     "upper95": 7.713,
+     "lower95": 3.768,
+     "frac_ge_1_5": 0.84,
+     "vyplácí_se": true
+    },
+    "TICA": {
+     "median": 7.325,
+     "upper95": 8.388,
+     "lower95": 5.012,
+     "frac_ge_1_5": 0.8,
+     "vyplácí_se": true
+    },
+    "nevyplácí_se": false,
+    "verdikt": "VYPLÁCÍ SE (jádro, TICA)"
+   }
+  },
+  "decisive": {
+   "install_passed": true,
+   "n_measured_base": 25,
+   "accounting": "změřené (Z8)",
+   "gpu_gen": "NVIDIA A40"
+  },
+  "censored": {
+   "jádro": 13,
+   "TICA": 15
+  },
+  "ii_good": {
+   "n_good": 15,
+   "n_hit": 7,
+   "names": [
+    "7jfl_C",
+    "6pce_B",
+    "6jv8_A",
+    "6h86_A",
+    "6pxz_B",
+    "6p5h_A",
+    "6uof_A"
+   ],
+   "evaluated": true,
+   "met": false
+  },
+  "ii_good2": {
+   "n_good": 15,
+   "n_hit": 7,
+   "names": [
+    "7jfl_C",
+    "6pce_B",
+    "6jv8_A",
+    "6ypi_A",
+    "6pxz_B",
+    "6p5h_A",
+    "6uof_A"
+   ],
+   "evaluated": true,
+   "met": false
+  },
+  "loo_tica_good": {
+   "n_good": 15,
+   "n_beats": 10,
+   "n_all": 25,
+   "n_beats_all": 15
+  },
+  "iii": {
+   "n_bad": 10,
+   "lose_both": 3,
+   "lose_any": 5
+  },
+  "ctrl_2x5_4": {
+   "jádro": {
+    "n": 25,
+    "run_closer": 17,
+    "median_diff_run_minus_ctrl": -0.0415,
+    "ci95": [
+     -0.0918,
+     0.0052
+    ]
+   },
+   "TICA": {
+    "n": 25,
+    "run_closer": 20,
+    "median_diff_run_minus_ctrl": -0.031,
+    "ci95": [
+     -0.0652,
+     -0.0183
+    ]
+   }
+  }
+ }
+}

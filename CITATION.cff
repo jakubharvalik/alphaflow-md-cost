@@ -7,14 +7,17 @@ authors:
     given-names: "Jakub"
     affiliation: "Department of Organic Chemistry, University of Chemistry and Technology, Prague"
     orcid: "https://orcid.org/0000-0001-5534-3586"
-version: "1.0"
+version: "1.1"
 date-released: "2026-11-11"
 repository-code: "https://github.com/jakubharvalik/alphaflow-md-cost"
-doi: "10.5281/zenodo.24135297"
+doi: "10.5281/zenodo.24135296"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.24135296"
     description: "Concept DOI (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.24135297"
+    description: "Version 1.0"
 license: MIT
 abstract: "Scripts, PBS job files, the AlphaFlow patch, derived per-protein tables, inputs (metrics and timings only) and the protocol log behind the preprint 'What does a generative ensemble really save? Honest cost accounting of AlphaFlow-seeded molecular dynamics on ATLAS test proteins'. Code is MIT; tables, inputs and protocol are CC BY 4.0 (see LICENSE)."
 keywords:

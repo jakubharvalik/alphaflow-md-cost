@@ -1,0 +1,6 @@
+  S18d50_s0: použit hybrid_summary_partial.json (fyzikální selhání, jen diagnostika)
+=== diag40 p2_7jfl_C
+  S18d50_s0: 15 boxů, 7050 snímků v okně 50:520 ps, Cα jádra od krystalu 0.234 nm (ATLAS 0.304, 0.289, 0.288)
+  S18d50_s0 jádro A běh 0.440 vs rep 0.436; B běh 0.440 vs rep 0.440; C běh 0.440 vs rep 0.394; D běh 0.441 vs rep 0.396
+  S18d50_s0 TICA  A běh 0.450 vs rep 0.427; B běh 0.452 vs rep 0.428; C běh 0.438 vs rep 0.415; D běh 0.438 vs rep 0.415; 1. TIC (báze 3) oddělení R_k [0.562, 0.929, 2.135] sd
+Uloženo l39srv/diag40/diag40_7jfl_C.json

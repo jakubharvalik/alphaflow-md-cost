@@ -1,0 +1,420 @@
+{
+ "6d7y_A": {
+  "S18_s0": {
+   "n": 1,
+   "log_s": 24.0,
+   "items": [
+    {
+     "box": 10,
+     "sample": 215,
+     "s": 24,
+     "type": "inf-min",
+     "log": "b39_6d7y_A_S18_s0_25398494_14_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  },
+  "S18d50_s0": {
+   "n": 1,
+   "log_s": 111.0,
+   "items": [
+    {
+     "box": 13,
+     "sample": 19,
+     "s": 111,
+     "type": "inf-min",
+     "log": "b39_6d7y_A_S18d50_s0_25424182_14_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6h86_A": {
+  "S18d50_s0": {
+   "n": 1,
+   "log_s": 107.0,
+   "items": [
+    {
+     "box": 2,
+     "sample": 37,
+     "s": 107,
+     "type": "inf-min",
+     "log": "b39_6h86_A_S18d50_s0_25424182_12_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6in7_A": {
+  "S18_s0": {
+   "n": 2,
+   "log_s": 418.0,
+   "items": [
+    {
+     "box": 2,
+     "sample": 15,
+     "s": 320,
+     "type": "NaN-coord",
+     "log": "b39_6in7_A_S18_s0_25398494_10_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    },
+    {
+     "box": 13,
+     "sample": 177,
+     "s": 98,
+     "type": "NaN-coord",
+     "log": "b39_6in7_A_S18_s0_25398494_10_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  },
+  "S18d50_s0": {
+   "n": 3,
+   "log_s": 441.0,
+   "items": [
+    {
+     "box": 6,
+     "sample": 17,
+     "s": 153,
+     "type": "NaN-coord",
+     "log": "b39_6in7_A_S18d50_s0_25424182_10_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    },
+    {
+     "box": 10,
+     "sample": 24,
+     "s": 114,
+     "type": "NaN-coord",
+     "log": "b39_6in7_A_S18d50_s0_25424182_10_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    },
+    {
+     "box": 11,
+     "sample": 41,
+     "s": 174,
+     "type": "NaN-coord",
+     "log": "b39_6in7_A_S18d50_s0_25424182_10_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  }
+ },
+ "6l34_A": {
+  "S18_s1": {
+   "n": 1,
+   "log_s": 116.0,
+   "items": [
+    {
+     "box": 11,
+     "sample": 18,
+     "s": 116,
+     "type": "inf-min",
+     "log": "b39_6l34_A_S18_s1_25398495_5_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6odd_B": {
+  "S18_s0": {
+   "n": 1,
+   "log_s": 73.0,
+   "items": [
+    {
+     "box": 12,
+     "sample": 139,
+     "s": 73,
+     "type": "inf-min",
+     "log": "b39_6odd_B_S18_s0_25398494_7_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6p5h_A": {
+  "S18_s0": {
+   "n": 2,
+   "log_s": 179.0,
+   "items": [
+    {
+     "box": 5,
+     "sample": 143,
+     "s": 90,
+     "type": "NaN-coord",
+     "log": "b39_6p5h_A_S18_s0_25398494_20_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    },
+    {
+     "box": 11,
+     "sample": 109,
+     "s": 89,
+     "type": "NaN-coord",
+     "log": "b39_6p5h_A_S18_s0_25398494_20_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  },
+  "S18_s1": {
+   "n": 1,
+   "log_s": 98.0,
+   "items": [
+    {
+     "box": 8,
+     "sample": 70,
+     "s": 98,
+     "type": "NaN-coord",
+     "log": "b39_6p5h_A_S18_s1_25398495_20_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  },
+  "S18d50_s0": {
+   "n": 1,
+   "log_s": 126.0,
+   "items": [
+    {
+     "box": 10,
+     "sample": 28,
+     "s": 126,
+     "type": "NaN-coord",
+     "log": "b39_6p5h_A_S18d50_s0_25424182_20_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  }
+ },
+ "6pxz_B": {
+  "S18_s0": {
+   "n": 1,
+   "log_s": 73.0,
+   "items": [
+    {
+     "box": 14,
+     "sample": 15,
+     "s": 73,
+     "type": "inf-min",
+     "log": "b39_6pxz_B_S18_s0_25398494_19_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6ro6_A": {
+  "K18_s0": {
+   "n": 1,
+   "log_s": 89.0,
+   "items": [
+    {
+     "box": 10,
+     "sample": 10,
+     "s": 89,
+     "type": "inf-min",
+     "log": "b39_6ro6_A_K18_s0_25400146_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6tgk_C": {
+  "S18_s0": {
+   "n": 1,
+   "log_s": 92.0,
+   "items": [
+    {
+     "box": 9,
+     "sample": 41,
+     "s": 92,
+     "type": "NaN-coord",
+     "log": "b39_6tgk_C_S18_s0_25398494_21_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  }
+ },
+ "6uof_A": {
+  "S18_s1": {
+   "n": 1,
+   "log_s": 21.0,
+   "items": [
+    {
+     "box": 4,
+     "sample": 154,
+     "s": 21,
+     "type": "inf-min",
+     "log": "b39_6uof_A_S18_s1_25398495_25_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "6ypi_A": {
+  "S18d50_s0": {
+   "n": 1,
+   "log_s": 91.0,
+   "items": [
+    {
+     "box": 3,
+     "sample": 22,
+     "s": 91,
+     "type": "inf-min",
+     "log": "b39_6ypi_A_S18d50_s0_25424182_15_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "7bwf_B": {
+  "S18d50_s0": {
+   "n": 1,
+   "log_s": 26.0,
+   "items": [
+    {
+     "box": 10,
+     "sample": 32,
+     "s": 26,
+     "type": "inf-min",
+     "log": "b39_7bwf_B_S18d50_s0_25424182_13_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "7jfl_C": {
+  "S18_s0": {
+   "n": 2,
+   "log_s": 145.0,
+   "items": [
+    {
+     "box": 2,
+     "sample": 56,
+     "s": 71,
+     "type": "inf-min",
+     "log": "b39_7jfl_C_S18_s0_25398494_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    },
+    {
+     "box": 10,
+     "sample": 135,
+     "s": 74,
+     "type": "inf-min",
+     "log": "b39_7jfl_C_S18_s0_25398494_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  },
+  "S18_s1": {
+   "n": 1,
+   "log_s": 93.0,
+   "items": [
+    {
+     "box": 14,
+     "sample": 61,
+     "s": 93,
+     "type": "inf-min",
+     "log": "b39_7jfl_C_S18_s1_25398495_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  },
+  "S18d50_s0": {
+   "n": 3,
+   "log_s": 215.0,
+   "items": [
+    {
+     "box": 2,
+     "sample": 4,
+     "s": 71,
+     "type": "inf-min",
+     "log": "b39_7jfl_C_S18d50_s0_25424182_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    },
+    {
+     "box": 4,
+     "sample": 39,
+     "s": 75,
+     "type": "inf-min",
+     "log": "b39_7jfl_C_S18d50_s0_25424182_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    },
+    {
+     "box": 16,
+     "sample": 26,
+     "s": 69,
+     "type": "inf-min",
+     "log": "b39_7jfl_C_S18d50_s0_25424182_2_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  }
+ },
+ "7k7p_B": {
+  "S18_s0": {
+   "n": 1,
+   "log_s": 87.0,
+   "items": [
+    {
+     "box": 15,
+     "sample": 47,
+     "s": 87,
+     "type": "NaN-coord",
+     "log": "b39_7k7p_B_S18_s0_25398494_24_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  }
+ },
+ "7n0j_E": {
+  "S18d50_s0": {
+   "n": 1,
+   "log_s": 139.0,
+   "items": [
+    {
+     "box": 1,
+     "sample": 19,
+     "s": 139,
+     "type": "NaN-coord",
+     "log": "b39_7n0j_E_S18d50_s0_25424182_18_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  }
+ },
+ "7s86_A": {
+  "S18_s0": {
+   "n": 1,
+   "log_s": 74.0,
+   "items": [
+    {
+     "box": 16,
+     "sample": 97,
+     "s": 74,
+     "type": "inf-min",
+     "log": "b39_7s86_A_S18_s0_25398494_17_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    }
+   ]
+  },
+  "S18d50_s0": {
+   "n": 2,
+   "log_s": 188.0,
+   "items": [
+    {
+     "box": 2,
+     "sample": 7,
+     "s": 27,
+     "type": "inf-min",
+     "log": "b39_7s86_A_S18d50_s0_25424182_17_.log",
+     "error": "OpenMMException: Energy or force at minimization starting point is infinite or NaN."
+    },
+    {
+     "box": 9,
+     "sample": 30,
+     "s": 161,
+     "type": "NaN-coord",
+     "log": "b39_7s86_A_S18d50_s0_25424182_17_.log",
+     "error": "OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently"
+    }
+   ]
+  }
+ }
+}

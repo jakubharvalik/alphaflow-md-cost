@@ -1,0 +1,81 @@
+=== Z10 (opravený přepočet po externím posudku) S18d50_s0: 25 z 25 proteinů (fyzikální selhání 0×: 2); rychlost MD z xfer, t* last, metrika js30, selhané boxy log
+  selhané boxy: 8 (přičteno 788 s, z logu u 7 běhů)
+  (i) i-a plný, 250 | p=2                            n=25 jádro medián 2.90 (90% CI 0.74–4.41, ≥1,5× 60%), TICA 3.86 (1.10–4.84, 64%) → VYPLÁCÍ SE (TICA)
+  (i) i-a plný, 250 | p=1.5                          n=25 jádro medián 1.80 (90% CI 0.48–3.09, ≥1,5× 52%), TICA 2.47 (0.75–3.29, 60%) → NEROZHODNUTO
+  (i) i-a plný, 250 | p=1                            n=25 jádro medián 1.11 (90% CI 0.25–1.75, ≥1,5× 36%), TICA 1.37 (0.47–2.13, 48%) → NEROZHODNUTO
+  (i) i-a plný, 250 | p=0                            n=25 jádro medián 0.43 (90% CI 0.08–0.68, ≥1,5× 8%), TICA 0.54 (0.20–0.97, 8%) → NEVYPLÁCÍ SE
+  (i) i-b destil., 50 | p=2                          n=25 jádro medián 5.57 (90% CI 0.89–7.35, ≥1,5× 60%), TICA 6.15 (1.85–8.15, 72%) → VYPLÁCÍ SE (TICA)
+  (i) i-b destil., 50 | p=1.5                        n=25 jádro medián 5.49 (90% CI 0.88–7.25, ≥1,5× 60%), TICA 6.04 (1.82–8.09, 72%) → VYPLÁCÍ SE (TICA)
+  (i) i-b destil., 50 | p=1                          n=25 jádro medián 5.35 (90% CI 0.86–7.07, ≥1,5× 60%), TICA 5.82 (1.77–7.82, 68%) → VYPLÁCÍ SE (TICA)
+  (i) i-b destil., 50 | p=0                          n=25 jádro medián 4.90 (90% CI 0.74–6.48, ≥1,5× 60%), TICA 5.08 (1.61–7.12, 68%) → VYPLÁCÍ SE (TICA)
+  (i) destil., 250 | p=2                             n=25 jádro medián 5.28 (90% CI 0.88–6.97, ≥1,5× 60%), TICA 5.87 (1.75–7.78, 68%) → VYPLÁCÍ SE (TICA)
+  (i) destil., 250 | p=1.5                           n=25 jádro medián 4.93 (90% CI 0.85–6.36, ≥1,5× 60%), TICA 5.40 (1.63–7.24, 68%) → VYPLÁCÍ SE (TICA)
+  (i) destil., 250 | p=1                             n=25 jádro medián 4.41 (90% CI 0.78–5.29, ≥1,5× 60%), TICA 4.60 (1.45–6.41, 64%) → VYPLÁCÍ SE (TICA)
+  (i) destil., 250 | p=0                             n=25 jádro medián 2.65 (90% CI 0.45–3.46, ≥1,5× 56%), TICA 3.24 (1.03–4.69, 64%) → VYPLÁCÍ SE (TICA)
+  (i) nula (vzorky existují) | p=2                   n=25 jádro medián 5.65 (90% CI 0.89–7.45, ≥1,5× 60%), TICA 6.22 (1.88–8.21, 72%) → VYPLÁCÍ SE (TICA)
+  (i) Z8 i-a změřeno: plný, 250                      n=25 jádro medián 1.15 (90% CI 0.30–1.65, ≥1,5× 36%), TICA 1.60 (0.42–1.87, 52%) → NEROZHODNUTO
+  (i) Z8 i-b změřeno: destil., 50                    n=25 jádro medián 5.24 (90% CI 0.85–6.88, ≥1,5× 60%), TICA 5.98 (1.75–7.67, 68%) → VYPLÁCÍ SE (TICA)
+  (i) změřeno: destil., 250                          n=25 jádro medián 4.06 (90% CI 0.74–5.25, ≥1,5× 60%), TICA 5.18 (1.39–5.89, 64%) → VYPLÁCÍ SE (TICA)
+  (i) změřeno 12l: plný, 250                         n=25 jádro medián 2.49 (90% CI 0.52–3.57, ≥1,5× 52%), TICA 3.45 (0.88–3.70, 64%) → NEROZHODNUTO
+  (i) změřeno 12l: destil., 50                       n=25 jádro medián 5.51 (90% CI 0.88–7.25, ≥1,5× 60%), TICA 6.14 (1.83–8.09, 72%) → VYPLÁCÍ SE (TICA)
+  (i) změřeno ESMFlow: plný, 250                     n=25 jádro medián 3.17 (90% CI 0.47–4.08, ≥1,5× 56%), TICA 4.04 (1.11–4.60, 64%) → VYPLÁCÍ SE (TICA)
+  (i) změřeno ESMFlow: destil., 50                   n=25 jádro medián 5.56 (90% CI 0.87–7.33, ≥1,5× 60%), TICA 6.16 (1.85–8.08, 72%) → VYPLÁCÍ SE (TICA)
+  ROZHODUJÍCÍ účtování: změřené Z8 (i-a, i-b změřeno); kontrola instalace prošla, změřeno plné na 23 proteinech, GPU měření NVIDIA A40
+  cenzurováno (t* ≥ 100 ns): jádro 10, TICA 12
+  (ii) primární dobrý AF: 15 proteinů, S18 lepší než 100ns replika (LOO, shodné n) + Rama, χ1 ≤ 0,08: 2 → NESPLNĚNO
+  (ii) sekundární dobrý AF: 15 proteinů, S18 lepší než 100ns replika (LOO, shodné n) + Rama, χ1 ≤ 0,08: 3 → NESPLNĚNO
+  LOO TICA (100 ns, shodné n, exploratorně): S18 lepší u 9/15 dobrých AF, celkem 12/25
+  (iii) špatný AF: 9, S18 horší než MD 10,9 ns (LOO, shodné n) v obou 3, aspoň v jednom 6
+  kontrola 2 × 5,4 ns proti R_k (jádro): S18 blíž u 14/23, medián JS(S18) − JS(kontrola) -0.0242 (95% CI -0.071–0.0045)
+  kontrola 2 × 5,4 ns proti R_k (TICA): S18 blíž u 15/23, medián JS(S18) − JS(kontrola) -0.0341 (95% CI -0.0563–0.0146)
+
+protein     L AF TICA   t* j/T ns GPU S18 s zrychl. i-a p2 j/T   nula j/T  LOO S18/rep j         TICA  Rama    χ1
+7lp1_A     39   0.386   8.8/0.5         957     0.78/0.05      0.89/0.06  0.071/0.05    0.163/0.088  0.066 0.073
+6okd_C     51   0.403  22.1/≥100.0      1276     1.54/6.93      1.81/8.18   0.39/0.314   0.517/0.554  0.073 0.110
+6ro6_A     58   0.573  12.1/12.3        612     0.75/0.76      1.11/1.12  0.506/0.338   0.514/0.337  0.060 0.081
+6l34_A     68   0.263 ≥100.0/≥100.0       634     5.13/5.13      8.42/8.42  0.219/0.312   0.224/0.233  0.036 0.089
+6pce_B     70   0.201 ≥100.0/≥100.0       705     3.86/3.86      6.23/6.23  0.139/0.156   0.164/0.191  0.039 0.064
+6odd_B     74   0.474   2.3/0.5        1108     0.12/0.03      0.18/0.05  0.249/0.163   0.432/0.187  0.042 0.101
+6jv8_A     76   0.361 ≥100.0/≥100.0      1211     4.56/4.56      6.48/6.48  0.377/0.531   0.395/0.53   0.060 0.097
+6ono_C     76   0.476   2.6/92.3       1234     0.19/6.50      0.27/9.18  0.629/0.559   0.538/0.531  0.126 0.082
+7a66_B     86   0.572 ≥100.0/≥100.0      1285     7.18/7.18     10.82/10.82  0.682/0.701   0.714/0.724  0.081 0.101
+6h86_A     88   0.424 ≥100.0/≥100.0      4204    10.96/10.96    12.73/12.73  0.476/0.527   0.412/0.475  0.035 0.085
+7bwf_B     92   0.389  24.7/40.3       1266     1.76/2.87      2.79/4.55  0.566/0.344   0.494/0.419  0.056 0.088
+6d7y_A     96   0.701 ≥100.0/22.6       1155     4.85/1.10      8.25/1.87  0.379/0.486   0.628/0.595  0.086 0.093
+6ypi_A     97   0.552 ≥100.0/≥100.0      1288     7.97/7.97     13.10/13.10  0.326/0.54    0.415/0.581  0.034 0.071
+6tly_A     99   0.435   9.8/≥100.0      1341     0.47/4.67      0.77/7.68  0.656/0.52    0.599/0.651  0.154 0.119
+7s86_A     99   0.269   4.9/4.9        1529     0.26/0.26      0.41/0.41  0.447/0.271   0.425/0.319  0.074 0.083
+7n0j_E    101   0.292  68.8/≥100.0      1282     3.32/4.83      5.65/8.21  0.208/0.128   0.271/0.282  0.037 0.057
+6pxz_B    104   0.223  89.6/≥100.0      1379     4.41/4.92      7.45/8.32   0.14/0.13    0.149/0.164  0.028 0.068
+6p5h_A    105   0.326   6.6/40.5       1369     0.34/2.08      0.58/3.56   0.43/0.28    0.347/0.316  0.048 0.071
+6tgk_C    105   0.728 ≥100.0/≥100.0      1351     5.31/5.31      9.13/9.13  0.594/0.726   0.735/0.763  0.094 0.101
+6vjg_A    110   0.413 ≥100.0/≥100.0      1168     4.84/4.84      9.25/9.25  0.357/0.394   0.446/0.522  0.056 0.079
+6yhu_B    117   0.480  73.9/69.3       1151     3.08/2.89      6.31/5.92  0.414/0.405   0.486/0.47   0.039 0.072
+7k7p_B    118   0.600   0.5/0.5         702     0.02/0.02      0.06/0.06   0.83/0.632   0.806/0.764  0.094 0.069
+6uof_A    119   0.227 ≥100.0/18.2        606     2.90/0.53      8.86/1.62  0.246/0.254   0.287/0.24   0.045 0.077
+
+protein  GPU úlohy                    bench ns/d box MD ns/d  atomy box/p2 propust. box/bench v_B ns/d  pravidlo
+7lp1_A   Quadro RTX 5000                     963        1040    7564/9505                0.86      903  bench × propustnost S18d50_s0/S18_s0 = 0.94
+6okd_C   Quadro RTX 5000                     693         770   15353/15071               1.13      829  bench × propustnost S18d50_s0/S18_s0 = 1.20
+6ro6_A   NVIDIA L40S                        1094        1607   10044/10701               1.38     1556  bench × propustnost S18d50_s0/S18_s0 = 1.42
+6l34_A   NVIDIA L40S                         883        1566   19168/18019               1.89     1620  bench × propustnost S18d50_s0/S18_s0 = 1.83
+6pce_B   NVIDIA L40S                         865        1400   29133/20332               2.32     1972  bench × propustnost S18d50_s0/S18_s0 = 2.28
+6odd_B   Quadro RTX 5000                    1654         890   19147/19321               0.53     1056  bench × propustnost S18d50_s0/S18_s0 = 0.64
+6jv8_A   Quadro RTX 5000                     962         816   15910/16806               0.80     1103  bench × propustnost S18d50_s0/S18_s0 = 1.15
+6ono_C   Quadro RTX 5000                     651         800   14929/15135               1.21      704  bench × propustnost S18d50_s0/S18_s0 = 1.08
+7a66_B   NVIDIA RTX A4000                   1372         770   17358/15194               0.64      622  bench × propustnost S18d50_s0/S18_s0 = 0.45
+6h86_A   NVIDIA RTX A4000                    162         222   84384/108210               1.07      162  bench (stejná GPU jako S18_s0)
+7bwf_B   NVIDIA RTX A4000                    942         766   22024/33754               0.53      607  bench × propustnost S18d50_s0/S18_s0 = 0.64
+6d7y_A   NVIDIA GeForce RTX 2080 Ti         1508         889   13203/10941               0.71      908  bench × propustnost S18d50_s0/S18_s0 = 0.60
+6ypi_A   Quadro RTX 5000                    1075         776   14389/11639               0.89      512  bench × propustnost S18d50_s0/S18_s0 = 0.48
+6tly_A   Quadro RTX 5000                     893         784   17430/17673               0.87      841  bench × propustnost S18d50_s0/S18_s0 = 0.94
+7s86_A   NVIDIA RTX A4000                   1026         652   26722/27891               0.61      694  bench × propustnost S18d50_s0/S18_s0 = 0.68
+7n0j_E   NVIDIA RTX A4000                   1656         810   19521/19497               0.49      822  bench × propustnost S18d50_s0/S18_s0 = 0.50
+6pxz_B   NVIDIA RTX A4000                   1627         727   23340/19179               0.54      754  bench × propustnost S18d50_s0/S18_s0 = 0.46
+6p5h_A   NVIDIA GeForce RTX 2080            1372         741   21891/28558               0.41      719  bench × propustnost S18d50_s0/S18_s0 = 0.52
+6tgk_C   NVIDIA GeForce RTX 2080            1301         728   22158/28573               0.43      701  bench × propustnost S18d50_s0/S18_s0 = 0.54
+6vjg_A   Quadro RTX 5000                     737         847   20083/22501               1.02      800  bench × propustnost S18d50_s0/S18_s0 = 1.09
+6yhu_B   Quadro RTX 5000                    1484         868   19233/24868               0.45      881  bench × propustnost S18d50_s0/S18_s0 = 0.59
+7k7p_B   NVIDIA L40S                        1359        1399   14149/14722               0.99     1359  bench (stejná GPU jako S18_s0)
+6uof_A   NVIDIA L40S                        1609        1631   18363/18996               0.98     1609  bench (stejná GPU jako S18_s0)
+Uloženo l39srv/out_z10/z10_S18d50_s0_last.json

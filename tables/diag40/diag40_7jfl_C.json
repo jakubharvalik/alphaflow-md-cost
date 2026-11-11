@@ -1,0 +1,206 @@
+{
+ "sys": "p2_7jfl_C",
+ "args": {
+  "sys": "p2_7jfl_C",
+  "atlas": "public/atlas/cache/7jfl_C",
+  "runs": [
+   "S18d50_s0=/var/folders/kw/xf3yls2x6w73b77wt_jk73z40000gn/T/diag40_cqighgv_/S18d50_s0"
+  ],
+  "allow_partial": true,
+  "win": "50:520",
+  "trim": 4,
+  "tica_lag_ps": 5000.0,
+  "tica_dim": 10,
+  "skip_ps": 100.0,
+  "bins": 30,
+  "draws": 20,
+  "seed": 40,
+  "out": "l39srv/diag40/diag40_7jfl_C.json",
+  "dt_ps": 10.0
+ },
+ "info": {
+  "L": 47,
+  "core": [
+   5,
+   43
+  ],
+  "n_atlas": [
+   9991,
+   9991,
+   9991
+  ],
+  "rmsd_core_nm": {
+   "ATLAS": [
+    0.3037,
+    0.2895,
+    0.2876
+   ],
+   "S18d50_s0": 0.2337
+  }
+ },
+ "runs": {
+  "S18d50_s0": {
+   "jádro": {
+    "A": {
+     "base": "all",
+     "edges": "all",
+     "run": 0.4401,
+     "md": 0.4357,
+     "run_beats": false,
+     "run_by_fold": [
+      0.4645,
+      0.4401,
+      0.4157
+     ],
+     "md_by_fold": [
+      0.3317,
+      0.3832,
+      0.5923
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0017
+    },
+    "B": {
+     "base": "all",
+     "edges": "ref",
+     "run": 0.44,
+     "md": 0.4395,
+     "run_beats": false,
+     "run_by_fold": [
+      0.462,
+      0.4405,
+      0.4175
+     ],
+     "md_by_fold": [
+      0.3355,
+      0.3872,
+      0.5958
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0017
+    },
+    "C": {
+     "base": "ref",
+     "edges": "all",
+     "run": 0.4396,
+     "md": 0.3943,
+     "run_beats": false,
+     "run_by_fold": [
+      0.442,
+      0.4301,
+      0.4468
+     ],
+     "md_by_fold": [
+      0.2996,
+      0.4114,
+      0.4719
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0
+    },
+    "D": {
+     "base": "ref",
+     "edges": "ref",
+     "run": 0.4409,
+     "md": 0.396,
+     "run_beats": false,
+     "run_by_fold": [
+      0.4412,
+      0.4331,
+      0.4483
+     ],
+     "md_by_fold": [
+      0.2991,
+      0.4141,
+      0.4749
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0
+    }
+   },
+   "TICA": {
+    "A": {
+     "base": "all",
+     "edges": "all",
+     "run": 0.4495,
+     "md": 0.4267,
+     "run_beats": false,
+     "run_by_fold": [
+      0.4707,
+      0.466,
+      0.4118
+     ],
+     "md_by_fold": [
+      0.3234,
+      0.3594,
+      0.5972
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0041
+    },
+    "B": {
+     "base": "all",
+     "edges": "ref",
+     "run": 0.4518,
+     "md": 0.4278,
+     "run_beats": false,
+     "run_by_fold": [
+      0.4707,
+      0.4687,
+      0.4158
+     ],
+     "md_by_fold": [
+      0.3228,
+      0.3599,
+      0.6007
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0041
+    },
+    "C": {
+     "base": "ref",
+     "edges": "all",
+     "run": 0.438,
+     "md": 0.4151,
+     "run_beats": false,
+     "run_by_fold": [
+      0.4687,
+      0.4558,
+      0.3894
+     ],
+     "md_by_fold": [
+      0.3102,
+      0.4042,
+      0.531
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0
+    },
+    "D": {
+     "base": "ref",
+     "edges": "ref",
+     "run": 0.438,
+     "md": 0.4151,
+     "run_beats": false,
+     "run_by_fold": [
+      0.4687,
+      0.4558,
+      0.3896
+     ],
+     "md_by_fold": [
+      0.3105,
+      0.404,
+      0.5307
+     ],
+     "outside_ref_range_run": 0.0,
+     "outside_ref_range_md": 0.0
+    },
+    "tic1_sep_heldout_sd": [
+     0.562,
+     0.929,
+     2.135
+    ]
+   }
+  }
+ }
+}
