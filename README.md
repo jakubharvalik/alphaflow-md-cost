@@ -4,7 +4,7 @@ This repository accompanies the preprint "What does a generative ensemble really
 
 - Author: Jakub Harvalík, Department of Organic Chemistry, University of Chemistry and Technology, Prague, Czech Republic
 - Preprint: [DOI to be added]
-- Version: 1.0 (GitHub release v1.0, archived at Zenodo: [DOI to be added])
+- Version: 1.0 (GitHub release v1.0, archived at Zenodo: https://doi.org/10.5281/zenodo.24135297; all versions: https://doi.org/10.5281/zenodo.24135296)
 - Repository: https://github.com/jakubharvalik/alphaflow-md-cost
 
 ## Contents
@@ -82,4 +82,4 @@ The MD simulations and the generator runs themselves need the cluster, the ATLAS
 
 ## How to cite
 
-Harvalík J. What does a generative ensemble really save? Honest cost accounting of AlphaFlow-seeded molecular dynamics on ATLAS test proteins. Code and derived data, version 1.0. https://github.com/jakubharvalik/alphaflow-md-cost, archived at Zenodo, [DOI to be added]. CITATION.cff holds the same information in machine-readable form.
+Harvalík J. What does a generative ensemble really save? Honest cost accounting of AlphaFlow-seeded molecular dynamics on ATLAS test proteins. Code and derived data, version 1.0. https://github.com/jakubharvalik/alphaflow-md-cost, archived at Zenodo, https://doi.org/10.5281/zenodo.24135297. CITATION.cff holds the same information in machine-readable form.
